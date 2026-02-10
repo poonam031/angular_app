@@ -1,0 +1,121 @@
+/* Outer shell */
+.ribbon-shell {
+  font-family: Tahoma, Arial, sans-serif;
+  background: linear-gradient(#eaf4ff, #cbdff4);
+  border-bottom: 1px solid #7fa6d8;
+}
+
+/* Tabs */
+.ribbon-tabs {
+  display: flex;
+  padding: 6px 8px;
+  background: linear-gradient(#dcecff, #c2dbf3);
+  border-bottom: 1px solid #7fa6d8;
+
+  .tab {
+    padding: 6px 18px;
+    margin-right: 6px;
+    border: 1px solid #7fa6d8;
+    border-bottom: none;
+    background: #edf5ff;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+
+    &.active {
+      background: #ffffff;
+    }
+  }
+}
+
+/* Ribbon buttons area */
+.ribbon-area {
+  display: flex;
+  gap: 14px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+/* Each button */
+.ribbon-item {
+  width: 96px;
+  height: 92px;
+  background: linear-gradient(#ffffff, #f0f0f0);
+  border: 1px solid #8c8c8c;
+  box-shadow:
+    inset 0 1px 0 #ffffff,
+    0 1px 0 #d0d0d0;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.12s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: linear-gradient(#eaf4ff, #cfe6ff);
+    border-color: #4f7fbf;
+  }
+
+  &:active {
+    box-shadow: inset 0 2px 4px rgba(0,0,0,.25);
+  }
+
+  &.selected {
+    background: linear-gradient(#fff4cc, #ffe08a);
+    border: 2px solid #3a6fb0;
+  }
+}
+
+/* Icon base */
+.icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 6px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* Icon mappings */
+.icon.import  { background-image: url('/assets/icons/import.svg'); }
+.icon.member  { background-image: url('/assets/icons/member.svg'); }
+.icon.advisor { background-image: url('/assets/icons/advisor.svg'); }
+.icon.demand  { background-image: url('/assets/icons/demand.svg'); }
+.icon.inward  { background-image: url('/assets/icons/inward.svg'); }
+.icon.cash    { background-image: url('/assets/icons/cash.svg'); }
+.icon.credit  { background-image: url('/assets/icons/credit.svg'); }
+.icon.deposit { background-image: url('/assets/icons/deposit.svg'); }
+
+/* Text */
+.text {
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.lang-switch {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  span {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  button {
+    padding: 4px 10px;
+    border: 1px solid #7fa6d8;
+    background: linear-gradient(#ffffff, #e9e9e9);
+    cursor: pointer;
+    font-size: 12px;
+
+    &:hover {
+      background: linear-gradient(#eaf4ff, #cfe6ff);
+    }
+  }
+}
+

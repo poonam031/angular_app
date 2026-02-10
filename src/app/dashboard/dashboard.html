@@ -1,0 +1,22 @@
+<div class="ribbon-tabs">
+  <div class="tab active">{{ lang.t('MASTER') }}</div>
+  <div class="tab">{{ lang.t('REPORT') }}</div>
+
+  <div class="lang-switch">
+    <span>{{ lang.t('LANGUAGE') }}:</span>
+    <button (click)="switchLang('mr')">मराठी</button>
+    <button (click)="switchLang('en')">English</button>
+  </div>
+</div>
+
+<div class="ribbon-area">
+  <div class="ribbon-item">{{ lang.t('IMPORT_INFO') }}</div>
+  <div class="ribbon-item">{{ lang.t('MEMBER_INFO') }}</div>
+  <div class="ribbon-item">{{ lang.t('ADVISOR_INFO') }}</div>
+  <div class="ribbon-item selected">{{ lang.t('GRAIN_DEMAND') }}</div>
+  <div class="ribbon-item">{{ lang.t('GRAIN_INWARD') }}</div>
+  <div class="ribbon-item">{{ lang.t('CASH_SALE') }}</div>
+  <div class="ribbon-item">{{ lang.t('CREDIT_SALE') }}</div>
+  <div class="ribbon-item">{{ lang.t('DEPOSIT') }}</div>
+</div>
+
