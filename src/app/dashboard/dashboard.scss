@@ -213,8 +213,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  justify-content: flex-start;   /* 🔑 FIX */
+
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   overflow: hidden;
@@ -272,6 +272,7 @@
       transform: scale(1.2) rotate(5deg);
     }
 
+
     .text {
       transform: translateY(-2px);
     }
@@ -310,6 +311,20 @@
   position: relative;
   z-index: 2;
   will-change: transform;
+}
+
+/* === FIX: Equal padding & alignment for all ribbon icons === */
+.ribbon-item {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+/* Fixed icon slot so all cards align */
+.ribbon-item .icon-image {
+  display: block;
+  height: 80px;      /* SAME vertical space for all icons */
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 .ribbon-item:hover .icon-image {
@@ -698,6 +713,7 @@
 /* === Grain Inward: make bigger than Cash Sale === */
 .ribbon-item img[src*="grain"] {
   width: 100px;       /* clearly bigger */
+  transform: scale(1.15);
   height: 80px;
   transform: scale(1.15);
 }
