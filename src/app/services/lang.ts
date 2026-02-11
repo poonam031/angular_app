@@ -7,28 +7,27 @@ export type Lang = 'mr' | 'en';
 export type TranslationKey =
   | 'MASTER'
   | 'REPORT'
-  | 'IMPORT_INFO'
+  | 'ITEM_INFO'
   | 'MEMBER_INFO'
-  | 'ADVISOR_INFO'
+  | 'SUPPLIER_INFO'
   | 'GRAIN_DEMAND'
   | 'GRAIN_INWARD'
   | 'CASH_SALE'
   | 'CREDIT_SALE'
   | 'DEPOSIT'
   | 'LANGUAGE'
-  | 'IMPORT_ID'
-  | 'IMPORT_DATE'
+  | 'ITEM_ID'
+  | 'ITEM_NAME'
   | 'QUANTITY_QTL'
   | 'QUALITY_GRADE'
-  | 'SUPPLIER_NAME'
   | 'REMARKS'
   | 'MEMBER_ID'
   | 'MEMBER_NAME'
   | 'CONTACT_NUMBER'
   | 'ADDRESS'
   | 'ACTIVE_STATUS'
-  | 'ADVISOR_ID'
-  | 'ADVISOR_NAME'
+  | 'SUPPLIER_ID'
+  | 'SUPPLIER_NAME'
   | 'SPECIALIZATION'
   | 'CONTACT'
   | 'EXPERIENCE'
@@ -79,28 +78,27 @@ export class LanguageService {
     mr: {
       MASTER: 'मास्टर',
       REPORT: 'रिपोर्ट',
-      IMPORT_INFO: 'आयटम माहीती',
+      ITEM_INFO: 'आयटम माहीती',
       MEMBER_INFO: 'सभासद माहीती',
-      ADVISOR_INFO: 'सप्लायर माहीती ',
+      SUPPLIER_INFO: 'सप्लायर माहीती ',
       GRAIN_DEMAND: 'धान्य मागणी',
       GRAIN_INWARD: 'धान्य आवक',
       CASH_SALE: 'रोख विक्री',
       CREDIT_SALE: 'उधार विक्री',
       DEPOSIT: 'जमा व्यवहार',
       LANGUAGE: 'भाषा',
-      IMPORT_ID: 'आयात ID',
-      IMPORT_DATE: 'आयात तारीख',
+      ITEM_ID: 'आयटम ID',
+      ITEM_NAME: 'आयटम नाव',
       QUANTITY_QTL: 'प्रमाण (क्विंटल)',
       QUALITY_GRADE: 'गुणवत्ता श्रेणी',
-      SUPPLIER_NAME: 'पूरवठदारचे नाव',
       REMARKS: 'टिप्पणी',
       MEMBER_ID: 'समासद ID',
       MEMBER_NAME: 'समासद नाव',
       CONTACT_NUMBER: 'संपर्क क्रमांक',
       ADDRESS: 'पत्ता',
       ACTIVE_STATUS: 'सक्रिय स्थिती',
-      ADVISOR_ID: 'सल्लागार ID',
-      ADVISOR_NAME: 'सल्लागार नाव',
+      SUPPLIER_ID: 'सप्लायर ID',
+      SUPPLIER_NAME: 'सप्लायर नाव',
       SPECIALIZATION: 'विशेषज्ञता',
       CONTACT: 'संपर्क',
       EXPERIENCE: 'अनुभव',
@@ -139,28 +137,27 @@ export class LanguageService {
     en: {
       MASTER: 'Master',
       REPORT: 'Report',
-      IMPORT_INFO: 'Import Info',
+      ITEM_INFO: 'Item Info',
       MEMBER_INFO: 'Member Info',
-      ADVISOR_INFO: 'Advisor Info',
+      SUPPLIER_INFO: 'Supplier Info',
       GRAIN_DEMAND: 'Grain Demand',
       GRAIN_INWARD: 'Grain Inward',
       CASH_SALE: 'Cash Sale',
       CREDIT_SALE: 'Credit Sale',
       DEPOSIT: 'Deposit',
       LANGUAGE: 'Language',
-      IMPORT_ID: 'Import ID',
-      IMPORT_DATE: 'Import Date',
+      ITEM_ID: 'Item ID',
+      ITEM_NAME: 'Item Name',
       QUANTITY_QTL: 'Quantity (QTL)',
       QUALITY_GRADE: 'Quality Grade',
-      SUPPLIER_NAME: 'Supplier Name',
       REMARKS: 'Remarks',
       MEMBER_ID: 'Member ID',
       MEMBER_NAME: 'Member Name',
       CONTACT_NUMBER: 'Contact Number',
       ADDRESS: 'Address',
       ACTIVE_STATUS: 'Active Status',
-      ADVISOR_ID: 'Advisor ID',
-      ADVISOR_NAME: 'Advisor Name',
+      SUPPLIER_ID: 'Supplier ID',
+      SUPPLIER_NAME: 'Supplier Name',
       SPECIALIZATION: 'Specialization',
       CONTACT: 'Contact',
       EXPERIENCE: 'Experience',

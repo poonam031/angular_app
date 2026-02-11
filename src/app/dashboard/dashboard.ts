@@ -23,9 +23,10 @@ export class Dashboard {
   selectedOption: string | null = null;
 
   formFields: Record<string, FormField[]> = {
-    'import-info': [
-      { label: 'IMPORT_ID', value: '' },
-      { label: 'IMPORT_DATE', value: '' },
+    'item-info': [
+      { label: 'ITEM_INFO', value: '' },        
+      { label: 'ITEM_ID', value: '' },
+      { label: 'ITEM_NAME', value: '' },
       { label: 'QUANTITY_QTL', value: '' },
       { label: 'QUALITY_GRADE', value: '' },
       { label: 'SUPPLIER_NAME', value: '' },
@@ -38,9 +39,9 @@ export class Dashboard {
       { label: 'ADDRESS', value: '' },
       { label: 'ACTIVE_STATUS', value: '' }
     ],
-    'advisor-info': [
-      { label: 'ADVISOR_ID', value: '' },
-      { label: 'ADVISOR_NAME', value: '' },
+    'supplier-info': [
+      { label: 'SUPPLIER_ID', value: '' },
+      { label: 'SUPPLIER_NAME', value: '' },
       { label: 'SPECIALIZATION', value: '' },
       { label: 'CONTACT', value: '' },
       { label: 'EXPERIENCE', value: '' }
@@ -101,9 +102,9 @@ export class Dashboard {
 
   getFormTitle(option: string): TranslationKey {
     const titles: Record<string, TranslationKey> = {
-      'import-info': 'IMPORT_INFO',
+      'item-info': 'ITEM_INFO',
       'member-info': 'MEMBER_INFO',
-      'advisor-info': 'ADVISOR_INFO',
+      'supplier-info': 'SUPPLIER_INFO',
       'grain-demand': 'GRAIN_DEMAND',
       'grain-inward': 'GRAIN_INWARD',
       'cash-sale': 'CASH_SALE',

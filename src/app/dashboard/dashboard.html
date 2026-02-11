@@ -15,9 +15,9 @@
   </div>
 
   <div class="ribbon-area" *ngIf="activeTab === 'master'">
-    <div class="ribbon-item" [class.selected]="selectedOption === 'import-info'" (click)="selectOption('import-info')">
-      <img src="icons/box.png" alt="Import" class="icon-image">
-      <span class="text">{{ lang.t('IMPORT_INFO') }}</span>
+    <div class="ribbon-item" [class.selected]="selectedOption === 'item-info'" (click)="selectOption('item-info')">
+      <img src="icons/box.png" alt="Item" class="icon-image">
+      <span class="text">{{ lang.t('ITEM_INFO') }}</span>
     </div>
 
     <div class="ribbon-item" [class.selected]="selectedOption === 'member-info'" (click)="selectOption('member-info')">
@@ -25,9 +25,9 @@
       <span class="text">{{ lang.t('MEMBER_INFO') }}</span>
     </div>
 
-    <div class="ribbon-item" [class.selected]="selectedOption === 'advisor-info'" (click)="selectOption('advisor-info')">
-      <img src="icons/manager.png" alt="Advisor" class="icon-image">
-      <span class="text">{{ lang.t('ADVISOR_INFO') }}</span>
+    <div class="ribbon-item" [class.selected]="selectedOption === 'supplier-info'" (click)="selectOption('supplier-info')">
+      <img src="icons/manager.png" alt="Supplier" class="icon-image">
+      <span class="text">{{ lang.t('SUPPLIER_INFO') }}</span>
     </div>
 
     <div class="ribbon-item" [class.selected]="selectedOption === 'grain-demand'" (click)="selectOption('grain-demand')">
