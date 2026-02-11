@@ -123,7 +123,7 @@
       <div class="form-grid">
         <div class="form-group" *ngFor="let field of formFields[selectedOption]">
           <label>{{ lang.t(field.label) }}</label>
-          <input type="text" [(ngModel)]="field.value" [placeholder]="'Enter ' + lang.t(field.label)">
+          <input type="text" [(ngModel)]="field.value" [placeholder]="lang.t('ENTER') + ' ' + lang.t(field.label)">
         </div>
       </div>
     </div>

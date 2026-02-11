@@ -60,7 +60,8 @@ export type TranslationKey =
   | 'SALES_REGISTER'
   | 'ACCOUNT_INFO'
   | 'BILL_LIST'
-  | 'OUTSTANDING_DEMAND';
+  | 'OUTSTANDING_DEMAND'
+  | 'ENTER';
 
 /* 3️⃣ Dictionary shape */
 type Dictionary = {
@@ -132,6 +133,7 @@ export class LanguageService {
       ACCOUNT_INFO: 'खाते माहिती',
       BILL_LIST: 'बिल यादी',
       OUTSTANDING_DEMAND: 'शिल्लक मागणी',
+      ENTER: 'दर्ज करा',
 
     },
     en: {
@@ -191,6 +193,7 @@ export class LanguageService {
       ACCOUNT_INFO: 'Account Information',
       BILL_LIST: 'Bill List',
       OUTSTANDING_DEMAND: 'Outstanding Demand',
+      ENTER: 'Enter', 
     }
   };
 
