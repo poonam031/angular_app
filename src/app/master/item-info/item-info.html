@@ -1,0 +1,25 @@
+<div class="form-container">
+  <div class="form-header">
+    <h2>{{ lang.t('ITEM_INFO') }}</h2>
+    <button class="close-btn" (click)="close()">✕</button>
+  </div>
+
+  <div class="form-content">
+    <div class="form-grid">
+      <div class="form-group" *ngFor="let field of formFields">
+        <label>{{ lang.t(field.label) }}</label>
+        <input
+          type="text"
+          [(ngModel)]="field.value"
+          [placeholder]="'Enter ' + lang.t(field.label)" />
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button class="btn-save">{{ lang.t('SAVE') }}</button>
+    <button class="btn-clear" (click)="clear()">
+      {{ lang.t('CLEAR') }}
+    </button>
+  </div>
+</div>
