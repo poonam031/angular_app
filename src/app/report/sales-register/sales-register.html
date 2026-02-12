@@ -1,1 +1,44 @@
-<p>sales-register works!</p>
+<div class="form-container">
+    <div class="form-header">
+        <h2>{{ lang.t('SALES_REGISTER') }}</h2>
+        <button class="close-btn" (click)="close()">✕</button>
+    </div>
+
+
+    <div class="form-content">
+        <div class="form-grid">
+            <!-- Start Date -->
+            <div class="form-group">
+                <label>{{ lang.t('START_DATE') }}</label>
+                <input type="date" [(ngModel)]="startDate"
+                    [placeholder]="lang.t('ENTER') + ' ' + lang.t('START_DATE')" />
+            </div>
+
+            <!-- End Date -->
+            <div class="form-group">
+                <label>{{ lang.t('END_DATE') }}</label>
+                <input type="date" [(ngModel)]="endDate" [placeholder]="lang.t('ENTER') + ' ' + lang.t('END_DATE')" />
+            </div>
+        </div>
+
+        <!-- Sale Type Options -->
+        <div class="form-group radio-section">
+            <label>{{ lang.t('SALE_TYPE') }}</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" [(ngModel)]="saleType" value="cash" />
+                    {{ lang.t('CASH') }}
+                </label>
+                <label>
+                    <input type="radio" [(ngModel)]="saleType" value="credit" />
+                    {{ lang.t('CREDIT') }}
+                </label>
+            </div>
+        </div>
+
+
+        <div class="form-actions">
+            <button class="btn-print" (click)="print()">{{ lang.t('PRINT') }}</button>
+            <button class="btn-close" (click)="close()">{{ lang.t('CLOSE') }}</button>
+        </div>
+    </div>

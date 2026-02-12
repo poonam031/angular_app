@@ -25,17 +25,20 @@
       <span class="text">{{ lang.t('MEMBER_INFO') }}</span>
     </div>
 
-    <div class="ribbon-item" [class.selected]="selectedOption === 'supplier-info'" (click)="selectOption('supplier-info')">
+    <div class="ribbon-item" [class.selected]="selectedOption === 'supplier-info'"
+      (click)="selectOption('supplier-info')">
       <img src="icons/manager.png" alt="Supplier" class="icon-image">
       <span class="text">{{ lang.t('SUPPLIER_INFO') }}</span>
     </div>
 
-    <div class="ribbon-item" [class.selected]="selectedOption === 'grain-demand'" (click)="selectOption('grain-demand')">
+    <div class="ribbon-item" [class.selected]="selectedOption === 'grain-demand'"
+      (click)="selectOption('grain-demand')">
       <img src="icons/grain.png" alt="Grain Demand" class="icon-image">
       <span class="text">{{ lang.t('GRAIN_DEMAND') }}</span>
     </div>
 
-    <div class="ribbon-item" [class.selected]="selectedOption === 'grain-inward'" (click)="selectOption('grain-inward')">
+    <div class="ribbon-item" [class.selected]="selectedOption === 'grain-inward'"
+      (click)="selectOption('grain-inward')">
       <img src="icons/grain_inward.png" alt="Grain Inward" class="icon-image">
       <span class="text">{{ lang.t('GRAIN_INWARD') }}</span>
     </div>
@@ -46,7 +49,7 @@
     </div>
 
     <div class="ribbon-item" [class.selected]="selectedOption === 'credit-sale'" (click)="selectOption('credit-sale')">
-<img src="icons/credit-sale-illustration.png" alt="Credit Sale" class="icon-image">
+      <img src="icons/credit-sale-illustration.png" alt="Credit Sale" class="icon-image">
       <span class="text">{{ lang.t('CREDIT_SALE') }}</span>
     </div>
 
@@ -59,63 +62,64 @@
 
   <!--------------------------REPORT SECTION--------------------------------------------->
 
- <div class="ribbon-area" *ngIf="activeTab === 'report'">
+  <div class="ribbon-area" *ngIf="activeTab === 'report'">
 
-  <div class="ribbon-item"
-       [class.selected]="selectedOption === 'demand-register'"
-       (click)="selectReport('demand-register')">
-    <img src="icons/report-demand.png" class="icon-image">
-    <span class="text">{{ lang.t('DEMAND_REGISTER') }}</span>
+    <div class="ribbon-item" [class.selected]="selectedOption === 'demand-register'"
+      (click)="selectReport('demand-register')">
+      <img src="icons/report-demand.png" class="icon-image">
+      <span class="text">{{ lang.t('DEMAND_REGISTER') }}</span>
+    </div>
+
+    <div class="ribbon-item" [class.selected]="selectedOption === 'stock-register'"
+      (click)="selectReport('stock-register')">
+      <img src="icons/report-stock.png" class="icon-image">
+      <span class="text">{{ lang.t('STOCK_REGISTER') }}</span>
+    </div>
+
+    <div class="ribbon-item" [class.selected]="selectedOption === 'stock-book'" (click)="selectReport('stock-book')">
+      <img src="icons/report-demand.png" class="icon-image">
+      <span class="text">{{ lang.t('STOCK_BOOK') }}</span>
+    </div>
+
+    <div class="ribbon-item" [class.selected]="selectedOption === 'sales-register'"
+      (click)="selectReport('sales-register')">
+      <img src="icons/report-sales.png" class="icon-image">
+      <span class="text">{{ lang.t('SALES_REGISTER') }}</span>
+    </div>
+
+    <div class="ribbon-item" [class.selected]="selectedOption === 'account-info'"
+      (click)="selectReport('account-info')">
+      <img src="icons/report-account.png" class="icon-image">
+      <span class="text">{{ lang.t('ACCOUNT_INFO') }}</span>
+    </div>
+
+    <div class="ribbon-item" [class.selected]="selectedOption === 'bill-list'" (click)="selectReport('bill-list')">
+      <img src="icons/report-bill.png" class="icon-image">
+      <span class="text">{{ lang.t('BILL_LIST') }}</span>
+    </div>
+
+    <div class="ribbon-item" [class.selected]="selectedOption === 'outstanding-demand'"
+      (click)="selectReport('outstanding-demand')">
+      <img src="icons/report-demand.png" class="icon-image">
+      <span class="text">{{ lang.t('OUTSTANDING_DEMAND') }}</span>
+    </div>
+
   </div>
 
-  <div class="ribbon-item"
-       [class.selected]="selectedOption === 'stock-register'"
-       (click)="selectReport('stock-register')">
-    <img src="icons/report-stock.png" class="icon-image">
-    <span class="text">{{ lang.t('STOCK_REGISTER') }}</span>
-  </div>
+  <!-- MASTER COMPONENT AREA -->
+  <app-item-info *ngIf="activeTab === 'master' && selectedOption === 'item-info'" (closed)="selectedOption = null">
+  </app-item-info>
 
-  <div class="ribbon-item"
-       [class.selected]="selectedOption === 'stock-book'"
-       (click)="selectReport('stock-book')">
-    <img src="icons/report-demand.png" class="icon-image">
-    <span class="text">{{ lang.t('STOCK_BOOK') }}</span>
-  </div>
+  <!-- REPORT COMPONENT AREA -->
+  <app-stock-book *ngIf="activeTab === 'report' && selectedOption === 'stock-book'" (closed)="selectedOption = null">
+  </app-stock-book>
 
-  <div class="ribbon-item"
-       [class.selected]="selectedOption === 'sales-register'"
-       (click)="selectReport('sales-register')">
-    <img src="icons/report-sales.png" class="icon-image">
-    <span class="text">{{ lang.t('SALES_REGISTER') }}</span>
-  </div>
 
-  <div class="ribbon-item"
-       [class.selected]="selectedOption === 'account-info'"
-       (click)="selectReport('account-info')">
-    <img src="icons/report-account.png" class="icon-image">
-    <span class="text">{{ lang.t('ACCOUNT_INFO') }}</span>
-  </div>
+  <app-sales-register *ngIf="activeTab === 'report' && selectedOption === 'sales-register'"
+    (closed)="selectedOption = null">
+  </app-sales-register>
 
-  <div class="ribbon-item"
-       [class.selected]="selectedOption === 'bill-list'"
-       (click)="selectReport('bill-list')">
-    <img src="icons/report-bill.png" class="icon-image">
-    <span class="text">{{ lang.t('BILL_LIST') }}</span>
-  </div>
-
-  <div class="ribbon-item"
-       [class.selected]="selectedOption === 'outstanding-demand'"
-       (click)="selectReport('outstanding-demand')">
-    <img src="icons/report-demand.png" class="icon-image">
-    <span class="text">{{ lang.t('OUTSTANDING_DEMAND') }}</span>
-  </div>
-
-</div>
-
-<!-- MASTER COMPONENT AREA -->
-<app-item-info
-  *ngIf="activeTab === 'master' && selectedOption === 'item-info'"
-  (closed)="selectedOption = null">
-</app-item-info>
+  <app-bill-list *ngIf="activeTab === 'report' && selectedOption === 'bill-list'" (closed)="selectedOption = null">
+  </app-bill-list>
 
 </div>

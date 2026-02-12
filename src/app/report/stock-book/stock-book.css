@@ -58,29 +58,8 @@
 }
 
 .form-group input:focus {
-  border-color: #3182ce; /* blue focus */
+  border-color: #667eea;
   outline: none;
-}
-
-.radio-group {
-  display: flex;
-  gap: 20px;
-  margin-top: 8px;
-}
-
-.radio-group label {
-  font-size: 14px;
-  color: #2d3748;
-  cursor: pointer;
-}
-
-.radio-group input[type="radio"] {
-  margin-right: 6px;
-}
-
-/* Extra spacing before radio field section */
-.form-group.radio-section {
-  margin-top: 20px;   /* increased spacing */
 }
 
 .form-actions {

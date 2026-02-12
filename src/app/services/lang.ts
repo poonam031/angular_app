@@ -8,6 +8,7 @@ export type TranslationKey =
   | 'MASTER'
   | 'REPORT'
   | 'ITEM_INFO'
+  | 'ITEM_CODE'
   | 'MEMBER_INFO'
   | 'SUPPLIER_INFO'
   | 'GRAIN_DEMAND'
@@ -18,6 +19,11 @@ export type TranslationKey =
   | 'LANGUAGE'
   | 'ITEM_ID'
   | 'ITEM_NAME'
+  | 'WEIGHT'
+  | 'UNIT_LIMIT'
+  | 'RATE_EACH'
+  | 'PURCHASE_RATE'
+  | 'CREDIT'
   | 'QUANTITY_QTL'
   | 'QUALITY_GRADE'
   | 'REMARKS'
@@ -54,6 +60,11 @@ export type TranslationKey =
   | 'INTEREST_RATE'
   | 'SAVE'
   | 'CLEAR'
+  | 'NEW'
+  | 'EDIT'
+  | 'CANCEL'
+  | 'PRINT'
+  | 'CLOSE'
   | 'DEMAND_REGISTER'
   | 'STOCK_REGISTER'
   | 'STOCK_BOOK'
@@ -61,6 +72,21 @@ export type TranslationKey =
   | 'ACCOUNT_INFO'
   | 'BILL_LIST'
   | 'OUTSTANDING_DEMAND'
+  | 'REFERENCE_CODE'
+  | 'REPORT_CODE'
+  | 'REFERENCE_DATE'
+  | 'REPORT_DATE'
+  | 'START_DATE'
+  | 'END_DATE'
+  | 'SALE_TYPE'
+  | 'CASH'
+  | 'CREDIT'
+  | 'BALANCE_AS_ON_DATE'
+  | 'ACCOUNT_TYPE'
+  | 'TRADER_ACCOUNT'
+  | 'CUSTOMER_ACCOUNT'
+  | 'SUPPLIER_ACCOUNT'
+  | 'SELECT'
   | 'ENTER';
 
 /* 3️⃣ Dictionary shape */
@@ -90,6 +116,12 @@ export class LanguageService {
       LANGUAGE: 'भाषा',
       ITEM_ID: 'आयटम ID',
       ITEM_NAME: 'आयटम नाव',
+      ITEM_CODE: 'आयटम कोड',
+      WEIGHT: 'वजन',
+      UNIT_LIMIT: 'नग मर्यादा',
+      RATE_EACH: 'पदर प्रत्येकी',
+      PURCHASE_RATE: 'खरेदी दर',
+      CREDIT: 'उधार',
       QUANTITY_QTL: 'प्रमाण (क्विंटल)',
       QUALITY_GRADE: 'गुणवत्ता श्रेणी',
       REMARKS: 'टिप्पणी',
@@ -126,6 +158,11 @@ export class LanguageService {
       INTEREST_RATE: 'व्याज दर',
       SAVE: 'जतन करा',
       CLEAR: 'क्लिअर करा',
+      NEW: "नवीन",
+      EDIT: "दुरुस्ती",
+      CANCEL: "रद्द",
+      PRINT: "छपाई",
+      CLOSE: "बंद",
       DEMAND_REGISTER: 'मागणी रजिस्टर',
       STOCK_REGISTER: 'स्टॉक रजिस्टर',
       STOCK_BOOK: 'स्टॉक बुक ',
@@ -134,7 +171,20 @@ export class LanguageService {
       BILL_LIST: 'बिल यादी',
       OUTSTANDING_DEMAND: 'शिल्लक मागणी',
       ENTER: 'दर्ज करा',
-
+      REFERENCE_CODE: "सुरुवातीचा कोड",
+      REPORT_CODE: "अखेरचा कोड",
+      REFERENCE_DATE: "सुरुवातीचा तारीख",
+      REPORT_DATE: "अखेरचा तारीख",
+      START_DATE: "आरंभीची तारीख", 
+      END_DATE: "अखेरची तारीख",
+      SALE_TYPE: "विक्री प्रकार", 
+      CASH: "रोख",
+      BALANCE_AS_ON_DATE: "शिल्लक यादी रोजी",
+      ACCOUNT_TYPE: "खाते प्रकार",
+      SELECT: "निवडा",
+      TRADER_ACCOUNT: "व्यापारी येणे",
+      CUSTOMER_ACCOUNT: "ग्राहक येणे",
+      SUPPLIER_ACCOUNT: "पुरवठादार येणे",
     },
     en: {
       MASTER: 'Master',
@@ -150,6 +200,12 @@ export class LanguageService {
       LANGUAGE: 'Language',
       ITEM_ID: 'Item ID',
       ITEM_NAME: 'Item Name',
+      ITEM_CODE: 'Item Code',
+      WEIGHT: 'Weight',
+      UNIT_LIMIT: 'Unit Limit',
+      RATE_EACH: 'Rate Each',
+      PURCHASE_RATE: 'Purchase Rate',
+      CREDIT: 'Credit',
       QUANTITY_QTL: 'Quantity (QTL)',
       QUALITY_GRADE: 'Quality Grade',
       REMARKS: 'Remarks',
@@ -186,6 +242,11 @@ export class LanguageService {
       INTEREST_RATE: 'Interest Rate',
       SAVE: 'Save',
       CLEAR: 'Clear',
+      NEW: 'New',
+      EDIT: 'Edit',
+      CANCEL: 'Cancel',
+      PRINT: 'Print',
+      CLOSE: 'Close',
       DEMAND_REGISTER: 'Demand Register',
       STOCK_REGISTER: 'Stock Register',
       STOCK_BOOK: 'Stock Book',
@@ -193,7 +254,21 @@ export class LanguageService {
       ACCOUNT_INFO: 'Account Information',
       BILL_LIST: 'Bill List',
       OUTSTANDING_DEMAND: 'Outstanding Demand',
-      ENTER: 'Enter', 
+      ENTER: 'Enter',
+      REFERENCE_CODE: 'Reference Code',
+      REPORT_CODE: 'Report Code',
+      REFERENCE_DATE: 'Reference Date',
+      REPORT_DATE: 'Report Date',
+      START_DATE: 'Start Date',
+      END_DATE: 'End Date',
+      SALE_TYPE: 'Sale Type',
+      CASH: 'Cash',
+      BALANCE_AS_ON_DATE: 'Balance As On Date',
+      ACCOUNT_TYPE: 'Account Type',
+      SELECT: 'Select',
+      TRADER_ACCOUNT: 'Trader Receivable Account',
+      CUSTOMER_ACCOUNT: 'Customer Receivable Account',
+      SUPPLIER_ACCOUNT: 'Supplier Receivable Account',
     }
   };
 

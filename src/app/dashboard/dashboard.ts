@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LanguageService } from '../services/lang';
 import { ItemInfoComponent } from '../master/item-info/item-info';
+import { StockBook } from '../report/stock-book/stock-book';
+import { SalesRegister } from '../report/sales-register/sales-register';
+import { BillList } from "../report/bill-list/bill-list";
 
 @Component({
   selector: 'app-navbar',
@@ -10,8 +13,11 @@ import { ItemInfoComponent } from '../master/item-info/item-info';
   imports: [
     CommonModule,
     FormsModule,
-    ItemInfoComponent
-  ],
+    ItemInfoComponent,
+    StockBook,
+    SalesRegister,
+    BillList
+],
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.scss']
 })

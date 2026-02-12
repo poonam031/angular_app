@@ -6,20 +6,58 @@
 
   <div class="form-content">
     <div class="form-grid">
-      <div class="form-group" *ngFor="let field of formFields">
-        <label>{{ lang.t(field.label) }}</label>
-        <input
-          type="text"
-          [(ngModel)]="field.value"
-          [placeholder]="'Enter ' + lang.t(field.label)" />
+      <!-- Item Code -->
+      <div class="form-group">
+        <label>{{ lang.t('ITEM_CODE') }}</label>
+        <input type="text" [(ngModel)]="itemCode" [placeholder]="'Enter ' + lang.t('ITEM_CODE')" />
+      </div>
+
+      <!-- Item Name -->
+      <div class="form-group">
+        <label>{{ lang.t('ITEM_NAME') }}</label>
+        <input type="text" [(ngModel)]="itemName" [placeholder]="'Enter ' + lang.t('ITEM_NAME')" />
+      </div>
+
+      <!-- Weight -->
+      <div class="form-group">
+        <label>{{ lang.t('WEIGHT') }}</label>
+        <input type="text" [(ngModel)]="weight" [placeholder]="'Enter ' + lang.t('WEIGHT')" />
+      </div>
+
+      <!-- Quantity Limit -->
+      <div class="form-group">
+        <label>{{ lang.t('UNIT_LIMIT') }}</label>
+        <input type="text" [(ngModel)]="unitLimit" [placeholder]="'Enter ' + lang.t('UNIT_LIMIT')" />
+      </div>
+
+      <!-- Rate Each -->
+      <div class="form-group">
+        <label>{{ lang.t('RATE_EACH') }}</label>
+        <input type="text" [(ngModel)]="rateEach" [placeholder]="'Enter ' + lang.t('RATE_EACH')" />
+      </div>
+
+      <!-- Purchase Rate -->
+      <div class="form-group">
+        <label>{{ lang.t('PURCHASE_RATE') }}</label>
+        <input type="text" [(ngModel)]="purchaseRate" [placeholder]="'Enter ' + lang.t('PURCHASE_RATE')" />
+      </div>
+
+      <!-- Credit -->
+      <div class="form-group">
+        <label>{{ lang.t('CREDIT') }}</label>
+        <input type="text" [(ngModel)]="credit" [placeholder]="lang.t('ENTER') + ' ' + lang.t('CREDIT')" />
+
       </div>
     </div>
-  </div>
 
-  <div class="form-actions">
-    <button class="btn-save">{{ lang.t('SAVE') }}</button>
-    <button class="btn-clear" (click)="clear()">
-      {{ lang.t('CLEAR') }}
-    </button>
+    <div class="form-actions">
+      <!-- Action Buttons -->
+      <button class="btn-save">{{ lang.t('SAVE') }}</button>
+      <button class="btn-clear" (click)="clear()">{{ lang.t('CLEAR') }}</button>
+      <button class="btn-new">{{ lang.t('NEW') }}</button>
+      <button class="btn-durusti">{{ lang.t('EDIT') }}</button>
+      <button class="btn-cancel">{{ lang.t('CANCEL') }}</button>
+      <button class="btn-print">{{ lang.t('PRINT') }}</button>
+      <button class="btn-close">{{ lang.t('CLOSE') }}</button>
+    </div>
   </div>
-</div>

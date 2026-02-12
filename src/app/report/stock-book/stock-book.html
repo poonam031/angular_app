@@ -1,0 +1,47 @@
+<div class="form-container">
+  <div class="form-header">
+    <h2>{{ lang.t('STOCK_BOOK') }}</h2>
+    <button class="close-btn" (click)="close()">✕</button>
+  </div>
+
+  <div class="form-content">
+    <div class="form-grid">
+      <!-- Reference Code -->
+      <div class="form-group">
+        <label>{{ lang.t('REFERENCE_CODE') }}</label>
+        <input type="text"
+               [(ngModel)]="referenceCode"
+               [placeholder]="lang.t('ENTER') + ' ' + lang.t('REFERENCE_CODE')" />
+      </div>
+
+      <!-- Report Code -->
+      <div class="form-group">
+        <label>{{ lang.t('REPORT_CODE') }}</label>
+        <input type="text"
+               [(ngModel)]="reportCode"
+               [placeholder]="lang.t('ENTER') + ' ' + lang.t('REPORT_CODE')" />
+      </div>
+
+      <!-- Reference Date -->
+      <div class="form-group">
+        <label>{{ lang.t('REFERENCE_DATE') }}</label>
+        <input type="date"
+               [(ngModel)]="referenceDate"
+               [placeholder]="lang.t('ENTER') + ' ' + lang.t('REFERENCE_DATE')" />
+      </div>
+
+      <!-- Report Date -->
+      <div class="form-group">
+        <label>{{ lang.t('REPORT_DATE') }}</label>
+        <input type="date"
+               [(ngModel)]="reportDate"
+               [placeholder]="lang.t('ENTER') + ' ' + lang.t('REPORT_DATE')" />
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button class="btn-print" (click)="print()">{{ lang.t('PRINT') }}</button>
+    <button class="btn-close" (click)="close()">{{ lang.t('CLOSE') }}</button>
+  </div>
+</div>
