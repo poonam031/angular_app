@@ -1,1 +1,38 @@
-<p>bill-list works!</p>
+<div class="form-container">
+
+  <!-- Header -->
+  <div class="form-header">
+    <h2>{{ lang.t('BILL_LIST') }}</h2>
+    <button class="close-btn" (click)="close()">✕</button>
+  </div>
+
+  <!-- Content -->
+  <div class="form-content">
+    <div class="form-grid">
+
+      <!-- Balance As On Date -->
+      <div class="form-group">
+        <label>{{ lang.t('BALANCE_AS_ON_DATE') }}</label>
+        <input type="date" [(ngModel)]="balanceDate" />
+      </div>
+
+      <!-- Account Type -->
+      <div class="form-group">
+        <label>{{ lang.t('ACCOUNT_TYPE') }}</label>
+        <select [(ngModel)]="accountType">
+          <option value="">{{ lang.t('SELECT') }}</option>
+          <option value="trader">{{ lang.t('TRADER_ACCOUNT') }}</option>
+          <option value="customer">{{ lang.t('CUSTOMER_ACCOUNT') }}</option>
+          <option value="supplier">{{ lang.t('SUPPLIER_ACCOUNT') }}</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- Actions -->
+    <div class="form-actions">
+      <button class="btn-print" (click)="print()">{{ lang.t('PRINT') }}</button>
+      <button class="btn-close" (click)="close()">{{ lang.t('CLOSE') }}</button>
+    </div>
+  </div>
+</div>

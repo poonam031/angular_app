@@ -7,6 +7,7 @@ import { BillList } from './report/bill-list/bill-list';
 import { BalanceDemand } from './report/balance-demand/balance-demand';
 import { ReportComponent } from './report/report.component';
 import { StockRegisterComponent } from './report/stock-register/stock-register';
+import { StockBook } from './report/stock-book/stock-book';
 
 
 export const routes: Routes = [
@@ -21,7 +22,8 @@ export const routes: Routes = [
       { path: 'stock', component: StockRegisterComponent },
       { path: 'sales', component:SalesRegister },
       { path: 'bill', component: BillList },
-      { path: 'balance', component: BalanceDemand }
+      { path: 'balance', component: BalanceDemand },
+      { path: 'stockbook', component: StockBook}
     ]
   }
 ];

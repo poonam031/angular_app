@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LanguageService } from '../services/lang';
 import { ItemInfoComponent } from '../master/item-info/item-info';
-import { DemandRegisterComponent } from '../report/demand-register/demand-register';
+import { StockBook } from '../report/stock-book/stock-book';
+import { SalesRegister } from '../report/sales-register/sales-register';
+import { BillList } from "../report/bill-list/bill-list";
 import { StockRegisterComponent } from '../report/stock-register/stock-register';
-
+import { DemandRegisterComponent } from '../report/demand-register/demand-register';
 
 @Component({
   selector: 'app-navbar',
@@ -14,9 +16,12 @@ import { StockRegisterComponent } from '../report/stock-register/stock-register'
     CommonModule,
     FormsModule,
     ItemInfoComponent,
-    DemandRegisterComponent,
-    StockRegisterComponent
-  ],
+    StockBook,
+    SalesRegister,
+    BillList,
+    StockRegisterComponent,
+    DemandRegisterComponent
+],
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.scss']
 })
