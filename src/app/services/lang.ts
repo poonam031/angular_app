@@ -61,7 +61,12 @@ export type TranslationKey =
   | 'ACCOUNT_INFO'
   | 'BILL_LIST'
   | 'OUTSTANDING_DEMAND'
-  | 'ENTER';
+  | 'ENTER'
+  | 'FROM_DATE'
+  | 'TO_DATE'
+  | 'LOCATION'
+  | 'PRINT'
+  | 'CLOSE';
 
 /* 3️⃣ Dictionary shape */
 type Dictionary = {
@@ -134,6 +139,12 @@ export class LanguageService {
       BILL_LIST: 'बिल यादी',
       OUTSTANDING_DEMAND: 'शिल्लक मागणी',
       ENTER: 'दर्ज करा',
+      FROM_DATE: 'आरंभीची तारीख',
+      TO_DATE: 'अखेरची तारीख',
+      LOCATION: 'ठिकाण',
+      PRINT: 'छपाई',
+      CLOSE: 'बंद',
+
 
     },
     en: {
@@ -193,7 +204,13 @@ export class LanguageService {
       ACCOUNT_INFO: 'Account Information',
       BILL_LIST: 'Bill List',
       OUTSTANDING_DEMAND: 'Outstanding Demand',
-      ENTER: 'Enter', 
+      ENTER: 'Enter',
+      FROM_DATE: 'From Date',
+      TO_DATE: 'To Date',
+      LOCATION: 'Location',
+      PRINT: 'Print',
+      CLOSE: 'Close',
+
     }
   };
 

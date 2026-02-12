@@ -1,0 +1,301 @@
+/* =========================================
+   OUTER PAGE FIX (IMPORTANT)
+   ========================================= */
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* This fixes the RIGHT SHIFT */
+.form-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* =========================================
+   SOFT BACKGROUND WRAPPER (VISIBLE)
+   ========================================= */
+.form-container {
+  background: linear-gradient(
+    180deg,
+    #f0f4ff 0%,
+    #f7f9ff 50%,
+    #ffffff 100%
+  );
+
+  border-radius: 14px;
+  padding: 24px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================
+   HEADER BAR
+   ========================================= */
+.form-header {
+  background: linear-gradient(
+    90deg,
+    #1e3c72,
+    #2a5298
+  );
+
+  padding: 14px 20px;
+  border-radius: 10px;
+
+  margin-bottom: 24px;
+  box-shadow: 0 6px 18px rgba(30, 60, 114, 0.35);
+}
+
+.form-header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+/* =========================================
+   FORM CONTENT
+   ========================================= */
+.form-content {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* GRID */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* =========================================
+   FORM GROUP
+   ========================================= */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e3c72;
+  margin-bottom: 6px;
+}
+
+/* =========================================
+   INPUTS & SELECT
+   ========================================= */
+.form-group input,
+.form-group select {
+  height: 42px;
+  padding: 8px 12px;
+  font-size: 14px;
+
+  border-radius: 8px;
+  border: 1.5px solid #cbd5e1;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #f4f6ff
+  );
+
+  transition: all 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+
+  box-shadow:
+    0 0 0 3px rgba(102, 126, 234, 0.2),
+    0 4px 12px rgba(102, 126, 234, 0.25);
+}
+
+/* Placeholder */
+.form-group select option[value=""] {
+  color: #9aa5b1;
+}
+
+/* =========================================
+   ACTIONS
+   ========================================= */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+
+  margin-top: 22px;
+  padding-top: 16px;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Buttons */
+.form-actions button {
+  padding: 10px 30px;
+  font-size: 13px;
+  font-weight: 700;
+
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  letter-spacing: 0.6px;
+  transition: all 0.25s ease;
+}
+
+/* PRINT */
+.btn-save {
+  background: linear-gradient(
+    135deg,
+    #667eea,
+    #764ba2
+  );
+  color: #ffffff;
+}
+
+.btn-save:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.45);
+}
+
+/* CLOSE */
+.btn-clear {
+  background: linear-gradient(
+    135deg,
+    #e2e8f0,
+    #cbd5e1
+  );
+  color: #2d3748;
+}
+
+.btn-clear:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}
+/* ================================
+   INPUT SIZE & RADIUS FIX
+   ================================ */
+.form-group input[type="date"],
+.form-group input[type="text"],
+.form-group select {
+  height: 38px;            /* ⬅ reduced height */
+  padding: 6px 12px;
+  font-size: 14px;
+
+  border-radius: 12px;    /* ⬅ more rounded corners */
+  border: 1.5px solid #cbd5e1;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #f6f8ff
+  );
+
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.form-group input:hover,
+.form-group select:hover {
+  background: #f3f6ff;
+}
+
+/* Focus */
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+
+  box-shadow:
+    0 0 0 3px rgba(102, 126, 234, 0.18),
+    0 4px 10px rgba(102, 126, 234, 0.2);
+}
+
+/* ================================
+   FORCE COMPACT DATE INPUT
+   ================================ */
+.form-group input[type="date"] {
+  height: 34px !important;        /* ⬅ smaller height */
+  min-height: 34px !important;
+
+  padding: 4px 10px !important;   /* ⬅ reduce inner space */
+  font-size: 13px;
+
+  border-radius: 12px;            /* ⬅ soft rounded */
+  line-height: 1.2;
+
+  background-color: #f9fbff;
+}
+
+/* Fix calendar icon alignment */
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  height: 16px;
+  width: 16px;
+  margin-right: 4px;
+  cursor: pointer;
+}
+/* ================================
+   UNIFY INPUT + DATE + SELECT SIZE
+   ================================ */
+
+.form-group input[type="date"],
+.form-group select {
+  height: 34px !important;
+  min-height: 34px !important;
+
+  padding: 4px 12px !important;
+  font-size: 13px;
+  line-height: 1.2;
+
+  border-radius: 12px;
+  border: 1.5px solid #cbd5e0;
+
+  background-color: #f9fbff;
+  box-sizing: border-box;
+}
+
+/* Fix dropdown arrow vertical alignment */
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #555 50%),
+    linear-gradient(135deg, #555 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 14px,
+    calc(100% - 13px) 14px;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 34px !important;
+}
+
+/* Calendar icon alignment */
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  height: 16px;
+  width: 16px;
+  margin-right: 6px;
+  cursor: pointer;
+}

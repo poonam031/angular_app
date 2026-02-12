@@ -118,4 +118,20 @@
   (closed)="selectedOption = null">
 </app-item-info>
 
+
+
+
+<!-- REPORT COMPONENT AREA -->
+<app-demand-register
+  *ngIf="activeTab === 'report' && selectedOption === 'demand-register'"
+  (closed)="selectedOption = null">
+</app-demand-register>
+
+
+<app-stock-register
+  *ngIf="activeTab === 'report' && selectedOption === 'stock-register'"
+  (closed)="selectedOption = null">
+</app-stock-register>
+
+
 </div>

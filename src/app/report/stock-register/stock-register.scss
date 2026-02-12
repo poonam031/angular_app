@@ -1,0 +1,230 @@
+/* =========================================
+   GLOBAL FIX (VERY IMPORTANT)
+   ========================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   COMPONENT WRAPPER
+   ========================================= */
+:host {
+  display: block;
+  width: 100%;
+  overflow-x: hidden; /* ✅ stops right shift */
+}
+
+/* =========================================
+   LEGACY WINDOW → MODERN CARD
+   ========================================= */
+.legacy-window {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden; /* ✅ safety */
+
+  background: linear-gradient(
+    180deg,
+    #f1f5ff 0%,
+    #f7f9ff 55%,
+    #ffffff 100%
+  );
+
+  border-radius: 16px;
+  padding: 22px;
+
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.08),
+    inset 0 1px 2px rgba(255, 255, 255, 0.95);
+}
+
+/* =========================================
+   TITLE BAR
+   ========================================= */
+.window-title {
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  color: #ffffff;
+
+  padding: 14px 20px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 22px;
+  box-shadow: 0 6px 18px rgba(30, 60, 114, 0.35);
+}
+
+.window-title span {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+/* ❌ REMOVE CLOSE BUTTON VISUALLY */
+.close-btn {
+  display: none;
+}
+
+/* =========================================
+   FORM BODY
+   ========================================= */
+.window-body {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   FORM ROWS (FIXED GRID)
+   ========================================= */
+.row {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+/* Date row (only 2 columns) */
+.row:last-of-type {
+  grid-template-columns: 140px minmax(0, 1fr);
+}
+
+/* =========================================
+   LABELS
+   ========================================= */
+.row label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e3c72;
+}
+
+/* =========================================
+   INPUTS
+   ========================================= */
+.row input {
+  width: 100%;
+  min-width: 0;
+
+  height: 34px;
+  padding: 4px 12px;
+  font-size: 13px;
+  line-height: 1.2;
+
+  border-radius: 14px;
+  border: 1.5px solid #cbd5e0;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #f6f8ff
+  );
+
+  transition: all 0.25s ease;
+}
+
+.row input:hover {
+  background: #f3f6ff;
+}
+
+.row input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow:
+    0 0 0 3px rgba(102, 126, 234, 0.18),
+    0 4px 10px rgba(102, 126, 234, 0.25);
+}
+
+/* Small input */
+.small-box {
+  width: 80px;
+  min-width: 80px;
+}
+
+/* Date input fix */
+.row input[type="date"] {
+  max-width: 260px;
+}
+
+/* Calendar icon alignment */
+.row input[type="date"]::-webkit-calendar-picker-indicator {
+  height: 16px;
+  width: 16px;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+/* =========================================
+   BUTTON AREA
+   ========================================= */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Buttons */
+.buttons button {
+  padding: 10px 32px;
+  font-size: 13px;
+  font-weight: 700;
+
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.6px;
+
+  transition: all 0.25s ease;
+}
+
+/* Print */
+.btn-primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(102, 126, 234, 0.45);
+}
+
+/* Close */
+.btn-secondary {
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  color: #2d3748;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .small-box {
+    width: 100%;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
+}

@@ -1,29 +1,51 @@
-<div class="report-form">
+<div class="form-container">
 
+  <!-- HEADER -->
   <div class="form-header">
-    <h3>Demand Register</h3>
+    <h2>{{ lang.t('DEMAND_REGISTER') }}</h2>
   </div>
 
-  <div class="form-grid">
-    <div class="form-group">
-      <label>From Date</label>
-      <input type="date">
-    </div>
+  <!-- CONTENT -->
+  <div class="form-content">
+    <div class="form-grid">
 
-    <div class="form-group">
-      <label>To Date</label>
-      <input type="date">
-    </div>
+      <div class="form-group">
+        <label>{{ lang.t('FROM_DATE') }}</label>
+        <input type="date" [(ngModel)]="fromDate">
+      </div>
 
-    <div class="form-group">
-      <label>Item Name</label>
-      <input type="text">
+      <div class="form-group">
+        <label>{{ lang.t('TO_DATE') }}</label>
+        <input type="date" [(ngModel)]="toDate">
+      </div>
+
+      <div class="form-group">
+        <label>{{ lang.t('LOCATION') }}</label>
+
+        <select [(ngModel)]="location">
+          <!-- Placeholder -->
+          <option value="" disabled hidden>
+            {{ lang.t('ENTER') }}
+          </option>
+
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+        </select>
+      </div>
+
     </div>
   </div>
 
+  <!-- ACTIONS -->
   <div class="form-actions">
-    <button>Search</button>
-    <button>Clear</button>
+    <button class="btn-save" (click)="search()">
+      {{ lang.t('PRINT') }}
+    </button>
+    <button class="btn-clear" (click)="close()">
+      {{ lang.t('CLOSE') }}
+    </button>
   </div>
 
 </div>
