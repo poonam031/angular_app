@@ -1,0 +1,35 @@
+<div class="form-container">
+  <div class="form-header">
+    <span class="title">सप्लायर मास्टर</span>
+    <button class="close-btn" (click)="onClose()">✕</button>
+  </div>
+
+  <div class="form-body">
+    <div class="input-group">
+      <label>सप्लायर कोड</label>
+      <input type="text" [(ngModel)]="supplierCode" class="code-input">
+    </div>
+
+    <div class="input-group">
+      <label>सप्लायरचे नांव</label>
+      <input type="text" [(ngModel)]="supplierName" class="name-input">
+    </div>
+  </div>
+
+  <div class="form-footer">
+    <div class="action-buttons">
+      <button class="btn-new" (click)="onNew()"><i class="icon-new"></i> नवीन</button>
+      <button class="btn-edit" (click)="onEdit()"><i class="icon-edit"></i> दुरुस्ती</button>
+      <button class="btn-delete" (click)="onDelete()"><i class="icon-delete"></i> रद्द</button>
+      <button class="btn-print" (click)="onPrint()"><i class="icon-print"></i> छपाई</button>
+      <button class="btn-form-close" (click)="onClose()"><i class="icon-close"></i> बंद</button>
+    </div>
+    
+    <div class="nav-buttons">
+      <button class="nav-btn" (click)="onClose()">|❮</button>
+      <button class="nav-btn" (click)="onClose()">❮</button>
+      <button class="nav-btn" (click)="onClose()">❯</button>
+      <button class="nav-btn" (click)="onClose()">❯|</button>
+    </div>
+  </div>
+</div>

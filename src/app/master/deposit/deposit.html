@@ -1,0 +1,100 @@
+<div class="form-container">
+
+  <div class="form-header">
+    <div class="title">{{ lang.t('DEPOSIT') }}</div>
+    <button class="close-top" (click)="onClose()">×</button>
+  </div>
+
+  <div class="form-body legacy-style">
+    
+    <div class="header-inputs row">
+      <div class="input-group">
+        <label>{{ lang.t('DEPOSIT_TYPE') }}</label>
+        <div class="radio-group">
+          <label *ngFor="let t of transactionTypes">
+            <input type="radio" name="type" [(ngModel)]="form.type" [value]="t.value">
+            {{ lang.getLang() === 'mr' ? t.labelMr : t.labelEn }}
+          </label>
+        </div>
+      </div>
+
+      <div class="input-group date-group">
+        <label>{{ lang.t('DATE') }}</label>
+        <div class="search-box">
+          <input type="date" class="date-input" [(ngModel)]="form.date">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>{{ lang.t('TRANSACTION_ID') }}</label>
+        <div class="search-box">
+          <input class="small-code" type="text" [(ngModel)]="form.transactionNo">
+        </div>
+      </div>
+    </div>
+
+    <div class="header-inputs row">
+      <div class="input-group full-width">
+        <label>{{ lang.t('SUPPLIER_ID') }}</label>
+        <div class="search-box">
+          <select class="dropdown-select" [(ngModel)]="form.partyCode" (ngModelChange)="onPartyChange($event)">
+            <option value="">Select</option>
+            <option *ngFor="let p of parties" [value]="p.code">{{ p.code }}</option>
+          </select>
+          <input class="display-name" type="text" [value]="form.partyName" disabled>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-inputs row">
+      <div class="input-group full-width">
+        <label>{{ lang.t('BUYER_NAME') }}</label>
+        <div class="search-box">
+          <input type="text" class="full-input" [(ngModel)]="form.receivedFrom">
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="header-inputs row space-between">
+      <div class="input-group">
+        <label>{{ lang.t('AMOUNT') }}</label>
+        <div class="search-box">
+          <input type="number" [(ngModel)]="form.amount" (ngModelChange)="onAmountChange()">
+        </div>
+      </div>
+      <div class="input-group">
+        <label>{{ lang.t('TOTAL_NOS') }} :</label>
+        <input class="total-input" [value]="form.totalAmount" disabled>
+      </div>
+    </div>
+
+    <div class="header-inputs row">
+      <div class="input-group full-width">
+        <label>{{ lang.t('REMARKS') }}</label>
+        <textarea [(ngModel)]="form.remarks"></textarea>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="form-footer">
+    <div class="action-buttons">
+      <button class="btn-action" (click)="onNew()">
+        <span class="icon">📄</span> {{ lang.t('NEW') }}
+      </button>
+      <button class="btn-form-close" (click)="onClose()">
+        <span class="icon">📁</span> {{ lang.t('CLOSE') }}
+      </button>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="nav-btn">|&lt;</button>
+      <button class="nav-btn">&lt;</button>
+      <button class="nav-btn">&gt;</button>
+      <button class="nav-btn">&gt;|</button>
+    </div>
+  </div>
+
+</div>

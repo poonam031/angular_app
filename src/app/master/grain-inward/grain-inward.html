@@ -1,0 +1,116 @@
+<div class="form-container">
+
+  <!-- HEADER -->
+  <div class="form-header">
+    <span class="title">{{ lang.t('GRAIN_INWARD_TITLE') }}</span>
+    <button class="close-top" (click)="onClose()">✕</button>
+  </div>
+
+  <div class="form-body">
+
+    <!-- HEADER FIELDS -->
+    <div class="header-inputs">
+
+      <div class="input-group">
+        <label>{{ lang.t('GODOWN_CODE') }}</label>
+        <div class="search-box">
+          <input [(ngModel)]="godownCode" class="small-code">
+          <input [(ngModel)]="godownName" class="display-name" readonly>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>{{ lang.t('BILL_NO') }}</label>
+        <input [(ngModel)]="billNo">
+      </div>
+
+      <div class="input-group date-group">
+        <label>{{ lang.t('DATE') }}</label>
+        <input type="date"
+               [(ngModel)]="billDate"
+               class="date-input">
+      </div>
+
+    </div>
+
+    <div class="header-inputs">
+
+      <div class="input-group">
+        <label>{{ lang.t('FARMER_NAME') }}</label>
+        <input [(ngModel)]="farmerName">
+      </div>
+
+      <div class="input-group">
+        <label>{{ lang.t('MEMBER_CODE') }}</label>
+        <input [(ngModel)]="memberCode" class="small-code">
+      </div>
+
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-container">
+      <table class="item-table">
+        <thead>
+          <tr>
+            <th>{{ lang.t('ITEM_CODE') }}</th>
+            <th>{{ lang.t('ITEM_LIST_NAME') }}</th>
+            <th>{{ lang.t('NOS') }}</th>
+            <th>{{ lang.t('RATE') }}</th>
+            <th>{{ lang.t('AMOUNT') }}</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td>{{ item.code }}</td>
+            <td>{{ item.name }}</td>
+            <td>
+              <input type="number"
+                     [(ngModel)]="item.qty"
+                     (ngModelChange)="calculateTotal()">
+            </td>
+            <td>
+              <input type="number"
+                     [(ngModel)]="item.rate"
+                     (ngModelChange)="calculateTotal()">
+            </td>
+            <td>{{ item.amount | number:'1.2-2' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TOTAL -->
+    <div class="total-bar">
+      <label>{{ lang.t('TOTAL_AMOUNT') }}</label>
+      <input class="grand-total"
+             [value]="totalAmount | number:'1.2-2'"
+             readonly>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="form-footer">
+
+    <div class="action-buttons">
+      <button class="btn-action">{{ lang.t('NEW') }}</button>
+      <button class="btn-action">{{ lang.t('EDIT') }}</button>
+      <button class="btn-save" (click)="onSave()">
+        {{ lang.t('SAVE') }}
+      </button>
+      <button class="btn-close" (click)="onClose()">
+        {{ lang.t('CLOSE') }}
+      </button>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="nav-btn">|❮</button>
+      <button class="nav-btn">❮</button>
+      <button class="nav-btn">❯</button>
+      <button class="nav-btn">❯|</button>
+    </div>
+
+  </div>
+
+</div>

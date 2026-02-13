@@ -1,0 +1,112 @@
+<div class="form-container">
+
+  <!-- HEADER -->
+  <div class="form-header">
+    <div class="title">{{ lang.t('MEMBER_INFO_TITLE') }}</div>
+    <button class="close-top" (click)="onClose()">×</button>
+  </div>
+
+  <!-- BODY -->
+  <div class="form-body">
+
+    <div class="header-inputs">
+
+      <!-- MEMBER CODE -->
+      <div class="input-group">
+        <label>{{ lang.t('MEMBER_CODE') }}</label>
+        <div class="search-box">
+          <input type="text"
+                 class="small-code"
+                 [(ngModel)]="memberCode">
+        </div>
+      </div>
+
+      <!-- MEMBER NAME -->
+      <div class="input-group full-width">
+        <label>{{ lang.t('MEMBER_NAME') }}</label>
+        <div class="search-box">
+          <input type="text"
+                 [(ngModel)]="memberName">
+        </div>
+      </div>
+
+      <!-- FATHER NAME -->
+      <div class="input-group full-width">
+        <label>{{ lang.t('FATHER_NAME') }}</label>
+        <div class="search-box">
+          <input type="text"
+                 [(ngModel)]="fatherName">
+        </div>
+      </div>
+
+      <!-- MEMBER NUMBER -->
+      <div class="input-group">
+        <label>{{ lang.t('MEMBER_NUMBER') }}</label>
+        <div class="search-box">
+          <input type="text"
+                 class="small-code"
+                 [(ngModel)]="memberNumber">
+        </div>
+      </div>
+
+      <!-- GENDER -->
+      <div class="input-group">
+        <label>{{ lang.t('TYPE') }}</label>
+        <div class="search-box">
+          <label>
+            <input type="radio"
+                   value="male"
+                   [(ngModel)]="gender">
+            {{ lang.t('MALE') }}
+          </label>
+
+          <label>
+            <input type="radio"
+                   value="female"
+                   [(ngModel)]="gender">
+            {{ lang.t('FEMALE') }}
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="form-footer">
+
+    <div class="action-buttons">
+
+      <button class="btn-action" (click)="onNew()">
+        {{ lang.t('NEW') }}
+      </button>
+
+      <button class="btn-save" (click)="onEdit()">
+        {{ lang.t('EDIT') }}
+      </button>
+
+      <button class="btn-cancel" (click)="onDelete()">
+        {{ lang.t('DELETE') }}
+      </button>
+
+      <button class="btn-action" (click)="onPrint()">
+        {{ lang.t('PRINT') }}
+      </button>
+
+      <button class="btn-close" (click)="onClose()">
+        {{ lang.t('CLOSE') }}
+      </button>
+
+    </div>
+
+    <div class="nav-buttons">
+      <button class="nav-btn">|&lt;</button>
+      <button class="nav-btn">&lt;</button>
+      <button class="nav-btn">&gt;</button>
+      <button class="nav-btn">&gt;|</button>
+    </div>
+
+  </div>
+
+</div>

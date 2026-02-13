@@ -1,43 +1,62 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { LanguageService, type TranslationKey } from '../../services/lang';
-
-interface FormField {
-  label: TranslationKey;
-  value: string;
-}
+import { LanguageService } from '../../services/lang';
 
 @Component({
   selector: 'app-item-info',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   templateUrl: './item-info.html',
   styleUrls: ['./item-info.css']
 })
-export class ItemInfoComponent {
-  // Declare all the fields you are binding in the template
-  itemCode: string = '';
-  itemName: string = '';
-  weight: string = '';
-  unitLimit: string = '';
-  rateEach: string = '';
-  purchaseRate: string = '';
-  credit: string = '';
+export class ItemInfoComponent implements OnInit {
+  @Output() closed = new EventEmitter<void>();
 
   constructor(public lang: LanguageService) {}
 
-  clear(): void {
-    this.itemCode = '';
-    this.itemName = '';
-    this.weight = '';
-    this.unitLimit = '';
-    this.rateEach = '';
-    this.purchaseRate = '';
-    this.credit = '';
+  ngOnInit(): void {}
+
+  item = {
+    code: '00001',
+    name: 'गहू (३० किलो पॅक)',
+    weight: 30,
+    limit: 17,
+    cashRate: 1020,
+    creditRate: 1090,
+    unit: '1'
+  };
+
+  onNew() {
+    this.item = {
+      code: '',
+      name: '',
+      weight: 0,
+      limit: 0,
+      cashRate: 0,
+      creditRate: 0,
+      unit: '1'
+    };
   }
 
-  close(): void {
-    // Add logic to close the form or navigate away
+  clear() {
+    this.onNew();
+  }
+
+  onEdit() {
+    console.log('Editing item:', this.item);
+  }
+
+  onDelete() {
+    if (confirm(this.lang.t('DELETE') + ' - ' + this.item.name + '?')) {
+      this.onNew();
+    }
+  }
+
+  onPrint() {
+    window.print();
+  }
+
+  onClose() {
+    this.closed.emit();
   }
 }

@@ -3,13 +3,20 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LanguageService } from '../services/lang';
 import { ItemInfoComponent } from '../master/item-info/item-info';
+import { SupplierInfoComponent } from '../master/supplier-info/supplier-info';
+import { CashSaleComponent } from '../master/cash-sale/cash-sale';
+import { CreditSaleComponent } from '../master/credit-sale/credit-sale';
+import { GrainDemandComponent } from '../master/grain-demand/grain-demand';
+import { DepositComponent } from '../master/deposit/deposit';
 import { StockBook } from '../report/stock-book/stock-book';
 import { SalesRegister } from '../report/sales-register/sales-register';
-import { BillList } from "../report/bill-list/bill-list";
+import { BillList } from '../report/bill-list/bill-list';
 import { StockRegisterComponent } from '../report/stock-register/stock-register';
 import { DemandRegisterComponent } from '../report/demand-register/demand-register';
 import { AccountInfoComponent } from '../report/account-info/account-info';
 import { OutstandingComponent } from '../report/outstanding-demand/outstanding';
+import { MemberInfoComponent } from '../master/member-info/member-info';
+
 
 @Component({
   selector: 'app-navbar',
@@ -18,14 +25,20 @@ import { OutstandingComponent } from '../report/outstanding-demand/outstanding';
     CommonModule,
     FormsModule,
     ItemInfoComponent,
+    SupplierInfoComponent,
+    CashSaleComponent,
+    CreditSaleComponent,
+    GrainDemandComponent,
+    DepositComponent,
     StockBook,
     SalesRegister,
     BillList,
     StockRegisterComponent,
     DemandRegisterComponent,
     AccountInfoComponent,
-    OutstandingComponent
-],
+    OutstandingComponent,
+    MemberInfoComponent
+  ],
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.scss']
 })

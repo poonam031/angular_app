@@ -7,107 +7,159 @@ export type Lang = 'mr' | 'en';
 export type TranslationKey =
   | 'MASTER'
   | 'REPORT'
-  | 'ITEM_INFO'
-  | 'ITEM_CODE'
-  | 'MEMBER_INFO'
-  | 'SUPPLIER_INFO'
-  | 'GRAIN_DEMAND'
-  | 'GRAIN_INWARD'
-  | 'CASH_SALE'
-  | 'DEPOSIT'
   | 'LANGUAGE'
+
+  | 'ITEM_INFO'
+  | 'ITEM_INFO_TITLE'
   | 'ITEM_ID'
+  | 'ITEM_CODE'
   | 'ITEM_NAME'
-  | 'WEIGHT'
-  | 'UNIT_LIMIT'
-  | 'RATE_EACH'
-  | 'PURCHASE_RATE'
-  | 'QUANTITY_QTL'
-  | 'QUALITY_GRADE'
-  | 'REMARKS'
+  | 'ITEM_LIST_NAME'
+  | 'ITEM_AMOUNT'
+
+  | 'MEMBER_INFO'
+  | 'MEMBER_INFO_TITLE'
   | 'MEMBER_ID'
+  | 'MEMBER_CODE'
   | 'MEMBER_NAME'
+  | 'MEMBER_NUMBER'
+  | 'FATHER_NAME'
   | 'CONTACT_NUMBER'
   | 'ADDRESS'
+  | 'CITY'
+  | 'TYPE'
+  | 'MALE'
+  | 'FEMALE'
   | 'ACTIVE_STATUS'
+
+  | 'SUPPLIER_INFO'
+  | 'SUPPLIER_INFO_TITLE'
+  | 'SUPPLIER_MASTER'
   | 'SUPPLIER_ID'
+  | 'SUPPLIER_CODE'
   | 'SUPPLIER_NAME'
   | 'SPECIALIZATION'
   | 'CONTACT'
   | 'EXPERIENCE'
+
+  | 'GRAIN_DEMAND'
+  | 'DEMAND_REGISTER'
   | 'DEMAND_ID'
-  | 'GRAIN_TYPE'
+  | 'DEMAND_NO'
   | 'REQUIRED_QUANTITY'
-  | 'DELIVERY_DATE'
   | 'PRIORITY_LEVEL'
+
+  | 'GRAIN_INWARD'
+  | 'GRAIN_INWARD_TITLE'
   | 'INWARD_ID'
+  | 'INWARD_NO'
+  | 'FARMER_NAME'
+  | 'VEHICLE_NO'
   | 'QUANTITY_RECEIVED_QTL'
   | 'QUALITY_CHECK'
   | 'STORAGE_LOCATION'
-  | 'TRANSACTION_ID'
-  | 'QUANTITY_SOLD'
-  | 'AMOUNT'
-  | 'PAYMENT_DATE'
-  | 'CREDIT_ID'
-  | 'BUYER_NAME'
-  | 'AMOUNT_DUE'
-  | 'PAYMENT_TERMS'
-  | 'DEPOSIT_ID'
-  | 'DEPOSIT_TYPE'
-  | 'MATURITY_DATE'
-  | 'INTEREST_RATE'
-  | 'SAVE'
-  | 'CLEAR'
-  | 'NEW'
-  | 'EDIT'
-  | 'CANCEL'
-  | 'PRINT'
-  | 'CLOSE'
-  | 'CREDIT'
-  | 'DEBIT'
-  | 'CREDIT_SALE'
-  | 'DEMAND_REGISTER'
+
   | 'STOCK_REGISTER'
   | 'STOCK_BOOK'
   | 'SALES_REGISTER'
   | 'ACCOUNT_INFO'
   | 'BILL_LIST'
   | 'OUTSTANDING_DEMAND'
+
+  | 'CASH_SALE'
+  | 'CASH_SALE_TITLE'
+  | 'CREDIT_SALE'
+  | 'CREDIT_SALE_TITLE'
+
+  | 'TRANSACTION_ID'
+  | 'TRANSACTION_TYPE'
+  | 'TRANSACTION'
+  | 'DATE'
+  | 'DELIVERY_DATE'
+  | 'PAYMENT_DATE'
+  | 'PAYMENT_MODE'
+  | 'RECEIPT_NUMBER'
+  | 'RECEIPT_DATE'
+
+  | 'QUANTITY_QTL'
+  | 'QUANTITY_SOLD'
+  | 'NOS'
+  | 'TOTAL_NOS'
+  | 'TOTAL_QTY'
+  | 'TOTAL_AMOUNT'
+  | 'WEIGHT'
+  | 'UNIT'
+  | 'LIMIT'
+  | 'RATE'
+  | 'AMOUNT'
+  | 'BILL_AMOUNT'
+  | 'BILL_DATE'
+  | 'BILL_NO'
+  | 'BILL_NUMBER'
+  | 'CURRENT_BALANCE'
+
+  | 'DEPOSIT'
+  | 'DEPOSIT_ID'
+  | 'DEPOSIT_TYPE'
+  | 'MATURITY_DATE'
+  | 'INTEREST_RATE'
+
+  | 'CREDIT'
+  | 'DEBIT'
+  | 'CASH'
+
+  | 'NEW'
+  | 'EDIT'
+  | 'DELETE'
+  | 'SAVE'
+  | 'CLEAR'
+  | 'CANCEL'
+  | 'PRINT'
+  | 'CLOSE'
   | 'ENTER'
   | 'SELECT'
+  | 'START_DATE'
+  | 'END_DATE'
   | 'FROM_DATE'
   | 'TO_DATE'
   | 'LOCATION'
-  | 'REFERENCE_CODE'
+  | 'TOTAL'
+  | 'END_CODE'
+
+   | 'BUYER_NAME'
+  | 'REMARKS'
+  | 'GODOWN'
+  | 'ITEM'
+  | 'GODOWN_CODE'
+
+  | 'ACCOUNT_CODE'
+  | 'ACCOUNT_NAME'
+
+  | 'NO'
+  | 'DETAILS'
+
+  | 'CREDIT_AMOUNT'
+  | 'DEBIT_AMOUNT'
+  | 'BALANCE'
+  | 'REFERENCE_NO'
+
   | 'BALANCE_AS_ON_DATE'
   | 'ACCOUNT_TYPE'
   | 'TRADER_ACCOUNT'
   | 'CUSTOMER_ACCOUNT'
   | 'SUPPLIER_ACCOUNT'
-  | 'START_CODE'
+
+  | 'SALE_TYPE'
+
+  | 'REFERENCE_CODE'
   | 'REPORT_CODE'
   | 'REFERENCE_DATE'
   | 'REPORT_DATE'
-  | 'START_DATE'
-  | 'END_DATE'
-  | 'SALE_TYPE'
-  | 'CASH'
-  | 'ACCOUNT_CODE'
-  | 'END_CODE'
-  | 'ACCOUNT_NAME'
-  | 'DATE'
-  | 'NO'
-  | 'DETAILS'
-  | 'CREDIT_AMOUNT'
-  | 'DEBIT_AMOUNT'
-  | 'BALANCE'
-  | 'REFERENCE_NO'
-  | 'TRANSACTION_TYPE'
-  | 'OPENING_BALANCE'
-  | 'TRANSACTION'
-  | 'TOTAL';
+  | 'START_CODE';
+;
 
 
+/* 3️⃣ Dictionary shape */
 type Dictionary = {
   [L in Lang]: Record<TranslationKey, string>;
 };
@@ -120,109 +172,59 @@ export class LanguageService {
   private dictionary: Dictionary = {
     mr: {
       MASTER: 'मास्टर',
-      START_CODE: 'सुरुवातीचा कोड',
       REPORT: 'रिपोर्ट',
-      ITEM_INFO: 'आयटम माहिती',
-      MEMBER_INFO: 'सभासद माहिती',
-      END_CODE: 'अखेरचा कोड',
-      SUPPLIER_INFO: 'सप्लायर माहिती',
-      GRAIN_DEMAND: 'धान्य मागणी',
-      GRAIN_INWARD: 'धान्य आवक',
-      CASH_SALE: 'रोख विक्री',
-      CREDIT_SALE: 'उधार विक्री',
-      DEPOSIT: 'जमा',
       LANGUAGE: 'भाषा',
-      CREDIT: 'जमा',
-      DEBIT: 'नावे',
-      START_DATE: 'सुरुवात तारीख',
-      END_DATE: 'शेवट तारीख',
-      SALE_TYPE: 'विक्री प्रकार',
-      CASH: 'रोख',
-      BALANCE_AS_ON_DATE: 'दिनांक प्रमाणे शिल्लक',
-      ACCOUNT_TYPE: 'खाते प्रकार',
-      TRADER_ACCOUNT: 'व्यापारी खाते',
-      CUSTOMER_ACCOUNT: 'ग्राहक खाते',
-      SUPPLIER_ACCOUNT: 'सप्लायर खाते',
 
-
-      ACCOUNT_CODE: 'खाते कोड',
-      ACCOUNT_NAME: 'खात्याचे नाव',
-      DATE: 'तारीख',
-      NO: 'क्र.',
-      DETAILS: 'तपशील',
-      CREDIT_AMOUNT: 'जमा रक्कम',
-      DEBIT_AMOUNT: 'नावे रक्कम',
-      BALANCE: 'शिल्लक',
-      REFERENCE_NO: 'संदर्भ क्र.',
-      TRANSACTION_TYPE: 'व्यवहार प्रकार',
-      OPENING_BALANCE: 'आरंभिक शिल्लक',
-      TRANSACTION: 'व्यवहार',
-      TOTAL: 'एकूण',
-
-
-
-
-
+      ITEM_INFO: 'आयटम माहिती',
+      ITEM_INFO_TITLE: 'आयटम माहिती',
       ITEM_ID: 'आयटम ID',
-      ITEM_NAME: 'आयटम नाव',
       ITEM_CODE: 'आयटम कोड',
-      WEIGHT: 'वजन',
-      UNIT_LIMIT: 'नग मर्यादा',
-      RATE_EACH: 'दर',
-      PURCHASE_RATE: 'खरेदी दर',
-      QUANTITY_QTL: 'प्रमाण (क्विंटल)',
-      QUALITY_GRADE: 'गुणवत्ता',
-      REMARKS: 'टिप्पणी',
+      ITEM_NAME: 'आयटम नाव',
+      ITEM_LIST_NAME: 'आयटमचे नाव',
+      ITEM_AMOUNT: 'रक्कम',
 
+      MEMBER_INFO: 'सभासद माहिती',
+      MEMBER_INFO_TITLE: 'सभासद माहिती',
       MEMBER_ID: 'सभासद ID',
+      MEMBER_CODE: 'सभासद कोड',
       MEMBER_NAME: 'सभासद नाव',
+      MEMBER_NUMBER: 'सभासद क्रमांक',
+      FATHER_NAME: 'वडिलांचे नाव',
       CONTACT_NUMBER: 'संपर्क क्रमांक',
       ADDRESS: 'पत्ता',
+      CITY: 'शहर',
+      TYPE: 'प्रकार',
+      MALE: 'पुरुष',
+      FEMALE: 'महिला',
       ACTIVE_STATUS: 'स्थिती',
 
+      SUPPLIER_INFO: 'सप्लायर माहिती',
+      SUPPLIER_INFO_TITLE: 'सप्लायर माहिती',
+      SUPPLIER_MASTER: 'सप्लायर मास्टर',
       SUPPLIER_ID: 'सप्लायर ID',
+      SUPPLIER_CODE: 'सप्लायर कोड',
       SUPPLIER_NAME: 'सप्लायर नाव',
       SPECIALIZATION: 'विशेषज्ञता',
       CONTACT: 'संपर्क',
       EXPERIENCE: 'अनुभव',
-      REPORT_DATE: 'अहवाल दिनांक',
 
-
+      GRAIN_DEMAND: 'धान्य मागणी',
+      DEMAND_REGISTER: 'मागणी रजिस्टर',
       DEMAND_ID: 'मागणी ID',
-      GRAIN_TYPE: 'धान्य प्रकार',
+      DEMAND_NO: 'मागणी क्रमांक',
       REQUIRED_QUANTITY: 'आवश्यक प्रमाण',
-      DELIVERY_DATE: 'डिलिव्हरी तारीख',
       PRIORITY_LEVEL: 'प्राधान्य',
 
+      GRAIN_INWARD: 'धान्य आवक',
+      GRAIN_INWARD_TITLE: 'धान्य आवक',
       INWARD_ID: 'आवक ID',
+      INWARD_NO: 'आवक क्रमांक',
+      FARMER_NAME: 'शेतकरी नाव',
+      VEHICLE_NO: 'वाहन क्रमांक',
       QUANTITY_RECEIVED_QTL: 'प्राप्त प्रमाण',
       QUALITY_CHECK: 'गुणवत्ता तपासणी',
       STORAGE_LOCATION: 'साठवण स्थान',
 
-      TRANSACTION_ID: 'व्यवहार ID',
-      QUANTITY_SOLD: 'विक्री प्रमाण',
-      AMOUNT: 'रक्कम',
-      PAYMENT_DATE: 'भरणा तारीख',
-
-      CREDIT_ID: 'उधार ID',
-      BUYER_NAME: 'खरेदीदार नाव',
-      AMOUNT_DUE: 'देय रक्कम',
-      PAYMENT_TERMS: 'भरणा अटी',
-
-      DEPOSIT_ID: 'जमा ID',
-      DEPOSIT_TYPE: 'जमा प्रकार',
-      MATURITY_DATE: 'परिपक्वता तारीख',
-      INTEREST_RATE: 'व्याज दर',
-
-      SAVE: 'जतन करा',
-      CLEAR: 'साफ करा',
-      NEW: 'नवीन',
-      EDIT: 'दुरुस्ती',
-      CANCEL: 'रद्द',
-      PRINT: 'छपाई',
-      CLOSE: 'बंद',
-
-      DEMAND_REGISTER: 'मागणी रजिस्टर',
       STOCK_REGISTER: 'स्टॉक रजिस्टर',
       STOCK_BOOK: 'स्टॉक बुक',
       SALES_REGISTER: 'विक्री रजिस्टर',
@@ -230,137 +232,256 @@ export class LanguageService {
       BILL_LIST: 'बिल यादी',
       OUTSTANDING_DEMAND: 'शिल्लक मागणी',
 
+      CASH_SALE: 'रोख विक्री',
+      CASH_SALE_TITLE: 'रोख विक्री',
+      CREDIT_SALE: 'उधार विक्री',
+      CREDIT_SALE_TITLE: 'उधार विक्री',
+
+      TRANSACTION_ID: 'व्यवहार ID',
+      TRANSACTION_TYPE: 'व्यवहार प्रकार',
+      TRANSACTION: 'व्यवहार',
+      DATE: 'तारीख',
+      DELIVERY_DATE: 'डिलिव्हरी तारीख',
+      PAYMENT_DATE: 'भरणा तारीख',
+      PAYMENT_MODE: 'भरणा प्रकार',
+      RECEIPT_NUMBER: 'पावती क्रमांक',
+      RECEIPT_DATE: 'पावती तारीख',
+
+      QUANTITY_QTL: 'प्रमाण (क्विंटल)',
+      QUANTITY_SOLD: 'विक्री प्रमाण',
+      NOS: 'नग',
+      TOTAL_NOS: 'एकूण नग',
+      TOTAL_QTY: 'एकूण नग',
+      TOTAL_AMOUNT: 'एकूण रक्कम',
+      WEIGHT: 'वजन',
+      UNIT: 'युनिट',
+      LIMIT: 'मर्यादा',
+      RATE: 'दर',
+      AMOUNT: 'रक्कम',
+      BILL_AMOUNT: 'बिल रक्कम',
+      BILL_DATE: 'बिल तारीख',
+      BILL_NO: 'बिल क्रमांक',
+      BILL_NUMBER: 'बिल नंबर',
+      CURRENT_BALANCE: 'शिल्लक',
+
+      DEPOSIT: 'जमा',
+      DEPOSIT_ID: 'जमा ID',
+      DEPOSIT_TYPE: 'जमा प्रकार',
+      MATURITY_DATE: 'परिपक्वता तारीख',
+      INTEREST_RATE: 'व्याज दर',
+
+      CREDIT: 'जमा',
+      DEBIT: 'नावे',
+      CASH: 'रोख',
+
+      NEW: 'नवीन',
+      EDIT: 'दुरुस्ती',
+      DELETE: 'रद्द',
+      SAVE: 'जतन करा',
+      CLEAR: 'साफ करा',
+      CANCEL: 'कॅन्सल',
+      PRINT: 'छपाई',
+      CLOSE: 'बंद',
       ENTER: 'दर्ज करा',
       SELECT: 'निवडा',
+      START_DATE: 'सुरुवात तारीख',
+      END_DATE: 'शेवट तारीख',
       FROM_DATE: 'सुरुवातीची तारीख',
       TO_DATE: 'अखेरची तारीख',
       LOCATION: 'ठिकाण',
-      REFERENCE_CODE: 'संदर्भ कोड',
-      REPORT_CODE: 'अहवाल कोड',
-      REFERENCE_DATE: 'संदर्भ तारीख',
+      TOTAL: 'एकूण',
+      END_CODE: 'अखेरचा कोड',
+
+      BUYER_NAME: 'खरेदीदार नाव',
+REMARKS: 'शेरा',
+GODOWN: 'गोदाम',
+ITEM: 'माल',
+GODOWN_CODE: 'गोदाम कोड',
+
+ACCOUNT_CODE: 'खाते क्रमांक',
+ACCOUNT_NAME: 'खाते नाव',
+
+NO: 'क्रमांक',
+DETAILS: 'तपशील',
+
+CREDIT_AMOUNT: 'जमा रक्कम',
+DEBIT_AMOUNT: 'नावे रक्कम',
+BALANCE: 'शिल्लक',
+REFERENCE_NO: 'संदर्भ क्रमांक',
+
+BALANCE_AS_ON_DATE: 'दिनांकनुसार शिल्लक',
+ACCOUNT_TYPE: 'खाते प्रकार',
+TRADER_ACCOUNT: 'व्यापारी खाते',
+CUSTOMER_ACCOUNT: 'ग्राहक खाते',
+SUPPLIER_ACCOUNT: 'पुरवठादार खाते',
+
+SALE_TYPE: 'विक्री प्रकार',
+
+REFERENCE_CODE: 'संदर्भ कोड',
+REPORT_CODE: 'अहवाल कोड',
+REFERENCE_DATE: 'संदर्भ तारीख',
+REPORT_DATE: 'अहवाल तारीख',
+START_CODE: 'प्रारंभ कोड',
+
+
 
     },
 
     en: {
       MASTER: 'Master',
       REPORT: 'Report',
-      ITEM_INFO: 'Item Info',
-      START_CODE: 'Start Code',
-      END_CODE: 'End Code',
-      MEMBER_INFO: 'Member Info',
-      SUPPLIER_INFO: 'Supplier Info',
-      GRAIN_DEMAND: 'Grain Demand',
-      GRAIN_INWARD: 'Grain Inward',
-      CASH_SALE: 'Cash Sale',
-      CREDIT_SALE: 'Credit Sale',
-      DEPOSIT: 'Deposit',
       LANGUAGE: 'Language',
-      BALANCE_AS_ON_DATE: 'Balance as on Date',
-      ACCOUNT_TYPE: 'Account Type',
-      TRADER_ACCOUNT: 'Trader Account',
-      CUSTOMER_ACCOUNT: 'Customer Account',
-      SUPPLIER_ACCOUNT: 'Supplier Account',
 
-
+      ITEM_INFO: 'Item Info',
+      ITEM_INFO_TITLE: 'Item Information',
       ITEM_ID: 'Item ID',
-      ITEM_NAME: 'Item Name',
       ITEM_CODE: 'Item Code',
-      WEIGHT: 'Weight',
-      UNIT_LIMIT: 'Unit Limit',
-      RATE_EACH: 'Rate',
-      PURCHASE_RATE: 'Purchase Rate',
-      QUANTITY_QTL: 'Quantity (QTL)',
-      QUALITY_GRADE: 'Quality',
-      REMARKS: 'Remarks',
-      CREDIT: 'Credit',
-      DEBIT: 'Debit',
-      START_DATE: 'Start Date',
-      END_DATE: 'End Date',
-      SALE_TYPE: 'Sale Type',
-      CASH: 'Cash',
+      ITEM_NAME: 'Item Name',
+      ITEM_LIST_NAME: 'Item Name',
+      ITEM_AMOUNT: 'Amount',
 
-
-      ACCOUNT_CODE: 'Account Code',
-      ACCOUNT_NAME: 'Account Name',
-      DATE: 'Date',
-      NO: 'No.',
-      DETAILS: 'Details',
-      CREDIT_AMOUNT: 'Credit Amount',
-      DEBIT_AMOUNT: 'Debit Amount',
-      BALANCE: 'Balance',
-      REFERENCE_NO: 'Reference No.',
-      TRANSACTION_TYPE: 'Transaction Type',
-      OPENING_BALANCE: 'Opening Balance',
-      TRANSACTION: 'Transaction',
-      TOTAL: 'Total',
-
-
-
-
+      MEMBER_INFO: 'Member Info',
+      MEMBER_INFO_TITLE: 'Member Information',
       MEMBER_ID: 'Member ID',
+      MEMBER_CODE: 'Member Code',
       MEMBER_NAME: 'Member Name',
+      MEMBER_NUMBER: 'Member Number',
+      FATHER_NAME: 'Father Name',
       CONTACT_NUMBER: 'Contact Number',
       ADDRESS: 'Address',
+      CITY: 'City',
+      TYPE: 'Type',
+      MALE: 'Male',
+      FEMALE: 'Female',
       ACTIVE_STATUS: 'Status',
 
+      SUPPLIER_INFO: 'Supplier Info',
+      SUPPLIER_INFO_TITLE: 'Supplier Information',
+      SUPPLIER_MASTER: 'Supplier Master',
       SUPPLIER_ID: 'Supplier ID',
+      SUPPLIER_CODE: 'Supplier Code',
       SUPPLIER_NAME: 'Supplier Name',
       SPECIALIZATION: 'Specialization',
       CONTACT: 'Contact',
       EXPERIENCE: 'Experience',
 
+      GRAIN_DEMAND: 'Grain Demand',
+      DEMAND_REGISTER: 'Demand Register',
       DEMAND_ID: 'Demand ID',
-      GRAIN_TYPE: 'Grain Type',
+      DEMAND_NO: 'Demand No',
       REQUIRED_QUANTITY: 'Required Quantity',
-      DELIVERY_DATE: 'Delivery Date',
       PRIORITY_LEVEL: 'Priority',
 
+      GRAIN_INWARD: 'Grain Inward',
+      GRAIN_INWARD_TITLE: 'Grain Inward',
       INWARD_ID: 'Inward ID',
+      INWARD_NO: 'Inward No',
+      FARMER_NAME: 'Farmer Name',
+      VEHICLE_NO: 'Vehicle No',
       QUANTITY_RECEIVED_QTL: 'Quantity Received',
       QUALITY_CHECK: 'Quality Check',
       STORAGE_LOCATION: 'Storage Location',
 
-      TRANSACTION_ID: 'Transaction ID',
-      QUANTITY_SOLD: 'Quantity Sold',
-      AMOUNT: 'Amount',
-      PAYMENT_DATE: 'Payment Date',
-
-      CREDIT_ID: 'Credit ID',
-      BUYER_NAME: 'Buyer Name',
-      AMOUNT_DUE: 'Amount Due',
-      PAYMENT_TERMS: 'Payment Terms',
-
-      DEPOSIT_ID: 'Deposit ID',
-      DEPOSIT_TYPE: 'Deposit Type',
-      MATURITY_DATE: 'Maturity Date',
-      INTEREST_RATE: 'Interest Rate',
-
-      SAVE: 'Save',
-      CLEAR: 'Clear',
-      NEW: 'New',
-      EDIT: 'Edit',
-      CANCEL: 'Cancel',
-      PRINT: 'Print',
-      CLOSE: 'Close',
-
-      DEMAND_REGISTER: 'Demand Register',
       STOCK_REGISTER: 'Stock Register',
       STOCK_BOOK: 'Stock Book',
       SALES_REGISTER: 'Sales Register',
       ACCOUNT_INFO: 'Account Information',
       BILL_LIST: 'Bill List',
       OUTSTANDING_DEMAND: 'Outstanding Demand',
-      REPORT_DATE: 'Report Date',
-      REFERENCE_CODE: 'Reference Code',
-      REPORT_CODE: 'Report Code',
-      REFERENCE_DATE: 'Reference Date',
 
+      CASH_SALE: 'Cash Sale',
+      CASH_SALE_TITLE: 'Cash Sale',
+      CREDIT_SALE: 'Credit Sale',
+      CREDIT_SALE_TITLE: 'Credit Sale',
 
+      TRANSACTION_ID: 'Transaction ID',
+      TRANSACTION_TYPE: 'Transaction Type',
+      TRANSACTION: 'Transaction',
+      DATE: 'Date',
+      DELIVERY_DATE: 'Delivery Date',
+      PAYMENT_DATE: 'Payment Date',
+      PAYMENT_MODE: 'Payment Mode',
+      RECEIPT_NUMBER: 'Receipt Number',
+      RECEIPT_DATE: 'Receipt Date',
+
+      QUANTITY_QTL: 'Quantity (QTL)',
+      QUANTITY_SOLD: 'Quantity Sold',
+      NOS: 'Nos',
+      TOTAL_NOS: 'Total Nos',
+      TOTAL_QTY: 'Total Qty',
+      TOTAL_AMOUNT: 'Total Amount',
+      WEIGHT: 'Weight',
+      UNIT: 'Unit',
+      LIMIT: 'Limit',
+      RATE: 'Rate',
+      AMOUNT: 'Amount',
+      BILL_AMOUNT: 'Bill Amount',
+      BILL_DATE: 'Bill Date',
+      BILL_NO: 'Bill No',
+      BILL_NUMBER: 'Bill Number',
+      CURRENT_BALANCE: 'Current Balance',
+
+      DEPOSIT: 'Deposit',
+      DEPOSIT_ID: 'Deposit ID',
+      DEPOSIT_TYPE: 'Deposit Type',
+      MATURITY_DATE: 'Maturity Date',
+      INTEREST_RATE: 'Interest Rate',
+
+      CREDIT: 'Credit',
+      DEBIT: 'Debit',
+      CASH: 'Cash',
+
+      NEW: 'New',
+      EDIT: 'Edit',
+      DELETE: 'Delete',
+      SAVE: 'Save',
+      CLEAR: 'Clear',
+      CANCEL: 'Cancel',
+      PRINT: 'Print',
+      CLOSE: 'Close',
       ENTER: 'Enter',
       SELECT: 'Select',
+      START_DATE: 'Start Date',
+      END_DATE: 'End Date',
       FROM_DATE: 'From Date',
       TO_DATE: 'To Date',
-      LOCATION: 'Location'
+      LOCATION: 'Location',
+      TOTAL: 'Total',
+      END_CODE: 'End Code',
+
+      BUYER_NAME: 'Buyer Name',
+REMARKS: 'Remarks',
+GODOWN: 'Godown',
+ITEM: 'Item',
+GODOWN_CODE: 'Godown Code',
+
+ACCOUNT_CODE: 'Account Code',
+ACCOUNT_NAME: 'Account Name',
+
+NO: 'No',
+DETAILS: 'Details',
+
+CREDIT_AMOUNT: 'Credit Amount',
+DEBIT_AMOUNT: 'Debit Amount',
+BALANCE: 'Balance',
+REFERENCE_NO: 'Reference No',
+
+BALANCE_AS_ON_DATE: 'Balance As On Date',
+ACCOUNT_TYPE: 'Account Type',
+TRADER_ACCOUNT: 'Trader Account',
+CUSTOMER_ACCOUNT: 'Customer Account',
+SUPPLIER_ACCOUNT: 'Supplier Account',
+
+SALE_TYPE: 'Sale Type',
+
+REFERENCE_CODE: 'Reference Code',
+REPORT_CODE: 'Report Code',
+REFERENCE_DATE: 'Reference Date',
+REPORT_DATE: 'Report Date',
+START_CODE: 'Start Code',
+
+
+
     }
   };
 

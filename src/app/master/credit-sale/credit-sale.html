@@ -1,0 +1,119 @@
+<div class="form-container">
+  <div class="form-header">
+    <span class="title">क्रेडिट सेल (Credit Sale)</span>
+    <button class="close-top" (click)="onClose()">✕</button>
+  </div>
+
+  <div class="form-body">
+    <div class="header-inputs">
+      <div class="input-group">
+        <label>गोडाऊन कोड</label>
+        <div class="search-box">
+          <select [(ngModel)]="godownCode" (change)="onGodownChange()" class="dropdown-select">
+            <option value="">-- उदा --</option>
+            <option *ngFor="let godown of godownList" value="{{ godown.code }}">{{ godown.code }}</option>
+          </select>
+          <input type="text" [(ngModel)]="godownName" class="display-name" readonly>
+        </div>
+      </div>
+      <div class="input-group date-group">
+        <label>बिल तारीख</label>
+        <input type="date" [(ngModel)]="billDate" class="date-input">
+      </div>
+    </div>
+
+    <div class="header-inputs">
+      <div class="input-group">
+        <label>बिल नंबर</label>
+        <div class="search-box">
+          <select [(ngModel)]="billNo" (change)="onBillNoChange()" class="dropdown-select">
+            <option value="">-- उदा --</option>
+            <option *ngFor="let bill of billNoList" value="{{ bill.no }}">{{ bill.no }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-inputs">
+      <div class="input-group">
+        <label>सभासद कोड</label>
+        <div class="search-box">
+          <select [(ngModel)]="memberCode" (change)="onMemberChange()" class="dropdown-select">
+            <option value="">-- उदा --</option>
+            <option *ngFor="let member of memberList" value="{{ member.code }}">{{ member.code }}</option>
+          </select>
+          <input type="text" [(ngModel)]="memberName" class="display-name" readonly>
+        </div>
+      </div>
+      <div class="input-group">
+        <label>खाते बाकी</label>
+        <input type="text" [(ngModel)]="accountBalance" class="balance-input" readonly>
+      </div>
+    </div>
+
+    <div class="tables-grid">
+      <div class="table-container main-table">
+        <table class="item-table">
+          <thead>
+            <tr>
+              <th>आयटम</th>
+              <th>आयटमचे नांव</th>
+              <th>नग</th>
+              <th>दर</th>
+              <th>रक्कम</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td>{{item.code}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.qty}}</td>
+              <td>{{item.rate | number:'1.2-2'}}</td>
+              <td>{{item.amount | number:'1.2-2'}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-container side-table">
+        <table class="item-table">
+          <thead>
+            <tr>
+              <th>कोड</th>
+              <th>आयटमचे नांव</th>
+              <th>नग</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of [1,2,3,4,5,6]">
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="total-bar">
+      <label>बिलाची रक्कम</label>
+      <input type="text" [value]="totalAmount | number:'1.2-2'" readonly class="grand-total">
+    </div>
+  </div>
+
+  <div class="form-footer">
+    <div class="action-buttons">
+      <button class="btn-action"><span class="icon">📄</span> नवीन</button>
+      <button class="btn-action"><span class="icon">✔️</span> दुरुस्ती</button>
+      <button class="btn-action"><span class="icon">❌</span> रद्द</button>
+      <button class="btn-action"><span class="icon">🖨️</span> छपाई</button>
+      <button class="btn-action" (click)="onClose()"><span class="icon">📁</span> बंद</button>
+    </div>
+    <div class="nav-buttons">
+      <button class="nav-btn">|❮</button>
+      <button class="nav-btn">❮</button>
+      <button class="nav-btn">❯</button>
+      <button class="nav-btn">❯|</button>
+    </div>
+  </div>
+</div>

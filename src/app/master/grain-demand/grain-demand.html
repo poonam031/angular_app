@@ -1,0 +1,165 @@
+<div class="form-container">
+
+  <!-- HEADER -->
+  <div class="form-header">
+    <div class="title">{{ lang.t('GRAIN_DEMAND') }}</div>
+    <button class="close-top" (click)="onClose()">×</button>
+  </div>
+
+  <!-- BODY -->
+  <div class="form-body">
+
+    <!-- TOP INPUT SECTION -->
+    <div class="header-inputs">
+
+      <!-- GODOWN -->
+      <div class="input-group">
+        <label>{{ lang.t('GODOWN') }}</label>
+        <div class="search-box">
+
+          <!-- Dropdown instead of ? -->
+          <select class="dropdown-select"
+                  [(ngModel)]="form.godownCode"
+                  (ngModelChange)="onGodownChange($event)">
+            <option *ngFor="let g of godowns" [value]="g.code">
+              {{ g.code }}
+            </option>
+          </select>
+
+          <input class="display-name"
+                 type="text"
+                 [value]="form.godownName"
+                 disabled>
+        </div>
+      </div>
+
+      <!-- DEMAND NO -->
+      <div class="input-group">
+        <label>{{ lang.t('DEMAND_NO') }}</label>
+        <div class="search-box">
+
+          <select class="dropdown-select"
+                  [(ngModel)]="form.demandNo">
+            <option *ngFor="let d of demandNumbers" [value]="d">
+              {{ d }}
+            </option>
+          </select>
+
+          <input class="year-input"
+                 type="text"
+                 [value]="form.year"
+                 disabled>
+        </div>
+      </div>
+
+      <!-- DATE -->
+      <div class="input-group date-group">
+        <label>{{ lang.t('DATE') }}</label>
+        <div class="search-box">
+          <input type="date"
+                 class="date-input"
+                 [(ngModel)]="form.date">
+        </div>
+      </div>
+
+      <!-- MEMBER CODE -->
+      <div class="input-group full-width">
+        <label>{{ lang.t('MEMBER_CODE') }}</label>
+        <div class="search-box" style="flex:1;">
+
+          <!-- Dropdown instead of ? -->
+          <select class="dropdown-select"
+                  [(ngModel)]="form.memberCode"
+                  (ngModelChange)="onMemberChange($event)">
+            <option *ngFor="let m of members" [value]="m.code">
+              {{ m.code }}
+            </option>
+          </select>
+
+          <input class="display-name"
+                 type="text"
+                 [value]="form.memberName"
+                 disabled>
+
+          <!-- City Dropdown -->
+          <select class="dropdown-select"
+                  [(ngModel)]="form.city">
+            <option value="Kolhapur">कोल्हापूर</option>
+            <option value="Sangli">सांगली</option>
+            <option value="Satara">सातारा</option>
+          </select>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-container">
+      <table class="item-table">
+        <thead>
+          <tr>
+            <th style="width:120px;">{{ lang.t('ITEM') }}</th>
+            <th>{{ lang.t('ITEM_LIST_NAME') }}</th>
+            <th style="width:120px;">{{ lang.t('NOS') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items; let i = index">
+            <td>{{ item.code }}</td>
+            <td>{{ item.name }}</td>
+            <td>
+              <input type="number"
+                     [(ngModel)]="item.qty"
+                     (ngModelChange)="calculateTotal()">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TOTAL -->
+    <div class="total-bar">
+      <label>{{ lang.t('TOTAL_NOS') }} :</label>
+      <input class="total-input"
+             [value]="totalQty"
+             disabled>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="form-footer">
+
+    <div class="action-buttons">
+      <button class="btn-action" (click)="onNew()">
+        {{ lang.t('NEW') }}
+      </button>
+
+      <button class="btn-save" (click)="onSave()">
+        {{ lang.t('EDIT') }}
+      </button>
+
+      <button class="btn-cancel" (click)="onDelete()">
+        {{ lang.t('DELETE') }}
+      </button>
+
+      <button class="btn-action" (click)="onPrint()">
+        {{ lang.t('PRINT') }}
+      </button>
+
+      <button class="btn-form-close" (click)="onClose()">
+        {{ lang.t('CLOSE') }}
+      </button>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="nav-btn">|&lt;</button>
+      <button class="nav-btn">&lt;</button>
+      <button class="nav-btn">&gt;</button>
+      <button class="nav-btn">&gt;|</button>
+    </div>
+
+  </div>
+
+</div>
