@@ -47,7 +47,7 @@ export class AccountInfoComponent implements OnInit {
     ];
   }
 
-  /* ✅ AUTO-UPDATES WHEN LANGUAGE CHANGES */
+  /*  AUTO-UPDATES WHEN LANGUAGE CHANGES */
   get i18nMessages() {
     return {
       totalMessage: this.lang.t('TOTAL'),
