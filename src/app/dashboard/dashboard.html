@@ -118,4 +118,32 @@
   (closed)="selectedOption = null">
 </app-item-info>
 
+
+<app-supplier-info
+  *ngIf="activeTab === 'master' && selectedOption === 'supplier-info'"
+  (closed)="selectedOption = null">
+</app-supplier-info>
+
+<app-cash-sale
+  *ngIf="activeTab === 'master' && selectedOption === 'cash-sale'"
+  (closed)="selectedOption = null">
+</app-cash-sale>
+
+<app-credit-sale
+  *ngIf="activeTab === 'master' && selectedOption === 'credit-sale'"
+  (closed)="selectedOption = null">
+</app-credit-sale>
+
+<app-grain-demand
+  *ngIf="activeTab === 'master' && selectedOption === 'grain-demand'"
+  (closed)="selectedOption = null">
+</app-grain-demand>
+
+<app-deposit
+  *ngIf="activeTab === 'master' && selectedOption === 'deposit'"
+  (closed)="selectedOption = null">
+</app-deposit>
+
+
+
 </div>

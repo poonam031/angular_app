@@ -61,7 +61,78 @@ export type TranslationKey =
   | 'ACCOUNT_INFO'
   | 'BILL_LIST'
   | 'OUTSTANDING_DEMAND'
-  | 'ENTER';
+  | 'ENTER'
+  | 'GODOWN'
+  | 'DEMAND_NO'
+  | 'DATE'
+  | 'MEMBER_CODE'
+  | 'CITY'
+  | 'ITEM'
+  | 'ITEM_CODE'
+  | 'ITEM_LIST_NAME'
+  | 'NOS'
+  | 'TOTAL_NOS'
+  | 'NEW'
+  | 'EDIT'
+  | 'DELETE'
+  | 'PRINT'
+  | 'CLOSE'
+  | 'TOTAL_NOS'
+| 'DEPOSIT_TYPE'
+| 'MATURITY_DATE'
+| 'INTEREST_RATE'
+| 'SUPPLIER_MASTER'
+| 'SUPPLIER_CODE'
+| 'CASH_SALE_TITLE'
+| 'TOTAL_QTY'
+| 'RATE'
+| 'CANCEL' 
+| 'MEMBER_INFO_TITLE'
+| 'SUPPLIER_INFO_TITLE'
+| 'ITEM_INFO_TITLE'
+| 'FATHER_NAME'
+| 'MEMBER_NUMBER'
+|'TYPE'
+|'MALE'
+|'FEMALE'
+| 'CREDIT_SALE_TITLE'
+| 'GODOWN_CODE'
+| 'BILL_DATE'
+| 'BILL_NUMBER'
+| 'CURRENT_BALANCE'
+| 'ITEM_AMOUNT'
+| 'BILL_AMOUNT'
+| 'PAYMENT_MODE'
+| 'RECEIPT_NUMBER'
+| 'RECEIPT_DATE'
+|'UNIT'
+|'WEIGHT'
+|'LIMIT'
+|'CREDIT'
+|'CASH'
+| 'GRAIN_INWARD_TITLE'
+| 'GODOWN_CODE'
+| 'INWARD_NO'
+| 'FARMER_NAME'
+| 'VEHICLE_NO'
+| 'TOTAL_AMOUNT'
+|'BILL_NO'
+
+
+// | 'SUPPLIER_BALANCE'
+// | 'MEMBER_BALANCE'
+// | 'OPENING_BALANCE'
+// | 'CLOSING_BALANCE'
+// | 'TRANSACTION_TYPE'
+// | 'TRANSACTION_DATE'
+// | 'TRANSACTION_AMOUNT'
+// | 'SUPPLIER_TRANSACTION_HISTORY'
+// | 'MEMBER_TRANSACTION_HISTORY';
+
+
+
+
+
 
 /* 3️⃣ Dictionary shape */
 type Dictionary = {
@@ -93,8 +164,8 @@ export class LanguageService {
       QUANTITY_QTL: 'प्रमाण (क्विंटल)',
       QUALITY_GRADE: 'गुणवत्ता श्रेणी',
       REMARKS: 'टिप्पणी',
-      MEMBER_ID: 'समासद ID',
-      MEMBER_NAME: 'समासद नाव',
+      MEMBER_ID: 'सभासद ID',
+      MEMBER_NAME: 'सभासद नाव',
       CONTACT_NUMBER: 'संपर्क क्रमांक',
       ADDRESS: 'पत्ता',
       ACTIVE_STATUS: 'सक्रिय स्थिती',
@@ -134,6 +205,62 @@ export class LanguageService {
       BILL_LIST: 'बिल यादी',
       OUTSTANDING_DEMAND: 'शिल्लक मागणी',
       ENTER: 'दर्ज करा',
+      GODOWN: 'गोडाऊन',
+DEMAND_NO: 'धान मागणी नं.',
+DATE: 'तारीख',
+MEMBER_CODE: 'सभासद कोड',
+CITY: 'शहर',
+ITEM: 'आयटम',
+ITEM_CODE: 'आयटम क्रमांक',
+ITEM_LIST_NAME: 'आयटमचे नाव',
+NOS: 'नग',
+TOTAL_NOS: 'एकूण नग',
+NEW: 'नवीन',
+EDIT: 'दुरुस्ती',
+DELETE: 'रद्द',
+PRINT: 'छपाई',
+CLOSE: 'बंद',
+SUPPLIER_MASTER: 'सप्लायर मास्टर',
+SUPPLIER_CODE: 'सप्लायर कोड',
+CASH_SALE_TITLE: 'रोख विक्री',
+TOTAL_QTY: 'एकूण नग',
+RATE: 'दर',
+CANCEL: 'कॅन्सल',
+MEMBER_INFO_TITLE: 'सभासद माहिती',
+SUPPLIER_INFO_TITLE: 'सप्लायर माहिती',
+ITEM_INFO_TITLE: 'आयटम माहिती',
+FATHER_NAME : 'वडिलांचे नाव',
+MEMBER_NUMBER: 'सभासद क्रमांक',
+TYPE: 'प्रकार',
+MALE: 'पुरुष',
+FEMALE: 'महिला',
+CREDIT_SALE_TITLE: 'क्रेडिट सेल (उधार विक्री)',
+GODOWN_CODE: 'गोडाऊन कोड',
+BILL_DATE: 'बिल तारीख',
+BILL_NUMBER: 'बिल नंबर',
+CURRENT_BALANCE: 'खाते बाकी',
+ITEM_AMOUNT: 'रक्कम',
+BILL_AMOUNT: 'बिलाची रक्कम',
+PAYMENT_MODE: 'भुगतान का तरीका',
+RECEIPT_NUMBER: 'रसीद नंबर',
+RECEIPT_DATE: 'रसीद तारीख',
+UNIT: 'युनिट',
+WEIGHT: 'वजन',
+LIMIT: 'सीमा',
+CREDIT: 'उधार',
+CASH: 'रोख',
+GRAIN_INWARD_TITLE: 'धान्य आवक',
+// GODOWN_CODE: 'गोडाऊन कोड',
+INWARD_NO: 'आवक क्रमांक',
+FARMER_NAME: 'शेतकरी नाव',
+VEHICLE_NO: 'वाहन क्रमांक',
+TOTAL_AMOUNT: 'एकूण रक्कम',
+BILL_NO: 'बिल नंबर',
+
+
+
+
+
 
     },
     en: {
@@ -194,6 +321,61 @@ export class LanguageService {
       BILL_LIST: 'Bill List',
       OUTSTANDING_DEMAND: 'Outstanding Demand',
       ENTER: 'Enter', 
+      GODOWN: 'Godown',
+DEMAND_NO: 'Demand No.',
+DATE: 'Date',
+MEMBER_CODE: 'Member Code',
+CITY: 'City',
+ITEM: 'Item',
+ITEM_CODE: 'Item Code',
+ITEM_LIST_NAME: 'Item Name',
+NOS: 'Nos',
+TOTAL_NOS: 'Total Nos',
+NEW: 'New',
+EDIT: 'Edit',
+DELETE: 'Delete',
+PRINT: 'Print',
+CLOSE: 'Close',
+SUPPLIER_MASTER: 'Supplier Master',
+SUPPLIER_CODE: 'Supplier Code',
+CASH_SALE_TITLE: 'Cash Sale',
+TOTAL_QTY: 'Total Qty',
+RATE: 'Rate',
+CANCEL: 'Cancel',
+MEMBER_INFO_TITLE: 'Member Information',
+SUPPLIER_INFO_TITLE: 'Supplier Information',
+ITEM_INFO_TITLE: 'Item Information',
+FATHER_NAME : 'Father Name',
+MEMBER_NUMBER: 'Member Number',
+TYPE: 'Type',
+MALE: 'Male',
+FEMALE: 'Female',
+CREDIT_SALE_TITLE: 'Credit Sale',
+GODOWN_CODE: 'Godown Code',
+BILL_DATE: 'Bill Date',
+BILL_NUMBER: 'Bill Number',
+CURRENT_BALANCE: 'Current Balance',
+ITEM_AMOUNT: 'Amount',
+BILL_AMOUNT: 'Bill Amount',
+PAYMENT_MODE: 'Payment Mode',
+RECEIPT_NUMBER: 'Receipt Number',
+RECEIPT_DATE: 'Receipt Date',
+UNIT: 'Unit',
+WEIGHT: 'Weight',
+LIMIT: 'Limit',
+CREDIT: 'Credit',
+CASH: 'Cash',
+GRAIN_INWARD_TITLE: 'Grain Inward',
+// GODOWN_CODE: 'Godown Code',
+INWARD_NO: 'Inward No',
+FARMER_NAME: 'Farmer Name',
+VEHICLE_NO: 'Vehicle No',
+TOTAL_AMOUNT: 'Total Amount',
+BILL_NO: 'Bill No',
+
+
+
+
     }
   };
 

@@ -1,25 +1,82 @@
 <div class="form-container">
   <div class="form-header">
-    <h2>{{ lang.t('ITEM_INFO') }}</h2>
-    <button class="close-btn" (click)="close()">✕</button>
+    <div class="title">{{ lang.t('ITEM_INFO') }}</div>
+    <button class="close-top" (click)="onClose()">×</button>
   </div>
 
-  <div class="form-content">
-    <div class="form-grid">
-      <div class="form-group" *ngFor="let field of formFields">
-        <label>{{ lang.t(field.label) }}</label>
-        <input
-          type="text"
-          [(ngModel)]="field.value"
-          [placeholder]="'Enter ' + lang.t(field.label)" />
+  <div class="form-body">
+    <div class="header-inputs">
+      <div class="input-group">
+        <label>{{ lang.t('ITEM_CODE') }}</label>
+        <div class="search-box">
+          <select [(ngModel)]="item.code" class="dropdown-select">
+            <option value="">-- उदा --</option>
+            <option value="00001">00001</option>
+            <option value="00002">00002</option>
+            <option value="00003">00003</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-inputs">
+      <div class="input-group full-width">
+        <label>{{ lang.t('ITEM_LIST_NAME') }}</label>
+        <input type="text" class="display-name" [(ngModel)]="item.name">
+      </div>
+    </div>
+
+    <div class="header-inputs">
+      <div class="input-group">
+        <label>{{ lang.t('WEIGHT') }}</label>
+        <input type="number" class="numeric-input" [(ngModel)]="item.weight">
+      </div>
+      <div class="input-group">
+        <label>{{ lang.t('LIMIT') }}</label>
+        <input type="number" class="numeric-input" [(ngModel)]="item.limit">
+      </div>
+    </div>
+
+    <div class="header-inputs">
+      <div class="input-group">
+        <label>{{ lang.t('RATE') }}</label>
+        <div class="search-box">
+          <span class="inline-label">{{ lang.t('CASH') }}</span>
+          <input type="number" class="numeric-input" [(ngModel)]="item.cashRate">
+        </div>
+      </div>
+      <div class="input-group">
+        <span class="inline-label">{{ lang.t('CREDIT') }}</span>
+        <input type="number" class="numeric-input" [(ngModel)]="item.creditRate">
+      </div>
+    </div>
+
+    <div class="header-inputs">
+      <div class="input-group">
+        <label>{{ lang.t('UNIT') }}</label>
+        <div class="search-box">
+          <label><input type="radio" name="unit" [(ngModel)]="item.unit" value="1"> १</label>
+          <label><input type="radio" name="unit" [(ngModel)]="item.unit" value="10"> १०</label>
+          <label><input type="radio" name="unit" [(ngModel)]="item.unit" value="100"> १००</label>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="form-actions">
-    <button class="btn-save">{{ lang.t('SAVE') }}</button>
-    <button class="btn-clear" (click)="clear()">
-      {{ lang.t('CLEAR') }}
-    </button>
+  <div class="form-footer">
+    <div class="action-buttons">
+      <button class="btn-new" (click)="onNew()">📋 {{ lang.t('NEW') }}</button>
+      <button class="btn-edit" (click)="onEdit()">✓ {{ lang.t('EDIT') }}</button>
+      <button class="btn-delete" (click)="onDelete()">× {{ lang.t('DELETE') }}</button>
+      <button class="btn-print" (click)="onPrint()">🖨️ {{ lang.t('PRINT') }}</button>
+      <button class="btn-form-close" (click)="onClose()">📁 {{ lang.t('CLOSE') }}</button>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="nav-btn">|❮</button>
+      <button class="nav-btn">❮</button>
+      <button class="nav-btn">❯</button>
+      <button class="nav-btn">❯|</button>
+    </div>
   </div>
 </div>

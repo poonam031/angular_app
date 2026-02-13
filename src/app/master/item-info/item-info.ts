@@ -1,40 +1,67 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { LanguageService, type TranslationKey } from '../../services/lang';
-
-interface FormField {
-  label: TranslationKey;
-  value: string;
-}
+import { LanguageService } from '../../services/lang';
 
 @Component({
   selector: 'app-item-info',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   templateUrl: './item-info.html',
   styleUrls: ['./item-info.css']
 })
-export class ItemInfoComponent {
-
-  constructor(public lang: LanguageService) {}
-
+export class ItemInfoComponent implements OnInit {
   @Output() closed = new EventEmitter<void>();
 
-  formFields: FormField[] = [
-    { label: 'ITEM_ID', value: '' },
-    { label: 'ITEM_NAME', value: '' },
-    { label: 'QUANTITY_QTL', value: '' },
-    { label: 'QUALITY_GRADE', value: '' },
-    { label: 'SUPPLIER_NAME', value: '' },
-    { label: 'REMARKS', value: '' }
-  ];
+  constructor(public lang: LanguageService) { }
 
-  clear() {
-    this.formFields.forEach(f => f.value = '');
+  ngOnInit(): void { }
+
+  // Initializing the item object with sample data
+  item = {
+    code: '00001',
+    name: 'गहू (३० किलो पॅक)',
+    weight: 30,
+    limit: 17,
+    cashRate: 1020,
+    creditRate: 1090,
+    unit: '1'
+  };
+
+  onNew() {
+    // Reset form logic
+    this.item = {
+      code: '',
+      name: '',
+      weight: 0,
+      limit: 0,
+      cashRate: 0,
+      creditRate: 0,
+      unit: '1'
+    };
+    console.log('New item created');
   }
 
-  close() {
+  onEdit() {
+    // Edit logic
+    console.log('Editing item:', this.item);
+    // Add your edit logic here
+  }
+
+  onDelete() {
+    // Delete logic
+    if (confirm(this.lang.t('DELETE') + ' - ' + this.item.name + '?')) {
+      console.log('Item deleted');
+      this.onNew();
+    }
+  }
+
+  onPrint() {
+    // Print logic
+    console.log('Printing item:', this.item);
+    window.print();
+  }
+
+  onClose() {
     this.closed.emit();
   }
 }

@@ -37,9 +37,19 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   onLogin() {
+    console.log('Login attempt:', { username: this.username, password: this.password });
     if (this.username === 'admin' && this.password === '1234') {
-      this.router.navigate(['/dashboard']);
+      console.log('Login successful, navigating to dashboard...');
+      this.router.navigate(['/dashboard']).then(success => {
+        console.log('Navigation result:', success);
+        if (!success) {
+          console.error('Navigation to dashboard failed');
+        }
+      }).catch(error => {
+        console.error('Navigation error:', error);
+      });
     } else {
+      console.log('Invalid credentials');
       this.loginState = 'error';
       setTimeout(() => this.loginState = 'normal', 500);
     }
