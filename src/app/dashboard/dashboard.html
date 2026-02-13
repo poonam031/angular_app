@@ -170,4 +170,18 @@
     (closed)="selectedOption = null">
   </app-bill-list>
 
+
+  <app-account-info
+    *ngIf="activeTab === 'report' && selectedOption === 'account-info'"
+    (closed)="selectedOption = null">
+  </app-account-info>
+
+
+  <app-outstanding
+    *ngIf="activeTab === 'report' && selectedOption === 'outstanding-demand'"
+    (closed)="selectedOption = null">
+  </app-outstanding>
+
+
+
 </div>

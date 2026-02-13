@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { LanguageService } from '../../services/lang';
 
 @Component({
   selector: 'app-stock-register',
@@ -11,21 +12,13 @@ import { FormsModule } from '@angular/forms';
 })
 export class StockRegisterComponent {
 
-  /* =========================
-     FORM FIELDS
-     ========================= */
-  startCode: string = '00006';
-  endCode: string = '00006';
-  date: string = '05/02/2026';
+  startCode = '00006';
+  endCode = '00006';
+  date = '2026-02-05';
 
-  /* =========================
-     OUTPUT EVENTS
-     ========================= */
   @Output() closed = new EventEmitter<void>();
 
-  /* =========================
-     ACTIONS
-     ========================= */
+  constructor(public lang: LanguageService) {}
 
   print(): void {
     console.log('Stock Register Print', {
@@ -33,9 +26,6 @@ export class StockRegisterComponent {
       endCode: this.endCode,
       date: this.date
     });
-
-    // 👉 You can add window.print() or API call here
-    // window.print();
   }
 
   close(): void {

@@ -3,11 +3,14 @@
   <!-- Header -->
   <div class="form-header">
     <h2>{{ lang.t('BILL_LIST') }}</h2>
-    <button class="close-btn" (click)="close()">✕</button>
+
+    <!-- ✅ FIX: use btn-close -->
+    <button class="btn-close" (click)="close()">✕</button>
   </div>
 
   <!-- Content -->
   <div class="form-content">
+
     <div class="form-grid">
 
       <!-- Balance As On Date -->
@@ -31,8 +34,17 @@
 
     <!-- Actions -->
     <div class="form-actions">
-      <button class="btn-print" (click)="print()">{{ lang.t('PRINT') }}</button>
-      <button class="btn-close" (click)="close()">{{ lang.t('CLOSE') }}</button>
+
+      <!-- ✅ FIX: use btn-save -->
+      <button class="btn-save" (click)="print()">
+        {{ lang.t('PRINT') }}
+      </button>
+
+      <!-- ✅ FIX: use btn-clear -->
+      <button class="btn-clear" (click)="close()">
+        {{ lang.t('CLOSE') }}
+      </button>
+
     </div>
   </div>
 </div>

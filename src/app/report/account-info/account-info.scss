@@ -210,3 +210,98 @@
   }
 }
 
+/* =========================================
+   TABLE CONTAINER (MATCH FORM STYLE)
+   ========================================= */
+.table-container {
+  margin-top: 24px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 10px;
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.08),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================
+   NGX-DATATABLE BASE
+   ========================================= */
+::ng-deep ngx-datatable.material {
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+/* =========================================
+   TABLE HEADER (GRADIENT)
+   ========================================= */
+::ng-deep ngx-datatable.material .datatable-header {
+  background: linear-gradient(90deg, #597499, #81a7ea);
+  color: #ffffff;
+}
+
+::ng-deep ngx-datatable.material .datatable-header-cell {
+  padding: 12px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================
+   TABLE ROWS & CELLS
+   ========================================= */
+::ng-deep ngx-datatable.material .datatable-body-row {
+  transition: background 0.25s ease;
+}
+
+::ng-deep ngx-datatable.material .datatable-body-row:hover {
+  background: #f3f6ff;
+}
+
+::ng-deep ngx-datatable.material .datatable-body-cell {
+  padding: 10px;
+  color: #2d3748;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Zebra striping */
+::ng-deep ngx-datatable.material .datatable-body-row:nth-child(even) {
+  background-color: #f9fbff;
+}
+
+/* =========================================
+   NUMERIC ALIGNMENT (AMOUNT / BALANCE)
+   ========================================= */
+::ng-deep ngx-datatable .datatable-body-cell {
+  text-align: left;
+}
+
+::ng-deep ngx-datatable .datatable-body-cell[data-title*="Amount"],
+::ng-deep ngx-datatable .datatable-body-cell[data-title*="Balance"] {
+  text-align: right;
+  font-weight: 600;
+}
+
+/* =========================================
+   TABLE FOOTER
+   ========================================= */
+::ng-deep ngx-datatable.material .datatable-footer {
+  background: #f1f5f9;
+  border-top: 1px solid #e2e8f0;
+  font-size: 12px;
+}
+
+/* =========================================
+   EMPTY STATE
+   ========================================= */
+::ng-deep ngx-datatable .empty-row {
+  text-align: center;
+  padding: 20px;
+  color: #718096;
+  font-style: italic;
+}
+

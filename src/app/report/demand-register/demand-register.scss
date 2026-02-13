@@ -1,21 +1,18 @@
 /* =========================================
-   OUTER PAGE FIX (IMPORTANT)
+   HOST FIX
    ========================================= */
 :host {
   display: block;
   width: 100%;
 }
 
-/* This fixes the RIGHT SHIFT */
+/* =========================================
+   FORM CONTAINER
+   ========================================= */
 .form-container {
   max-width: 100%;
   margin: 0 auto;
-}
 
-/* =========================================
-   SOFT BACKGROUND WRAPPER (VISIBLE)
-   ========================================= */
-.form-container {
   background: linear-gradient(
     180deg,
     #f0f4ff 0%,
@@ -35,16 +32,15 @@
    HEADER BAR
    ========================================= */
 .form-header {
-  background: linear-gradient(
-    90deg,
-    #1e3c72,
-    #2a5298
-  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
   padding: 14px 20px;
   border-radius: 10px;
-
   margin-bottom: 24px;
+
   box-shadow: 0 6px 18px rgba(30, 60, 114, 0.35);
 }
 
@@ -56,6 +52,17 @@
   letter-spacing: 0.8px;
 }
 
+/* HEADER CLOSE BUTTON */
+.btn-close {
+  background: linear-gradient(135deg, #a0aec0, #718096);
+  color: #ffffff;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 /* =========================================
    FORM CONTENT
    ========================================= */
@@ -65,7 +72,9 @@
   padding: 20px;
 }
 
-/* GRID */
+/* =========================================
+   GRID
+   ========================================= */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -92,20 +101,21 @@
    ========================================= */
 .form-group input,
 .form-group select {
-  height: 42px;
-  padding: 8px 12px;
-  font-size: 14px;
+  height: 34px;
+  padding: 4px 12px;
+  font-size: 13px;
 
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1.5px solid #cbd5e1;
 
-  background: linear-gradient(
-    135deg,
-    #ffffff,
-    #f4f6ff
-  );
-
+  background: linear-gradient(135deg, #ffffff, #f6f8ff);
   transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+  background: #f3f6ff;
 }
 
 .form-group input:focus,
@@ -114,13 +124,30 @@
   border-color: #667eea;
 
   box-shadow:
-    0 0 0 3px rgba(102, 126, 234, 0.2),
-    0 4px 12px rgba(102, 126, 234, 0.25);
+    0 0 0 3px rgba(102, 126, 234, 0.18),
+    0 4px 10px rgba(102, 126, 234, 0.2);
 }
 
-/* Placeholder */
-.form-group select option[value=""] {
-  color: #9aa5b1;
+/* DATE PICKER */
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  height: 16px;
+  width: 16px;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+/* SELECT ARROW */
+.form-group select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #555 50%),
+    linear-gradient(135deg, #555 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 14px,
+    calc(100% - 13px) 14px;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 34px;
 }
 
 /* =========================================
@@ -133,32 +160,19 @@
 
   margin-top: 22px;
   padding-top: 16px;
-
   border-top: 1px solid #e2e8f0;
-}
-
-/* Buttons */
-.form-actions button {
-  padding: 10px 30px;
-  font-size: 13px;
-  font-weight: 700;
-
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-
-  letter-spacing: 0.6px;
-  transition: all 0.25s ease;
 }
 
 /* PRINT */
 .btn-save {
-  background: linear-gradient(
-    135deg,
-    #667eea,
-    #764ba2
-  );
+  background: linear-gradient(135deg, #667eea, #764ba2);
   color: #ffffff;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-save:hover {
@@ -168,12 +182,14 @@
 
 /* CLOSE */
 .btn-clear {
-  background: linear-gradient(
-    135deg,
-    #e2e8f0,
-    #cbd5e1
-  );
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
   color: #2d3748;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-clear:hover {
@@ -192,110 +208,4 @@
   .form-actions button {
     width: 100%;
   }
-}
-/* ================================
-   INPUT SIZE & RADIUS FIX
-   ================================ */
-.form-group input[type="date"],
-.form-group input[type="text"],
-.form-group select {
-  height: 38px;            /* ⬅ reduced height */
-  padding: 6px 12px;
-  font-size: 14px;
-
-  border-radius: 12px;    /* ⬅ more rounded corners */
-  border: 1.5px solid #cbd5e1;
-
-  background: linear-gradient(
-    135deg,
-    #ffffff,
-    #f6f8ff
-  );
-
-  transition: all 0.25s ease;
-}
-
-/* Hover */
-.form-group input:hover,
-.form-group select:hover {
-  background: #f3f6ff;
-}
-
-/* Focus */
-.form-group input:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: #667eea;
-
-  box-shadow:
-    0 0 0 3px rgba(102, 126, 234, 0.18),
-    0 4px 10px rgba(102, 126, 234, 0.2);
-}
-
-/* ================================
-   FORCE COMPACT DATE INPUT
-   ================================ */
-.form-group input[type="date"] {
-  height: 34px !important;        /* ⬅ smaller height */
-  min-height: 34px !important;
-
-  padding: 4px 10px !important;   /* ⬅ reduce inner space */
-  font-size: 13px;
-
-  border-radius: 12px;            /* ⬅ soft rounded */
-  line-height: 1.2;
-
-  background-color: #f9fbff;
-}
-
-/* Fix calendar icon alignment */
-.form-group input[type="date"]::-webkit-calendar-picker-indicator {
-  height: 16px;
-  width: 16px;
-  margin-right: 4px;
-  cursor: pointer;
-}
-/* ================================
-   UNIFY INPUT + DATE + SELECT SIZE
-   ================================ */
-
-.form-group input[type="date"],
-.form-group select {
-  height: 34px !important;
-  min-height: 34px !important;
-
-  padding: 4px 12px !important;
-  font-size: 13px;
-  line-height: 1.2;
-
-  border-radius: 12px;
-  border: 1.5px solid #cbd5e0;
-
-  background-color: #f9fbff;
-  box-sizing: border-box;
-}
-
-/* Fix dropdown arrow vertical alignment */
-.form-group select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
-  background-image:
-    linear-gradient(45deg, transparent 50%, #555 50%),
-    linear-gradient(135deg, #555 50%, transparent 50%);
-  background-position:
-    calc(100% - 18px) 14px,
-    calc(100% - 13px) 14px;
-  background-size: 5px 5px, 5px 5px;
-  background-repeat: no-repeat;
-  padding-right: 34px !important;
-}
-
-/* Calendar icon alignment */
-.form-group input[type="date"]::-webkit-calendar-picker-indicator {
-  height: 16px;
-  width: 16px;
-  margin-right: 6px;
-  cursor: pointer;
 }

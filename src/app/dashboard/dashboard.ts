@@ -8,6 +8,8 @@ import { SalesRegister } from '../report/sales-register/sales-register';
 import { BillList } from "../report/bill-list/bill-list";
 import { StockRegisterComponent } from '../report/stock-register/stock-register';
 import { DemandRegisterComponent } from '../report/demand-register/demand-register';
+import { AccountInfoComponent } from '../report/account-info/account-info';
+import { OutstandingComponent } from '../report/outstanding-demand/outstanding';
 
 @Component({
   selector: 'app-navbar',
@@ -20,7 +22,9 @@ import { DemandRegisterComponent } from '../report/demand-register/demand-regist
     SalesRegister,
     BillList,
     StockRegisterComponent,
-    DemandRegisterComponent
+    DemandRegisterComponent,
+    AccountInfoComponent,
+    OutstandingComponent
 ],
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.scss']

@@ -1,0 +1,86 @@
+<div class="form-container">
+
+  <!-- HEADER -->
+  <div class="form-header">
+    <h2>{{ lang.t('ACCOUNT_INFO') }}</h2>
+    <button type="button" class="btn-close" (click)="close()">✕</button>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="form-content">
+
+    <!-- FORM GRID -->
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label>{{ lang.t('ACCOUNT_CODE') }}</label>
+        <input type="text" [(ngModel)]="accountCode" />
+      </div>
+
+      <div class="form-group">
+        <label>{{ lang.t('ACCOUNT_NAME') }}</label>
+        <input type="text" [(ngModel)]="accountName" />
+      </div>
+
+      <div class="form-group">
+        <label>{{ lang.t('FROM_DATE') }}</label>
+        <input type="date" [(ngModel)]="fromDate" />
+      </div>
+
+      <div class="form-group">
+        <label>{{ lang.t('TO_DATE') }}</label>
+        <input type="date" [(ngModel)]="toDate" />
+      </div>
+
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-container" style="margin-top: 20px;">
+      <ngx-datatable
+        class="material"
+        [rows]="rows"
+        [columnMode]="'force'"
+        [headerHeight]="45"
+        [footerHeight]="45"
+        [rowHeight]="40"
+        [scrollbarH]="true"
+        [messages]="i18nMessages">
+
+        <ngx-datatable-column [name]="lang.t('DATE')" prop="date"></ngx-datatable-column>
+        <ngx-datatable-column [name]="lang.t('NO')" prop="no"></ngx-datatable-column>
+
+        <ngx-datatable-column [name]="lang.t('DETAILS')">
+          <ng-template ngx-datatable-cell-template let-row="row">
+            {{ lang.t(row.detailsKey) }}
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column [name]="lang.t('CREDIT_AMOUNT')" prop="credit"></ngx-datatable-column>
+        <ngx-datatable-column [name]="lang.t('DEBIT_AMOUNT')" prop="debit"></ngx-datatable-column>
+        <ngx-datatable-column [name]="lang.t('BALANCE')" prop="balance"></ngx-datatable-column>
+        <ngx-datatable-column [name]="lang.t('REFERENCE_NO')" prop="refNo"></ngx-datatable-column>
+
+        <ngx-datatable-column [name]="lang.t('TRANSACTION_TYPE')">
+          <ng-template ngx-datatable-cell-template let-row="row">
+            {{ lang.t(row.typeKey) }}
+          </ng-template>
+        </ngx-datatable-column>
+
+      </ngx-datatable>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="form-actions">
+      <!-- ✅ FIX -->
+      <button type="button" class="btn-save" (click)="print()">
+        {{ lang.t('PRINT') }}
+      </button>
+
+      <!-- ✅ FIX -->
+      <button type="button" class="btn-clear" (click)="close()">
+        {{ lang.t('CLOSE') }}
+      </button>
+    </div>
+
+  </div>
+</div>

@@ -84,13 +84,29 @@ export type TranslationKey =
   | 'TRADER_ACCOUNT'
   | 'CUSTOMER_ACCOUNT'
   | 'SUPPLIER_ACCOUNT'
+  | 'START_CODE'
   | 'REPORT_CODE'
   | 'REFERENCE_DATE'
   | 'REPORT_DATE'
   | 'START_DATE'
   | 'END_DATE'
   | 'SALE_TYPE'
-  | 'CASH';
+  | 'CASH'
+  | 'ACCOUNT_CODE'
+  | 'END_CODE'
+  | 'ACCOUNT_NAME'
+  | 'DATE'
+  | 'NO'
+  | 'DETAILS'
+  | 'CREDIT_AMOUNT'
+  | 'DEBIT_AMOUNT'
+  | 'BALANCE'
+  | 'REFERENCE_NO'
+  | 'TRANSACTION_TYPE'
+  | 'OPENING_BALANCE'
+  | 'TRANSACTION'
+  | 'TOTAL';
+
 
 type Dictionary = {
   [L in Lang]: Record<TranslationKey, string>;
@@ -104,9 +120,11 @@ export class LanguageService {
   private dictionary: Dictionary = {
     mr: {
       MASTER: 'मास्टर',
+      START_CODE: 'सुरुवातीचा कोड',
       REPORT: 'रिपोर्ट',
       ITEM_INFO: 'आयटम माहिती',
       MEMBER_INFO: 'सभासद माहिती',
+      END_CODE: 'अखेरचा कोड',
       SUPPLIER_INFO: 'सप्लायर माहिती',
       GRAIN_DEMAND: 'धान्य मागणी',
       GRAIN_INWARD: 'धान्य आवक',
@@ -125,6 +143,22 @@ export class LanguageService {
       TRADER_ACCOUNT: 'व्यापारी खाते',
       CUSTOMER_ACCOUNT: 'ग्राहक खाते',
       SUPPLIER_ACCOUNT: 'सप्लायर खाते',
+
+
+      ACCOUNT_CODE: 'खाते कोड',
+      ACCOUNT_NAME: 'खात्याचे नाव',
+      DATE: 'तारीख',
+      NO: 'क्र.',
+      DETAILS: 'तपशील',
+      CREDIT_AMOUNT: 'जमा रक्कम',
+      DEBIT_AMOUNT: 'नावे रक्कम',
+      BALANCE: 'शिल्लक',
+      REFERENCE_NO: 'संदर्भ क्र.',
+      TRANSACTION_TYPE: 'व्यवहार प्रकार',
+      OPENING_BALANCE: 'आरंभिक शिल्लक',
+      TRANSACTION: 'व्यवहार',
+      TOTAL: 'एकूण',
+
 
 
 
@@ -211,6 +245,8 @@ export class LanguageService {
       MASTER: 'Master',
       REPORT: 'Report',
       ITEM_INFO: 'Item Info',
+      START_CODE: 'Start Code',
+      END_CODE: 'End Code',
       MEMBER_INFO: 'Member Info',
       SUPPLIER_INFO: 'Supplier Info',
       GRAIN_DEMAND: 'Grain Demand',
@@ -242,6 +278,22 @@ export class LanguageService {
       END_DATE: 'End Date',
       SALE_TYPE: 'Sale Type',
       CASH: 'Cash',
+
+
+      ACCOUNT_CODE: 'Account Code',
+      ACCOUNT_NAME: 'Account Name',
+      DATE: 'Date',
+      NO: 'No.',
+      DETAILS: 'Details',
+      CREDIT_AMOUNT: 'Credit Amount',
+      DEBIT_AMOUNT: 'Debit Amount',
+      BALANCE: 'Balance',
+      REFERENCE_NO: 'Reference No.',
+      TRANSACTION_TYPE: 'Transaction Type',
+      OPENING_BALANCE: 'Opening Balance',
+      TRANSACTION: 'Transaction',
+      TOTAL: 'Total',
+
 
 
 

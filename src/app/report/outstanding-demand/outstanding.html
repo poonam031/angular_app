@@ -12,12 +12,12 @@
     <div class="form-grid">
 
       <div class="form-group">
-        <label>{{ lang.t('START_DATE') }}</label>
+        <label>{{ lang.t('FROM_DATE') }}</label>
         <input type="date" [(ngModel)]="fromDate">
       </div>
 
       <div class="form-group">
-        <label>{{ lang.t('END_DATE') }}</label>
+        <label>{{ lang.t('TO_DATE') }}</label>
         <input type="date" [(ngModel)]="toDate">
       </div>
 
@@ -25,7 +25,7 @@
         <label>{{ lang.t('LOCATION') }}</label>
         <select [(ngModel)]="location">
           <option value="" disabled hidden>
-            {{ lang.t('SELECT') }}
+            {{ lang.t('ENTER') }}
           </option>
           <option value="A">A</option>
           <option value="B">B</option>

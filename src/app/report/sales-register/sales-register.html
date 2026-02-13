@@ -1,44 +1,70 @@
 <div class="form-container">
-    <div class="form-header">
-        <h2>{{ lang.t('SALES_REGISTER') }}</h2>
-        <button class="close-btn" (click)="close()">✕</button>
+
+  <!-- HEADER -->
+  <div class="form-header">
+    <h2>{{ lang.t('SALES_REGISTER') }}</h2>
+    <button class="btn-close" (click)="close()">✕</button>
+  </div>
+
+  <!-- FORM CONTENT -->
+  <div class="form-content">
+
+    <!-- GRID ROW -->
+    <div class="form-grid">
+
+      <!-- Start Date -->
+      <div class="form-group">
+        <label>{{ lang.t('START_DATE') }}</label>
+        <input
+          type="date"
+          [(ngModel)]="startDate" />
+      </div>
+
+      <!-- End Date -->
+      <div class="form-group">
+        <label>{{ lang.t('END_DATE') }}</label>
+        <input
+          type="date"
+          [(ngModel)]="endDate" />
+      </div>
+
     </div>
 
+    <!-- SALE TYPE (FULL WIDTH) -->
+    <div class="form-group" style="margin-top: 18px;">
+      <label>{{ lang.t('SALE_TYPE') }}</label>
 
-    <div class="form-content">
-        <div class="form-grid">
-            <!-- Start Date -->
-            <div class="form-group">
-                <label>{{ lang.t('START_DATE') }}</label>
-                <input type="date" [(ngModel)]="startDate"
-                    [placeholder]="lang.t('ENTER') + ' ' + lang.t('START_DATE')" />
-            </div>
+      <div style="display:flex; gap:28px; margin-top:8px;">
+        <label style="display:flex; align-items:center; gap:6px;">
+          <input
+            type="radio"
+            name="saleType"
+            value="cash"
+            [(ngModel)]="saleType" />
+          {{ lang.t('CASH') }}
+        </label>
 
-            <!-- End Date -->
-            <div class="form-group">
-                <label>{{ lang.t('END_DATE') }}</label>
-                <input type="date" [(ngModel)]="endDate" [placeholder]="lang.t('ENTER') + ' ' + lang.t('END_DATE')" />
-            </div>
-        </div>
-
-        <!-- Sale Type Options -->
-        <div class="form-group radio-section">
-            <label>{{ lang.t('SALE_TYPE') }}</label>
-            <div class="radio-group">
-                <label>
-                    <input type="radio" [(ngModel)]="saleType" value="cash" />
-                    {{ lang.t('CASH') }}
-                </label>
-                <label>
-                    <input type="radio" [(ngModel)]="saleType" value="credit" />
-                    {{ lang.t('CREDIT') }}
-                </label>
-            </div>
-        </div>
-
-
-        <div class="form-actions">
-            <button class="btn-print" (click)="print()">{{ lang.t('PRINT') }}</button>
-            <button class="btn-close" (click)="close()">{{ lang.t('CLOSE') }}</button>
-        </div>
+        <label style="display:flex; align-items:center; gap:6px;">
+          <input
+            type="radio"
+            name="saleType"
+            value="credit"
+            [(ngModel)]="saleType" />
+          {{ lang.t('CREDIT') }}
+        </label>
+      </div>
     </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="form-actions">
+      <button class="btn-save" (click)="print()">
+        {{ lang.t('PRINT') }}
+      </button>
+
+      <button class="btn-clear" (click)="close()">
+        {{ lang.t('CLOSE') }}
+      </button>
+    </div>
+
+  </div>
+</div>
