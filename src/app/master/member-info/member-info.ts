@@ -19,7 +19,7 @@ export class MemberInfoComponent {
   // Form Fields
   memberCode: string = '00006';
   memberName: string = 'श्री गणेश आबासाहेब बापुसा';
-  fatherName: string = '';
+  mobileNumber: string = '';
   memberNumber: string = '00006';
   gender: string = 'male'; // male / female
 
@@ -27,7 +27,7 @@ export class MemberInfoComponent {
   onNew() {
     this.memberCode = '';
     this.memberName = '';
-    this.fatherName = '';
+    this.mobileNumber = '';
     this.memberNumber = '';
     this.gender = 'male';
   }

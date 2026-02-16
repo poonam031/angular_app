@@ -1,96 +1,165 @@
 <div class="form-container">
+
+  <!-- ================= HEADER ================= -->
   <div class="form-header">
-    <span class="title">कॅश सेल (Cash Sale)</span>
-    <button class="close-top" (click)="onClose()">✕</button>
+    <h2>कॅश सेल (Cash Sale)</h2>
+    <button class="btn-close" (click)="onClose()">✕</button>
   </div>
 
-  <div class="form-body">
-    <div class="header-inputs">
-      <div class="input-group">
-        <label>गोडाऊन</label>
-        <div class="search-box">
-          <select [(ngModel)]="godownCode" (change)="onGodownChange()" class="dropdown-select">
-            <option value="">-- उदा --</option>
-            <option *ngFor="let godown of godownList" value="{{ godown.code }}">{{ godown.code }}</option>
-          </select>
-          <input type="text" [(ngModel)]="godownName" class="display-name" readonly>
-        </div>
-      </div>
+  <!-- ================= CONTENT ================= -->
+  <div class="form-content">
+<!-- ===== SECTION 1 : SALE INFORMATION ===== -->
+<div class="section-box">
+  <h3 class="section-title">
+    विक्री माहिती
+  </h3>
 
-      <div class="input-group">
-        <label>धान्य मागणी नं.</label>
-        <div class="search-box">
-          <select [(ngModel)]="demandNo" (change)="onDemandChange()" class="dropdown-select">
-            <option value="">-- उदा --</option>
-            <option *ngFor="let demand of demandList" value="{{ demand.no }}">{{ demand.no }}</option>
-          </select>
-          <input type="text" [(ngModel)]="year" class="year-input" readonly>
-        </div>
-      </div>
+  <!-- ===== ROW 1 ===== -->
+  <div class="form-grid">
 
-      <div class="input-group date-group">
-        <label>तारीख</label>
-        <input type="date" [(ngModel)]="currentDate" class="date-input">
-      </div>
-    </div>
+    <!-- GODOWN : CODE + NAME -->
+    <div class="form-group inline-group">
+      <label>गोडाऊन</label>
 
-    <div class="header-inputs">
-      <div class="input-group full-width">
-        <label>सप्लायर कोड</label>
-        <div class="search-box">
-          <select [(ngModel)]="supplierCode" (change)="onSupplierChange()" class="dropdown-select">
-            <option value="">-- उदा --</option>
-            <option *ngFor="let supplier of supplierList" value="{{ supplier.code }}">{{ supplier.code }}</option>
-          </select>
-          <input type="text" [(ngModel)]="supplierName" class="display-name" readonly>
-        </div>
+      <div class="inline-fields">
+        <select [(ngModel)]="godownCode"
+                (ngModelChange)="onGodownChange()">
+          <option value="">-- उदा --</option>
+          <option *ngFor="let godown of godownList"
+                  [value]="godown.code">
+            {{ godown.code }}
+          </option>
+        </select>
+
+        <input type="text"
+               [(ngModel)]="godownName"
+               disabled>
       </div>
     </div>
 
-    <div class="table-container">
-      <table class="item-table">
-        <thead>
-          <tr>
-            <th style="width: 100px;">आयटम</th>
-            <th style="width: 400px;">आयटमचे नांव</th>
-            <th style="width: 100px;">नग</th>
-            <th style="width: 100px;">दर</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of items; let i = index">
-            <td><input type="text" [(ngModel)]="item.code"></td>
-            <td><input type="text" [(ngModel)]="item.name"></td>
-            <td><input type="number" [(ngModel)]="item.qty" (change)="calculateTotal()"></td>
-            <td><input type="number" [(ngModel)]="item.rate"></td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- DEMAND NO : NO + YEAR -->
+    <div class="form-group inline-group">
+      <label>धान्य मागणी नं.</label>
+
+      <div class="inline-fields">
+        <select [(ngModel)]="demandNo"
+                (ngModelChange)="onDemandChange()">
+          <option value="">-- उदा --</option>
+          <option *ngFor="let demand of demandList"
+                  [value]="demand.no">
+            {{ demand.no }}
+          </option>
+        </select>
+
+        <input type="text"
+               [(ngModel)]="year"
+               disabled>
+      </div>
     </div>
 
-    <div class="total-bar">
-      <input type="number" [value]="totalQty" readonly class="total-input">
+    <!-- DATE -->
+    <div class="form-group">
+      <label>तारीख</label>
+      <input type="date"
+             [(ngModel)]="currentDate">
     </div>
+
   </div>
 
-  <div class="form-footer">
-    <div class="action-buttons">
-      <button class="btn-save" (click)="onSave()">
-        <span class="icon">💾</span> सेव्ह
-      </button>
-      <button class="btn-cancel" (click)="onCancel()">
-        <span class="icon">↺</span> कॅन्सल
-      </button>
-      <button class="btn-form-close" (click)="onClose()">
-        <span class="icon">📁</span> बंद
-      </button>
+  <!-- ===== ROW 2 ===== -->
+  <div class="form-grid second-row">
+
+    <!-- SUPPLIER : CODE + NAME -->
+    <div class="form-group inline-group">
+      <label>सप्लायर कोड</label>
+
+      <div class="inline-fields">
+        <select [(ngModel)]="supplierCode"
+                (ngModelChange)="onSupplierChange()">
+          <option value="">-- उदा --</option>
+          <option *ngFor="let supplier of supplierList"
+                  [value]="supplier.code">
+            {{ supplier.code }}
+          </option>
+        </select>
+
+        <input type="text"
+               [(ngModel)]="supplierName"
+               disabled>
+      </div>
     </div>
 
-    <div class="nav-buttons">
-      <button class="nav-btn" title="First Record">|❮</button>
-      <button class="nav-btn" title="Previous Record">❮</button>
-      <button class="nav-btn" title="Next Record">❯</button>
-      <button class="nav-btn" title="Last Record">❯|</button>
-    </div>
   </div>
 </div>
+
+
+    <!-- ===== SECTION 2 : ITEM DETAILS ===== -->
+    <div class="section-box">
+      <h3 class="section-title">
+        आयटम तपशील
+      </h3>
+
+      <div class="table-container">
+        <table class="item-table">
+          <thead>
+            <tr>
+              <th style="width:120px;">आयटम</th>
+              <th>आयटमचे नांव</th>
+              <th style="width:120px;">नग</th>
+              <th style="width:120px;">दर</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let item of items; let i = index">
+              <td>{{ item.code }}</td>
+              <td>{{ item.name }}</td>
+              <td>
+                <input type="number"
+                       [(ngModel)]="item.qty"
+                       (ngModelChange)="calculateTotal()">
+              </td>
+              <td>
+                <input type="number"
+                       [(ngModel)]="item.rate"
+                       (ngModelChange)="calculateTotal()">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ===== SECTION 3 : TOTAL ===== -->
+    <div class="total-bar">
+      <label>एकूण नग :</label>
+      <input class="total-input"
+             [value]="totalQty"
+             disabled>
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="form-footer">
+
+    <!-- LEFT ACTIONS -->
+    <div class="footer-left">
+      <button class="btn-save" (click)="onSave()">सेव्ह</button>
+      <button class="btn-clear" (click)="onCancel()">कॅन्सल</button>
+      <button class="btn-clear" (click)="onClose()">बंद</button>
+    </div>
+
+    <!-- RIGHT PAGINATION -->
+    <div class="footer-right modern-pagination">
+      <button class="page-btn" title="First">⏮</button>
+      <button class="page-btn" title="Previous">◀</button>
+      <span class="page-info">1 / 10</span>
+      <button class="page-btn" title="Next">▶</button>
+      <button class="page-btn" title="Last">⏭</button>
+    </div>
+
+  </div>
+
+</div>
+

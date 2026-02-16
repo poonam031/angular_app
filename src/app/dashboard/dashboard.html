@@ -216,4 +216,9 @@
 </app-member-info>
 
 
+<app-grain-inward
+  *ngIf="activeTab === 'master' && selectedOption === 'grain-inward'"
+  (closed)="selectedOption = null">
+</app-grain-inward>
+
 </div>

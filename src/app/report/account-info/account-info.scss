@@ -1,31 +1,21 @@
 /* =========================================
-   HOST FIX
+   ROOT (DO NOT FORCE HEIGHT HERE)
    ========================================= */
 :host {
   display: block;
   width: 100%;
+  background: #f4f7fb;
+  box-sizing: border-box;
 }
 
 /* =========================================
-   FORM CONTAINER
+   FORM CONTAINER (MAIN LAYOUT)
    ========================================= */
 .form-container {
-  max-width: 100%;
-  margin: 0 auto;
-
-  background: linear-gradient(
-    180deg,
-    #f0f4ff 0%,
-    #f7f9ff 50%,
-    #ffffff 100%
-  );
-
-  border-radius: 14px;
-  padding: 24px;
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.08),
-    inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;              /* 🔥 ONLY PLACE FOR FULL HEIGHT */
+  background: #f4f7fb;
 }
 
 /* =========================================
@@ -36,49 +26,57 @@
   justify-content: space-between;
   align-items: center;
 
-  background: linear-gradient(90deg, #1e3c72, #2a5298);
-  padding: 14px 20px;
-  border-radius: 10px;
-  margin-bottom: 24px;
+  background: linear-gradient(180deg, #365d9d, #2a4c87);
+  padding: 18px 26px;
+  border-radius: 14px;
 
-  box-shadow: 0 6px 18px rgba(30, 60, 114, 0.35);
+  box-shadow: 0 10px 25px rgba(42, 76, 135, 0.35);
 }
 
 .form-header h2 {
   margin: 0;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.6px;
 }
 
-/* HEADER CLOSE BUTTON */
+/* CLOSE BUTTON */
 .btn-close {
-  background: linear-gradient(135deg, #a0aec0, #718096);
-  color: #ffffff;
-  padding: 8px 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   border: none;
-  border-radius: 6px;
-  font-weight: 600;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+  color: #ffffff;
+  font-size: 18px;
   cursor: pointer;
 }
 
 /* =========================================
-   FORM CONTENT
+   CONTENT AREA (ONLY SCROLL AREA)
    ========================================= */
 .form-content {
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 12px;
-  padding: 20px;
+  flex: 1;                    /* 🔥 TAKE REMAINING SPACE */
+  overflow-y: auto;           /* 🔥 SCROLL HERE ONLY */
+
+  margin-top: 18px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+
+  padding-bottom: 96px;       /* 🔥 SPACE FOR FIXED FOOTER */
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
 }
 
 /* =========================================
-   GRID
+   GRID SYSTEM
    ========================================= */
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 32px;
 }
 
 /* =========================================
@@ -90,10 +88,10 @@
 }
 
 .form-group label {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
-  color: #1e3c72;
-  margin-bottom: 6px;
+  color: #203864;
+  margin-bottom: 8px;
 }
 
 /* =========================================
@@ -101,39 +99,31 @@
    ========================================= */
 .form-group input,
 .form-group select {
-  height: 34px;
-  padding: 4px 12px;
-  font-size: 13px;
+  height: 44px;
+  padding: 8px 16px;
+  font-size: 15px;
 
-  border-radius: 12px;
-  border: 1.5px solid #cbd5e1;
+  border-radius: 14px;
+  border: 1.8px solid #cfd8e6;
+  background: #f7f9fd;
 
-  background: linear-gradient(135deg, #ffffff, #f6f8ff);
   transition: all 0.25s ease;
   box-sizing: border-box;
 }
 
+/* Hover */
 .form-group input:hover,
 .form-group select:hover {
-  background: #f3f6ff;
+  background: #f1f5fb;
 }
 
+/* Focus */
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #667eea;
-
-  box-shadow:
-    0 0 0 3px rgba(102, 126, 234, 0.18),
-    0 4px 10px rgba(102, 126, 234, 0.2);
-}
-
-/* DATE PICKER */
-.form-group input[type="date"]::-webkit-calendar-picker-indicator {
-  height: 16px;
-  width: 16px;
-  margin-right: 6px;
-  cursor: pointer;
+  border-color: #4c6ef5;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(76, 110, 245, 0.18);
 }
 
 /* SELECT ARROW */
@@ -143,165 +133,127 @@
     linear-gradient(45deg, transparent 50%, #555 50%),
     linear-gradient(135deg, #555 50%, transparent 50%);
   background-position:
-    calc(100% - 18px) 14px,
-    calc(100% - 13px) 14px;
-  background-size: 5px 5px;
+    calc(100% - 18px) 18px,
+    calc(100% - 13px) 18px;
+  background-size: 6px 6px;
   background-repeat: no-repeat;
-  padding-right: 34px;
+  padding-right: 36px;
 }
 
 /* =========================================
-   ACTIONS
+   SECTION BOX
    ========================================= */
-.form-actions {
+.section-box {
+  margin-bottom: 28px;
+  padding: 22px 24px;
+
+  background: #f9fbff;
+  border-radius: 14px;
+  border: 1px solid #e3e9f4;
+}
+
+.section-title {
+  margin: 0 0 18px 0;
+  padding-bottom: 10px;
+
+  font-size: 16px;
+  font-weight: 700;
+  color: #203864;
+
+  border-bottom: 1px solid #dbe3f1;
+}
+
+/* =========================================
+   FIXED FOOTER
+   ========================================= */
+.form-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 64px;
+  padding: 0 32px;
+
   display: flex;
-  justify-content: flex-end;
-  gap: 14px;
+  justify-content: space-between;
+  align-items: center;
 
-  margin-top: 22px;
-  padding-top: 16px;
-  border-top: 1px solid #e2e8f0;
-}
-
-/* PRINT */
-.btn-save {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(180deg, #365d9d, #2a4c87);
   color: #ffffff;
-  padding: 10px 30px;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 700;
-  border: none;
+
+  box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+}
+
+/* FOOTER SECTIONS */
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* =========================================
+   FOOTER BUTTONS
+   ========================================= */
+.form-footer button {
+  height: 40px;
+  padding: 0 22px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  border-radius: 12px;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.btn-save:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.45);
+.form-footer button:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #ffffff;
 }
 
-/* CLOSE */
-.btn-clear {
-  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
-  color: #2d3748;
-  padding: 10px 30px;
-  border-radius: 8px;
+/* =========================================
+   PAGINATION
+   ========================================= */
+.page-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+}
+
+.page-info {
   font-size: 13px;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-clear:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0.9;
 }
 
 /* =========================================
    RESPONSIVE
    ========================================= */
+@media (max-width: 1024px) {
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
-  .form-actions {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-footer {
     flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
   }
 
-  .form-actions button {
-    width: 100%;
+  .form-content {
+    padding-bottom: 140px;   /* more space on mobile */
   }
 }
-
-/* =========================================
-   TABLE CONTAINER (MATCH FORM STYLE)
-   ========================================= */
-.table-container {
-  margin-top: 24px;
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 10px;
-
-  box-shadow:
-    0 8px 22px rgba(0, 0, 0, 0.08),
-    inset 0 1px 2px rgba(255, 255, 255, 0.9);
-}
-
-/* =========================================
-   NGX-DATATABLE BASE
-   ========================================= */
-::ng-deep ngx-datatable.material {
-  border-radius: 12px;
-  overflow: hidden;
-  font-size: 13px;
-  box-shadow: none;
-}
-
-/* =========================================
-   TABLE HEADER (GRADIENT)
-   ========================================= */
-::ng-deep ngx-datatable.material .datatable-header {
-  background: linear-gradient(90deg, #597499, #81a7ea);
-  color: #ffffff;
-}
-
-::ng-deep ngx-datatable.material .datatable-header-cell {
-  padding: 12px 10px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-/* =========================================
-   TABLE ROWS & CELLS
-   ========================================= */
-::ng-deep ngx-datatable.material .datatable-body-row {
-  transition: background 0.25s ease;
-}
-
-::ng-deep ngx-datatable.material .datatable-body-row:hover {
-  background: #f3f6ff;
-}
-
-::ng-deep ngx-datatable.material .datatable-body-cell {
-  padding: 10px;
-  color: #2d3748;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-/* Zebra striping */
-::ng-deep ngx-datatable.material .datatable-body-row:nth-child(even) {
-  background-color: #f9fbff;
-}
-
-/* =========================================
-   NUMERIC ALIGNMENT (AMOUNT / BALANCE)
-   ========================================= */
-::ng-deep ngx-datatable .datatable-body-cell {
-  text-align: left;
-}
-
-::ng-deep ngx-datatable .datatable-body-cell[data-title*="Amount"],
-::ng-deep ngx-datatable .datatable-body-cell[data-title*="Balance"] {
-  text-align: right;
-  font-weight: 600;
-}
-
-/* =========================================
-   TABLE FOOTER
-   ========================================= */
-::ng-deep ngx-datatable.material .datatable-footer {
-  background: #f1f5f9;
-  border-top: 1px solid #e2e8f0;
-  font-size: 12px;
-}
-
-/* =========================================
-   EMPTY STATE
-   ========================================= */
-::ng-deep ngx-datatable .empty-row {
-  text-align: center;
-  padding: 20px;
-  color: #718096;
-  font-style: italic;
-}
-

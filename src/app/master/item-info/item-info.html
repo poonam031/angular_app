@@ -1,83 +1,93 @@
 <div class="form-container">
+
   <!-- HEADER -->
   <div class="form-header">
-    <div class="title">{{ lang.t('ITEM_INFO') }}</div>
-    <button class="close-top" (click)="onClose()">×</button>
+    <h2>{{ lang.t('ITEM_INFO_TITLE') }}</h2>
+<button class="btn-close" (click)="onClose()">✕</button>
   </div>
 
-  <!-- BODY -->
-  <div class="form-body">
+  <!-- CONTENT -->
+  <div class="form-content">
 
-    <div class="header-inputs">
-      <div class="input-group">
+    <div class="form-grid">
+
+      <div class="form-group">
         <label>{{ lang.t('ITEM_CODE') }}</label>
-        <select [(ngModel)]="item.code" class="dropdown-select">
-          <option value="">-- उदा --</option>
-          <option value="00001">00001</option>
-          <option value="00002">00002</option>
-          <option value="00003">00003</option>
-        </select>
+        <input type="text" value="00009">
       </div>
-    </div>
 
-    <div class="header-inputs">
-      <div class="input-group full-width">
-        <label>{{ lang.t('ITEM_LIST_NAME') }}</label>
-        <input type="text" [(ngModel)]="item.name">
+      <div class="form-group">
+        <label>{{ lang.t('ITEM_NAME') }}</label>
+        <input type="text" value="गहू (जुना पिकाचा)">
       </div>
-    </div>
 
-    <div class="header-inputs">
-      <div class="input-group">
+      <div class="form-group">
         <label>{{ lang.t('WEIGHT') }}</label>
-        <input type="number" [(ngModel)]="item.weight">
+        <input type="number" value="30">
       </div>
 
-      <div class="input-group">
-        <label>{{ lang.t('LIMIT') }}</label>
-        <input type="number" [(ngModel)]="item.limit">
+      <div class="form-group">
+        <label>{{ lang.t('NOS') }}</label>
+        <input type="number" value="11">
       </div>
+
+      <div class="form-group">
+        <label>{{ lang.t('SALE_RATE') }}</label>
+        <input type="number" value="9070">
+      </div>
+
+      <div class="form-group">
+        <label>{{ lang.t('PURCHASE_RATE') }}</label>
+        <input type="number" value="9070">
+      </div>
+
+      <div class="form-group">
+        <label>{{ lang.t('RATE_TYPE') }}</label>
+
+        <div class="radio-group">
+          <label class="radio-item">
+            <input type="radio" name="rate" value="1">
+            <span>{{ lang.t('RATE_1') }}</span>
+          </label>
+
+          <label class="radio-item">
+            <input type="radio" name="rate" value="10">
+            <span>{{ lang.t('RATE_10') }}</span>
+          </label>
+
+          <label class="radio-item">
+            <input type="radio" name="rate" value="100">
+            <span>{{ lang.t('RATE_100') }}</span>
+          </label>
+        </div>
+      </div>
+
     </div>
-
-    <div class="header-inputs">
-      <div class="input-group">
-        <label>{{ lang.t('RATE') }}</label>
-        <span class="inline-label">{{ lang.t('CASH') }}</span>
-        <input type="number" [(ngModel)]="item.cashRate">
-      </div>
-
-      <div class="input-group">
-        <span class="inline-label">{{ lang.t('CREDIT') }}</span>
-        <input type="number" [(ngModel)]="item.creditRate">
-      </div>
-    </div>
-
-    <div class="header-inputs">
-      <div class="input-group">
-        <label>{{ lang.t('UNIT') }}</label>
-        <label><input type="radio" name="unit" [(ngModel)]="item.unit" value="1"> १</label>
-        <label><input type="radio" name="unit" [(ngModel)]="item.unit" value="10"> १०</label>
-        <label><input type="radio" name="unit" [(ngModel)]="item.unit" value="100"> १००</label>
-      </div>
-    </div>
-
   </div>
 
-  <!-- FOOTER (STICKY) -->
+  <!-- FOOTER (OUTSIDE content) -->
   <div class="form-footer">
-    <div class="action-buttons">
-      <button class="btn-new" (click)="onNew()">📋 {{ lang.t('NEW') }}</button>
-      <button class="btn-edit" (click)="onEdit()">✓ {{ lang.t('EDIT') }}</button>
-      <button class="btn-delete" (click)="onDelete()">× {{ lang.t('DELETE') }}</button>
-      <button class="btn-print" (click)="onPrint()">🖨️ {{ lang.t('PRINT') }}</button>
-      <button class="btn-close" (click)="onClose()">📁 {{ lang.t('CLOSE') }}</button>
+
+    <div class="footer-left">
+      <button class="btn-save">{{ lang.t('NEW') }}</button>
+      <button class="btn-clear">{{ lang.t('EDIT') }}</button>
+      <button class="btn-clear">{{ lang.t('DELETE') }}</button>
+      <button class="btn-clear">{{ lang.t('PRINT') }}</button>
+      <button class="btn-clear">{{ lang.t('CLOSE') }}</button>
     </div>
 
-    <div class="nav-buttons">
-      <button class="nav-btn">|❮</button>
-      <button class="nav-btn">❮</button>
-      <button class="nav-btn">❯</button>
-      <button class="nav-btn">❯|</button>
+    <div class="footer-right modern-pagination">
+      <button class="page-btn" title="{{ lang.t('FIRST') }}">⏮</button>
+      <button class="page-btn" title="{{ lang.t('PREVIOUS') }}">◀</button>
+
+      <span class="page-info">
+        1 / 10
+      </span>
+
+      <button class="page-btn" title="{{ lang.t('NEXT') }}">▶</button>
+      <button class="page-btn" title="{{ lang.t('LAST') }}">⏭</button>
     </div>
+
   </div>
+
 </div>

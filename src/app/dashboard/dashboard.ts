@@ -16,6 +16,7 @@ import { DemandRegisterComponent } from '../report/demand-register/demand-regist
 import { AccountInfoComponent } from '../report/account-info/account-info';
 import { OutstandingComponent } from '../report/outstanding-demand/outstanding';
 import { MemberInfoComponent } from '../master/member-info/member-info';
+import { GrainInwardComponent } from '../master/grain-inward/grain-inward';
 
 
 @Component({
@@ -37,7 +38,8 @@ import { MemberInfoComponent } from '../master/member-info/member-info';
     DemandRegisterComponent,
     AccountInfoComponent,
     OutstandingComponent,
-    MemberInfoComponent
+    MemberInfoComponent,
+    GrainInwardComponent
   ],
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.scss']

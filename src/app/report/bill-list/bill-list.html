@@ -1,50 +1,70 @@
 <div class="form-container">
 
-  <!-- Header -->
+  <!-- ================= HEADER ================= -->
   <div class="form-header">
     <h2>{{ lang.t('BILL_LIST') }}</h2>
-
-    <!-- ✅ FIX: use btn-close -->
     <button class="btn-close" (click)="close()">✕</button>
   </div>
 
-  <!-- Content -->
+  <!-- ================= CONTENT ================= -->
   <div class="form-content">
 
-    <div class="form-grid">
+    <!-- ===== SECTION : BILL LIST FILTER ===== -->
+    <div class="section-box">
+      <h3 class="section-title">
+        {{ lang.t('BILL_LIST') }}
+      </h3>
 
-      <!-- Balance As On Date -->
-      <div class="form-group">
-        <label>{{ lang.t('BALANCE_AS_ON_DATE') }}</label>
-        <input type="date" [(ngModel)]="balanceDate" />
+      <div class="form-grid">
+
+        <!-- Balance As On Date -->
+        <div class="form-group">
+          <label>{{ lang.t('BALANCE_AS_ON_DATE') }}</label>
+          <input type="date" [(ngModel)]="balanceDate">
+        </div>
+
+        <!-- Account Type -->
+        <div class="form-group">
+          <label>{{ lang.t('ACCOUNT_TYPE') }}</label>
+          <select [(ngModel)]="accountType">
+            <option value="">{{ lang.t('SELECT') }}</option>
+            <option value="trader">{{ lang.t('TRADER_ACCOUNT') }}</option>
+            <option value="customer">{{ lang.t('CUSTOMER_ACCOUNT') }}</option>
+            <option value="supplier">{{ lang.t('SUPPLIER_ACCOUNT') }}</option>
+          </select>
+        </div>
+
       </div>
-
-      <!-- Account Type -->
-      <div class="form-group">
-        <label>{{ lang.t('ACCOUNT_TYPE') }}</label>
-        <select [(ngModel)]="accountType">
-          <option value="">{{ lang.t('SELECT') }}</option>
-          <option value="trader">{{ lang.t('TRADER_ACCOUNT') }}</option>
-          <option value="customer">{{ lang.t('CUSTOMER_ACCOUNT') }}</option>
-          <option value="supplier">{{ lang.t('SUPPLIER_ACCOUNT') }}</option>
-        </select>
-      </div>
-
     </div>
 
-    <!-- Actions -->
-    <div class="form-actions">
+  </div>
+ <!-- FIXED FOOTER (STANDARD FOR ALL REGISTERS) -->
+  <div class="form-footer">
 
-      <!-- ✅ FIX: use btn-save -->
-      <button class="btn-save" (click)="print()">
+    <!-- LEFT SIDE ACTIONS -->
+    <div class="footer-left">
+      <button class="btn-clear" (click)="print()">
         {{ lang.t('PRINT') }}
       </button>
 
-      <!-- ✅ FIX: use btn-clear -->
       <button class="btn-clear" (click)="close()">
         {{ lang.t('CLOSE') }}
       </button>
-
     </div>
+
+    <!-- RIGHT SIDE PAGINATION -->
+    <div class="footer-right modern-pagination">
+      <button class="page-btn" title="{{ lang.t('FIRST') }}">⏮</button>
+      <button class="page-btn" title="{{ lang.t('PREVIOUS') }}">◀</button>
+
+      <span class="page-info">
+        1 / 1
+      </span>
+
+      <button class="page-btn" title="{{ lang.t('NEXT') }}">▶</button>
+      <button class="page-btn" title="{{ lang.t('LAST') }}">⏭</button>
+    </div>
+
   </div>
+
 </div>

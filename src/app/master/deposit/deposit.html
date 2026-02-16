@@ -1,100 +1,140 @@
 <div class="form-container">
 
+  <!-- HEADER -->
   <div class="form-header">
-    <div class="title">{{ lang.t('DEPOSIT') }}</div>
-    <button class="close-top" (click)="onClose()">×</button>
+    <h2>{{ lang.t('DEPOSIT') }}</h2>
+    <button class="btn-close" (click)="onClose()">✕</button>
   </div>
 
-  <div class="form-body legacy-style">
-    
-    <div class="header-inputs row">
-      <div class="input-group">
-        <label>{{ lang.t('DEPOSIT_TYPE') }}</label>
-        <div class="radio-group">
-          <label *ngFor="let t of transactionTypes">
-            <input type="radio" name="type" [(ngModel)]="form.type" [value]="t.value">
-            {{ lang.getLang() === 'mr' ? t.labelMr : t.labelEn }}
-          </label>
+  <!-- CONTENT -->
+  <div class="form-content">
+
+    <!-- SECTION : DEPOSIT INFO -->
+    <div class="section-box">
+      <h3 class="section-title">{{ lang.t('DEPOSIT') }}</h3>
+
+      <!-- ROW 1 : Deposit Type (LABEL INLINE) -->
+      <div class="erp-row-1">
+        <div class="form-group">
+          <div class="radio-group">
+            <span class="radio-label">
+              {{ lang.t('DEPOSIT_TYPE') }} :
+            </span>
+
+            <label *ngFor="let t of transactionTypes">
+              <input type="radio"
+                     name="type"
+                     [(ngModel)]="form.type"
+                     [value]="t.value">
+              {{ lang.getLang() === 'mr' ? t.labelMr : t.labelEn }}
+            </label>
+          </div>
         </div>
       </div>
 
-      <div class="input-group date-group">
-        <label>{{ lang.t('DATE') }}</label>
-        <div class="search-box">
-          <input type="date" class="date-input" [(ngModel)]="form.date">
+      <!-- ROW 2 : Date -->
+      <div class="erp-row-1 second-row">
+        <div class="form-group">
+          <label>{{ lang.t('DATE') }}</label>
+          <input type="date" [(ngModel)]="form.date">
         </div>
       </div>
 
-      <div class="input-group">
-        <label>{{ lang.t('TRANSACTION_ID') }}</label>
-        <div class="search-box">
-          <input class="small-code" type="text" [(ngModel)]="form.transactionNo">
+      <!-- ROW 3 : Transaction ID -->
+      <div class="erp-row-1 second-row">
+        <div class="form-group">
+          <label>{{ lang.t('TRANSACTION_ID') }}</label>
+          <input type="text" [(ngModel)]="form.transactionNo">
         </div>
       </div>
+
+      <!-- ROW 4 : Supplier -->
+      <div class="erp-row-2 second-row">
+        <div class="form-group inline-group">
+          <label>{{ lang.t('SUPPLIER_ID') }}</label>
+          <div class="inline-fields">
+            <select [(ngModel)]="form.partyCode"
+                    (ngModelChange)="onPartyChange($event)">
+              <option value="">Select</option>
+              <option *ngFor="let p of parties" [value]="p.code">
+                {{ p.code }}
+              </option>
+            </select>
+
+            <input type="text"
+                   [value]="form.partyName"
+                   disabled>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 5 : Buyer -->
+      <div class="erp-row-1 second-row">
+        <div class="form-group">
+          <label>{{ lang.t('BUYER_NAME') }}</label>
+          <input type="text"
+                 [(ngModel)]="form.receivedFrom">
+        </div>
+      </div>
+
     </div>
 
-    <div class="header-inputs row">
-      <div class="input-group full-width">
-        <label>{{ lang.t('SUPPLIER_ID') }}</label>
-        <div class="search-box">
-          <select class="dropdown-select" [(ngModel)]="form.partyCode" (ngModelChange)="onPartyChange($event)">
-            <option value="">Select</option>
-            <option *ngFor="let p of parties" [value]="p.code">{{ p.code }}</option>
-          </select>
-          <input class="display-name" type="text" [value]="form.partyName" disabled>
+    <!-- SECTION : AMOUNT -->
+    <div class="section-box">
+
+      <!-- ROW 6 : Amount -->
+      <div class="erp-row-1">
+        <div class="form-group">
+          <label>{{ lang.t('AMOUNT') }}</label>
+          <input type="number"
+                 [(ngModel)]="form.amount"
+                 (ngModelChange)="onAmountChange()">
         </div>
       </div>
-    </div>
 
-    <div class="header-inputs row">
-      <div class="input-group full-width">
-        <label>{{ lang.t('BUYER_NAME') }}</label>
-        <div class="search-box">
-          <input type="text" class="full-input" [(ngModel)]="form.receivedFrom">
+      <!-- ROW 7 : Total Nos -->
+      <div class="erp-row-1 second-row">
+        <div class="form-group">
+          <label>{{ lang.t('TOTAL_NOS') }}</label>
+          <input class="total-input"
+                 [value]="form.totalAmount"
+                 disabled>
         </div>
       </div>
-    </div>
 
-    <hr class="divider">
-
-    <div class="header-inputs row space-between">
-      <div class="input-group">
-        <label>{{ lang.t('AMOUNT') }}</label>
-        <div class="search-box">
-          <input type="number" [(ngModel)]="form.amount" (ngModelChange)="onAmountChange()">
+      <!-- ROW 8 : Remarks -->
+      <div class="erp-row-1 second-row">
+        <div class="form-group full-width">
+          <label>{{ lang.t('REMARKS') }}</label>
+          <textarea [(ngModel)]="form.remarks"></textarea>
         </div>
       </div>
-      <div class="input-group">
-        <label>{{ lang.t('TOTAL_NOS') }} :</label>
-        <input class="total-input" [value]="form.totalAmount" disabled>
-      </div>
-    </div>
 
-    <div class="header-inputs row">
-      <div class="input-group full-width">
-        <label>{{ lang.t('REMARKS') }}</label>
-        <textarea [(ngModel)]="form.remarks"></textarea>
-      </div>
     </div>
 
   </div>
 
+  <!-- FOOTER -->
   <div class="form-footer">
-    <div class="action-buttons">
-      <button class="btn-action" (click)="onNew()">
-        <span class="icon">📄</span> {{ lang.t('NEW') }}
+
+    <div class="footer-left">
+      <button class="btn-save" (click)="onNew()">
+        {{ lang.t('NEW') }}
       </button>
-      <button class="btn-form-close" (click)="onClose()">
-        <span class="icon">📁</span> {{ lang.t('CLOSE') }}
+
+      <button class="btn-clear" (click)="onClose()">
+        {{ lang.t('CLOSE') }}
       </button>
     </div>
 
-    <div class="nav-buttons">
-      <button class="nav-btn">|&lt;</button>
-      <button class="nav-btn">&lt;</button>
-      <button class="nav-btn">&gt;</button>
-      <button class="nav-btn">&gt;|</button>
+    <div class="footer-right modern-pagination">
+      <button class="page-btn">⏮</button>
+      <button class="page-btn">◀</button>
+      <span class="page-info">1 / 1</span>
+      <button class="page-btn">▶</button>
+      <button class="page-btn">⏭</button>
     </div>
+
   </div>
 
 </div>

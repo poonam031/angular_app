@@ -1,37 +1,65 @@
 <div class="form-container">
 
+  <!-- HEADER -->
   <div class="form-header">
-    <h2>{{ lang.t('DEMAND_REGISTER') }}</h2>
+    <h2>{{ lang.t('STOCK_REGISTER') }}</h2>
     <button class="btn-close" (click)="close()">✕</button>
   </div>
 
+  <!-- CONTENT -->
   <div class="form-content">
 
     <div class="form-grid">
+
+      <!-- START CODE -->
       <div class="form-group">
         <label>{{ lang.t('START_CODE') }}</label>
         <input type="text" [(ngModel)]="startCode">
       </div>
 
+      <!-- END CODE -->
       <div class="form-group">
         <label>{{ lang.t('END_CODE') }}</label>
         <input type="text" [(ngModel)]="endCode">
       </div>
 
+      <!-- DATE -->
       <div class="form-group">
         <label>{{ lang.t('DATE') }}</label>
         <input type="date" [(ngModel)]="date">
       </div>
+
     </div>
 
-    <div class="form-actions">
-      <button class="btn-save" (click)="print()">
+  </div>
+
+  <!-- FIXED FOOTER (SAME AS ITEM INFO / DEMAND REGISTER) -->
+  <div class="form-footer">
+
+    <!-- LEFT SIDE ACTIONS -->
+    <div class="footer-left">
+      <button class="btn-clear" (click)="print()">
         {{ lang.t('PRINT') }}
       </button>
+
       <button class="btn-clear" (click)="close()">
         {{ lang.t('CLOSE') }}
       </button>
     </div>
 
+    <!-- RIGHT SIDE PAGINATION -->
+    <div class="footer-right modern-pagination">
+      <button class="page-btn" title="{{ lang.t('FIRST') }}">⏮</button>
+      <button class="page-btn" title="{{ lang.t('PREVIOUS') }}">◀</button>
+
+      <span class="page-info">
+        1 / 1
+      </span>
+
+      <button class="page-btn" title="{{ lang.t('NEXT') }}">▶</button>
+      <button class="page-btn" title="{{ lang.t('LAST') }}">⏭</button>
+    </div>
+
   </div>
+
 </div>

@@ -1,49 +1,78 @@
 <div class="form-container">
 
-  <!-- HEADER -->
+  <!-- ================= HEADER ================= -->
   <div class="form-header">
     <h2>{{ lang.t('OUTSTANDING_DEMAND') }}</h2>
     <button class="btn-close" (click)="close()">✕</button>
   </div>
 
-  <!-- CONTENT -->
+  <!-- ================= CONTENT ================= -->
   <div class="form-content">
 
-    <div class="form-grid">
+    <!-- ===== SECTION : OUTSTANDING DEMAND FILTER ===== -->
+    <div class="section-box">
+      <h3 class="section-title">
+        {{ lang.t('OUTSTANDING_DEMAND') }}
+      </h3>
 
-      <div class="form-group">
-        <label>{{ lang.t('FROM_DATE') }}</label>
-        <input type="date" [(ngModel)]="fromDate">
+      <div class="form-grid">
+
+        <!-- From Date -->
+        <div class="form-group">
+          <label>{{ lang.t('FROM_DATE') }}</label>
+          <input type="date" [(ngModel)]="fromDate">
+        </div>
+
+        <!-- To Date -->
+        <div class="form-group">
+          <label>{{ lang.t('TO_DATE') }}</label>
+          <input type="date" [(ngModel)]="toDate">
+        </div>
+
+        <!-- Location -->
+        <div class="form-group">
+          <label>{{ lang.t('LOCATION') }}</label>
+          <select [(ngModel)]="location">
+            <option value="" disabled hidden>
+              {{ lang.t('ENTER') }}
+            </option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+          </select>
+        </div>
+
       </div>
-
-      <div class="form-group">
-        <label>{{ lang.t('TO_DATE') }}</label>
-        <input type="date" [(ngModel)]="toDate">
-      </div>
-
-      <div class="form-group">
-        <label>{{ lang.t('LOCATION') }}</label>
-        <select [(ngModel)]="location">
-          <option value="" disabled hidden>
-            {{ lang.t('ENTER') }}
-          </option>
-          <option value="A">A</option>
-          <option value="B">B</option>
-          <option value="C">C</option>
-          <option value="D">D</option>
-        </select>
-      </div>
-
     </div>
 
-    <!-- ACTIONS -->
-    <div class="form-actions">
-      <button class="btn-save" (click)="search()">
+  </div>
+
+  <!-- ================= FIXED FOOTER ================= -->
+  <div class="form-footer">
+
+    <!-- LEFT SIDE ACTIONS -->
+    <div class="footer-left">
+      <button class="btn-clear" (click)="search()">
         {{ lang.t('PRINT') }}
       </button>
+
       <button class="btn-clear" (click)="close()">
         {{ lang.t('CLOSE') }}
       </button>
+    </div>
+
+    <!-- RIGHT SIDE PAGINATION -->
+    <div class="footer-right modern-pagination">
+      <button class="page-btn" title="{{ lang.t('FIRST') }}">⏮</button>
+      <button class="page-btn" title="{{ lang.t('PREVIOUS') }}">◀</button>
+
+      <span class="page-info">
+        1 / 1
+      </span>
+
+      <button class="page-btn" title="{{ lang.t('NEXT') }}">▶</button>
+      <button class="page-btn" title="{{ lang.t('LAST') }}">⏭</button>
     </div>
 
   </div>

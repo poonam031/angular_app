@@ -1,119 +1,160 @@
 <div class="form-container">
+
+  <!-- ================= HEADER ================= -->
   <div class="form-header">
-    <span class="title">क्रेडिट सेल (Credit Sale)</span>
-    <button class="close-top" (click)="onClose()">✕</button>
+    <h2>क्रेडिट सेल (Credit Sale)</h2>
+    <button class="btn-close" (click)="onClose()">✕</button>
   </div>
 
-  <div class="form-body">
-    <div class="header-inputs">
-      <div class="input-group">
-        <label>गोडाऊन कोड</label>
-        <div class="search-box">
-          <select [(ngModel)]="godownCode" (change)="onGodownChange()" class="dropdown-select">
-            <option value="">-- उदा --</option>
-            <option *ngFor="let godown of godownList" value="{{ godown.code }}">{{ godown.code }}</option>
-          </select>
-          <input type="text" [(ngModel)]="godownName" class="display-name" readonly>
-        </div>
-      </div>
-      <div class="input-group date-group">
-        <label>बिल तारीख</label>
-        <input type="date" [(ngModel)]="billDate" class="date-input">
+  <!-- ================= CONTENT ================= -->
+  <div class="form-content">
+
+  <!-- ===== SECTION 1 : SALE INFORMATION ===== -->
+<div class="section-box">
+  <h3 class="section-title">
+    विक्री माहिती
+  </h3>
+
+  <!-- ===== ROW 1 ===== -->
+  <div class="form-grid">
+
+    <!-- GODOWN : CODE + NAME -->
+    <div class="form-group inline-group">
+      <label>गोडाऊन कोड</label>
+      <div class="inline-fields">
+        <select [(ngModel)]="godownCode"
+                (ngModelChange)="onGodownChange()">
+          <option value="">-- उदा --</option>
+          <option *ngFor="let godown of godownList"
+                  [value]="godown.code">
+            {{ godown.code }}
+          </option>
+        </select>
+
+        <input type="text"
+               [(ngModel)]="godownName"
+               disabled>
       </div>
     </div>
 
-    <div class="header-inputs">
-      <div class="input-group">
-        <label>बिल नंबर</label>
-        <div class="search-box">
-          <select [(ngModel)]="billNo" (change)="onBillNoChange()" class="dropdown-select">
-            <option value="">-- उदा --</option>
-            <option *ngFor="let bill of billNoList" value="{{ bill.no }}">{{ bill.no }}</option>
-          </select>
-        </div>
+    <!-- BILL DATE -->
+    <div class="form-group">
+      <label>बिल तारीख</label>
+      <input type="date"
+             [(ngModel)]="billDate">
+    </div>
+
+  </div>
+
+  <!-- ===== ROW 2 ===== -->
+  <div class="form-grid second-row">
+
+    <!-- BILL NO -->
+    <div class="form-group">
+      <label>बिल नंबर</label>
+      <select [(ngModel)]="billNo"
+              (ngModelChange)="onBillNoChange()">
+        <option value="">-- उदा --</option>
+        <option *ngFor="let bill of billNoList"
+                [value]="bill.no">
+          {{ bill.no }}
+        </option>
+      </select>
+    </div>
+
+    <!-- MEMBER : CODE + NAME -->
+    <div class="form-group inline-group">
+      <label>सभासद कोड</label>
+      <div class="inline-fields">
+        <select [(ngModel)]="memberCode"
+                (ngModelChange)="onMemberChange()">
+          <option value="">-- उदा --</option>
+          <option *ngFor="let member of memberList"
+                  [value]="member.code">
+            {{ member.code }}
+          </option>
+        </select>
+
+        <input type="text"
+               [(ngModel)]="memberName"
+               disabled>
       </div>
     </div>
 
-    <div class="header-inputs">
-      <div class="input-group">
-        <label>सभासद कोड</label>
-        <div class="search-box">
-          <select [(ngModel)]="memberCode" (change)="onMemberChange()" class="dropdown-select">
-            <option value="">-- उदा --</option>
-            <option *ngFor="let member of memberList" value="{{ member.code }}">{{ member.code }}</option>
-          </select>
-          <input type="text" [(ngModel)]="memberName" class="display-name" readonly>
-        </div>
-      </div>
-      <div class="input-group">
-        <label>खाते बाकी</label>
-        <input type="text" [(ngModel)]="accountBalance" class="balance-input" readonly>
-      </div>
+    <!-- ACCOUNT BALANCE -->
+    <div class="form-group">
+      <label>खाते बाकी</label>
+      <input type="text"
+             [(ngModel)]="accountBalance"
+             disabled>
     </div>
 
-    <div class="tables-grid">
-      <div class="table-container main-table">
+  </div>
+</div>
+
+
+    <!-- ===== SECTION 2 : ITEM DETAILS ===== -->
+    <div class="section-box">
+      <h3 class="section-title">
+        आयटम तपशील
+      </h3>
+
+      <div class="table-container">
         <table class="item-table">
           <thead>
             <tr>
-              <th>आयटम</th>
+              <th style="width:120px;">आयटम</th>
               <th>आयटमचे नांव</th>
-              <th>नग</th>
-              <th>दर</th>
-              <th>रक्कम</th>
+              <th style="width:120px;">नग</th>
+              <th style="width:120px;">दर</th>
+              <th style="width:140px;">रक्कम</th>
             </tr>
           </thead>
+
           <tbody>
             <tr *ngFor="let item of items">
-              <td>{{item.code}}</td>
-              <td>{{item.name}}</td>
-              <td>{{item.qty}}</td>
-              <td>{{item.rate | number:'1.2-2'}}</td>
-              <td>{{item.amount | number:'1.2-2'}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="table-container side-table">
-        <table class="item-table">
-          <thead>
-            <tr>
-              <th>कोड</th>
-              <th>आयटमचे नांव</th>
-              <th>नग</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let row of [1,2,3,4,5,6]">
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
+              <td>{{ item.code }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.qty }}</td>
+              <td>{{ item.rate | number:'1.2-2' }}</td>
+              <td>{{ item.amount | number:'1.2-2' }}</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
+    <!-- ===== SECTION 3 : TOTAL ===== -->
     <div class="total-bar">
-      <label>बिलाची रक्कम</label>
-      <input type="text" [value]="totalAmount | number:'1.2-2'" readonly class="grand-total">
+      <label>बिलाची रक्कम :</label>
+      <input class="grand-total"
+             [value]="totalAmount | number:'1.2-2'"
+             disabled>
     </div>
+
   </div>
 
+  <!-- ================= FOOTER ================= -->
   <div class="form-footer">
-    <div class="action-buttons">
-      <button class="btn-action"><span class="icon">📄</span> नवीन</button>
-      <button class="btn-action"><span class="icon">✔️</span> दुरुस्ती</button>
-      <button class="btn-action"><span class="icon">❌</span> रद्द</button>
-      <button class="btn-action"><span class="icon">🖨️</span> छपाई</button>
-      <button class="btn-action" (click)="onClose()"><span class="icon">📁</span> बंद</button>
+
+    <!-- LEFT ACTIONS -->
+    <div class="footer-left">
+      <button class="btn-save">नवीन</button>
+      <button class="btn-clear">दुरुस्ती</button>
+      <button class="btn-clear">रद्द</button>
+      <button class="btn-clear">छपाई</button>
+      <button class="btn-clear" (click)="onClose()">बंद</button>
     </div>
-    <div class="nav-buttons">
-      <button class="nav-btn">|❮</button>
-      <button class="nav-btn">❮</button>
-      <button class="nav-btn">❯</button>
-      <button class="nav-btn">❯|</button>
+
+    <!-- RIGHT PAGINATION -->
+    <div class="footer-right modern-pagination">
+      <button class="page-btn" title="First">⏮</button>
+      <button class="page-btn" title="Previous">◀</button>
+      <span class="page-info">1 / 10</span>
+      <button class="page-btn" title="Next">▶</button>
+      <button class="page-btn" title="Last">⏭</button>
     </div>
+
   </div>
+
 </div>

@@ -148,15 +148,34 @@ export type TranslationKey =
   | 'TRADER_ACCOUNT'
   | 'CUSTOMER_ACCOUNT'
   | 'SUPPLIER_ACCOUNT'
-
+  | 'ACCOUNT_STATEMENT'
   | 'SALE_TYPE'
 
   | 'REFERENCE_CODE'
   | 'REPORT_CODE'
   | 'REFERENCE_DATE'
   | 'REPORT_DATE'
-  | 'START_CODE';
-;
+  | 'START_CODE'
+
+  |'DEMAND_INFO'
+  | 'ITEM_DETAILS'
+  |'INWARD_INFO'
+
+
+
+   | 'FIRST'
+  | 'PREVIOUS'
+  | 'NEXT'
+  | 'LAST'
+  | 'PURCHASE_RATE'
+  | 'RATE_TYPE'
+  | 'RATE_1'
+  | 'RATE_10'
+  | 'RATE_100'
+  | 'SALE_RATE'
+  | 'SALE_INFO'
+  | 'MOBILE_NUMBER';
+
 
 
 /* 3️⃣ Dictionary shape */
@@ -179,7 +198,7 @@ export class LanguageService {
       ITEM_INFO_TITLE: 'आयटम माहिती',
       ITEM_ID: 'आयटम ID',
       ITEM_CODE: 'आयटम कोड',
-      ITEM_NAME: 'आयटम नाव',
+      ITEM_NAME: 'आयटमचे  नाव',
       ITEM_LIST_NAME: 'आयटमचे नाव',
       ITEM_AMOUNT: 'रक्कम',
 
@@ -187,8 +206,8 @@ export class LanguageService {
       MEMBER_INFO_TITLE: 'सभासद माहिती',
       MEMBER_ID: 'सभासद ID',
       MEMBER_CODE: 'सभासद कोड',
-      MEMBER_NAME: 'सभासद नाव',
-      MEMBER_NUMBER: 'सभासद क्रमांक',
+      MEMBER_NAME: 'सभासदाचे नाव',
+      MEMBER_NUMBER: 'सभासद नंबर',
       FATHER_NAME: 'वडिलांचे नाव',
       CONTACT_NUMBER: 'संपर्क क्रमांक',
       ADDRESS: 'पत्ता',
@@ -249,7 +268,7 @@ export class LanguageService {
 
       QUANTITY_QTL: 'प्रमाण (क्विंटल)',
       QUANTITY_SOLD: 'विक्री प्रमाण',
-      NOS: 'नग',
+      NOS: 'नग मर्यादा',
       TOTAL_NOS: 'एकूण नग',
       TOTAL_QTY: 'एकूण नग',
       TOTAL_AMOUNT: 'एकूण रक्कम',
@@ -323,6 +342,27 @@ REFERENCE_DATE: 'संदर्भ तारीख',
 REPORT_DATE: 'अहवाल तारीख',
 START_CODE: 'प्रारंभ कोड',
 
+DEMAND_INFO: 'मागणी माहिती',
+    ITEM_DETAILS: 'वस्तू तपशील',
+    INWARD_INFO: 'आवक माहिती',
+
+
+     SALE_RATE: "विक्री दर",
+      PURCHASE_RATE: "खरेदी दर",
+      RATE_TYPE: "दर प्रत्येकी",
+      RATE_1: "१",
+      RATE_10: "१०",
+      RATE_100: "१००",
+      FIRST: "पहिला",
+      PREVIOUS: "मागील",
+      NEXT: "पुढील",
+      LAST: "शेवटचा",
+      SALE_INFO: 'विक्री माहिती',
+      MOBILE_NUMBER: 'मोबाईल नंबर',
+      ACCOUNT_STATEMENT: 'खाते विवरण',
+
+
+
 
 
     },
@@ -339,6 +379,8 @@ START_CODE: 'प्रारंभ कोड',
       ITEM_NAME: 'Item Name',
       ITEM_LIST_NAME: 'Item Name',
       ITEM_AMOUNT: 'Amount',
+      ACCOUNT_STATEMENT: 'Account Statement',
+
 
       MEMBER_INFO: 'Member Info',
       MEMBER_INFO_TITLE: 'Member Information',
@@ -354,6 +396,8 @@ START_CODE: 'प्रारंभ कोड',
       MALE: 'Male',
       FEMALE: 'Female',
       ACTIVE_STATUS: 'Status',
+          SALE_INFO: 'Sale Information',
+
 
       SUPPLIER_INFO: 'Supplier Info',
       SUPPLIER_INFO_TITLE: 'Supplier Information',
@@ -450,37 +494,49 @@ START_CODE: 'प्रारंभ कोड',
       END_CODE: 'End Code',
 
       BUYER_NAME: 'Buyer Name',
-REMARKS: 'Remarks',
-GODOWN: 'Godown',
-ITEM: 'Item',
-GODOWN_CODE: 'Godown Code',
+      REMARKS: 'Remarks',
+      GODOWN: 'Godown',
+      ITEM: 'Item',
+      GODOWN_CODE: 'Godown Code',
 
-ACCOUNT_CODE: 'Account Code',
-ACCOUNT_NAME: 'Account Name',
+      ACCOUNT_CODE: 'Account Code',
+      ACCOUNT_NAME: 'Account Name',
 
-NO: 'No',
-DETAILS: 'Details',
+      NO: 'No',
+      DETAILS: 'Details',
 
-CREDIT_AMOUNT: 'Credit Amount',
-DEBIT_AMOUNT: 'Debit Amount',
-BALANCE: 'Balance',
-REFERENCE_NO: 'Reference No',
+      CREDIT_AMOUNT: 'Credit Amount',
+      DEBIT_AMOUNT: 'Debit Amount',
+      BALANCE: 'Balance',
+      REFERENCE_NO: 'Reference No',
 
-BALANCE_AS_ON_DATE: 'Balance As On Date',
-ACCOUNT_TYPE: 'Account Type',
-TRADER_ACCOUNT: 'Trader Account',
-CUSTOMER_ACCOUNT: 'Customer Account',
-SUPPLIER_ACCOUNT: 'Supplier Account',
+      BALANCE_AS_ON_DATE: 'Balance As On Date',
+      ACCOUNT_TYPE: 'Account Type',
+      TRADER_ACCOUNT: 'Trader Account',
+      CUSTOMER_ACCOUNT: 'Customer Account',
+      SUPPLIER_ACCOUNT: 'Supplier Account',
 
-SALE_TYPE: 'Sale Type',
+      SALE_TYPE: 'Sale Type',
 
-REFERENCE_CODE: 'Reference Code',
-REPORT_CODE: 'Report Code',
-REFERENCE_DATE: 'Reference Date',
-REPORT_DATE: 'Report Date',
-START_CODE: 'Start Code',
-
-
+      REFERENCE_CODE: 'Reference Code',
+      REPORT_CODE: 'Report Code',
+      REFERENCE_DATE: 'Reference Date',
+      REPORT_DATE: 'Report Date',
+      START_CODE: 'Start Code',
+      DEMAND_INFO: 'Demand Information',
+      ITEM_DETAILS: 'Item Details',
+      INWARD_INFO: 'Inward Information',
+      FIRST: 'First',
+      PREVIOUS: 'Previous',
+      NEXT: 'Next',
+      LAST: 'Last',
+      PURCHASE_RATE: 'Purchase Rate',
+      RATE_TYPE: 'Rate Type',
+      RATE_1: '1',
+      RATE_10: '10',
+      RATE_100: '100',
+      SALE_RATE: '',
+      MOBILE_NUMBER: 'Mobile Number',
 
     }
   };

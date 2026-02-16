@@ -2,109 +2,107 @@
 
   <!-- HEADER -->
   <div class="form-header">
-    <div class="title">{{ lang.t('MEMBER_INFO_TITLE') }}</div>
-    <button class="close-top" (click)="onClose()">×</button>
+    <h2>{{ lang.t('MEMBER_INFO_TITLE') }}</h2>
+    <button class="btn-close" (click)="onClose()">✕</button>
   </div>
 
-  <!-- BODY -->
-  <div class="form-body">
-
-    <div class="header-inputs">
+  <!-- CONTENT -->
+  <div class="form-content">
+    <div class="form-grid">
 
       <!-- MEMBER CODE -->
-      <div class="input-group">
+      <div class="form-group">
         <label>{{ lang.t('MEMBER_CODE') }}</label>
-        <div class="search-box">
-          <input type="text"
-                 class="small-code"
-                 [(ngModel)]="memberCode">
-        </div>
+        <input type="text"
+               [(ngModel)]="memberCode">
       </div>
 
       <!-- MEMBER NAME -->
-      <div class="input-group full-width">
+      <div class="form-group">
         <label>{{ lang.t('MEMBER_NAME') }}</label>
-        <div class="search-box">
-          <input type="text"
-                 [(ngModel)]="memberName">
-        </div>
+        <input type="text"
+               [(ngModel)]="memberName">
       </div>
 
-      <!-- FATHER NAME -->
-      <div class="input-group full-width">
-        <label>{{ lang.t('FATHER_NAME') }}</label>
-        <div class="search-box">
-          <input type="text"
-                 [(ngModel)]="fatherName">
-        </div>
+          <!-- MOBILE NUMBER -->
+      <div class="form-group">
+        <label>{{ lang.t('MOBILE_NUMBER') }}</label>
+        <input
+          type="tel"
+          maxlength="10"
+          placeholder="Enter mobile number"
+          [(ngModel)]="mobileNumber">
       </div>
+
 
       <!-- MEMBER NUMBER -->
-      <div class="input-group">
+      <div class="form-group">
         <label>{{ lang.t('MEMBER_NUMBER') }}</label>
-        <div class="search-box">
-          <input type="text"
-                 class="small-code"
-                 [(ngModel)]="memberNumber">
-        </div>
+        <input type="text"
+               [(ngModel)]="memberNumber">
       </div>
 
       <!-- GENDER -->
-      <div class="input-group">
+      <div class="form-group">
         <label>{{ lang.t('TYPE') }}</label>
-        <div class="search-box">
-          <label>
+
+        <div class="radio-group">
+          <label class="radio-item">
             <input type="radio"
                    value="male"
                    [(ngModel)]="gender">
-            {{ lang.t('MALE') }}
+            <span>{{ lang.t('MALE') }}</span>
           </label>
 
-          <label>
+          <label class="radio-item">
             <input type="radio"
                    value="female"
                    [(ngModel)]="gender">
-            {{ lang.t('FEMALE') }}
+            <span>{{ lang.t('FEMALE') }}</span>
           </label>
         </div>
       </div>
 
     </div>
-
   </div>
 
   <!-- FOOTER -->
   <div class="form-footer">
 
-    <div class="action-buttons">
-
-      <button class="btn-action" (click)="onNew()">
+    <!-- LEFT ACTIONS -->
+    <div class="footer-left">
+      <button class="btn-save" (click)="onNew()">
         {{ lang.t('NEW') }}
       </button>
 
-      <button class="btn-save" (click)="onEdit()">
+      <button class="btn-clear" (click)="onEdit()">
         {{ lang.t('EDIT') }}
       </button>
 
-      <button class="btn-cancel" (click)="onDelete()">
+      <button class="btn-clear" (click)="onDelete()">
         {{ lang.t('DELETE') }}
       </button>
 
-      <button class="btn-action" (click)="onPrint()">
+      <button class="btn-clear" (click)="onPrint()">
         {{ lang.t('PRINT') }}
       </button>
 
-      <button class="btn-close" (click)="onClose()">
+      <button class="btn-clear" (click)="onClose()">
         {{ lang.t('CLOSE') }}
       </button>
-
     </div>
 
-    <div class="nav-buttons">
-      <button class="nav-btn">|&lt;</button>
-      <button class="nav-btn">&lt;</button>
-      <button class="nav-btn">&gt;</button>
-      <button class="nav-btn">&gt;|</button>
+    <!-- RIGHT PAGINATION -->
+    <div class="footer-right modern-pagination">
+      <button class="page-btn" title="First">⏮</button>
+      <button class="page-btn" title="Previous">◀</button>
+
+      <span class="page-info">
+        1 / 10
+      </span>
+
+      <button class="page-btn" title="Next">▶</button>
+      <button class="page-btn" title="Last">⏭</button>
     </div>
 
   </div>

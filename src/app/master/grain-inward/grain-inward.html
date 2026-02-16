@@ -1,114 +1,153 @@
 <div class="form-container">
 
-  <!-- HEADER -->
+  <!-- ================= HEADER ================= -->
   <div class="form-header">
-    <span class="title">{{ lang.t('GRAIN_INWARD_TITLE') }}</span>
-    <button class="close-top" (click)="onClose()">✕</button>
+    <h2>{{ lang.t('GRAIN_INWARD_TITLE') }}</h2>
+    <button class="btn-close" (click)="onClose()">✕</button>
   </div>
 
-  <div class="form-body">
+  <!-- ================= CONTENT ================= -->
+  <div class="form-content">
 
-    <!-- HEADER FIELDS -->
-    <div class="header-inputs">
+    <!-- ===== SECTION 1 : INWARD INFORMATION ===== -->
+    <div class="section-box">
+      <h3 class="section-title">
+        {{ lang.t('INWARD_INFO') }}
+      </h3>
 
-      <div class="input-group">
-        <label>{{ lang.t('GODOWN_CODE') }}</label>
-        <div class="search-box">
-          <input [(ngModel)]="godownCode" class="small-code">
-          <input [(ngModel)]="godownName" class="display-name" readonly>
+      <!-- ===== ROW 1 ===== -->
+      <div class="form-grid">
+
+        <!-- GODOWN : CODE + NAME -->
+        <div class="form-group inline-group">
+          <label>{{ lang.t('GODOWN_CODE') }}</label>
+          <div class="inline-fields">
+            <input type="text"
+                   [(ngModel)]="godownCode"
+                   class="small-input">
+
+            <input type="text"
+                   [(ngModel)]="godownName"
+                   disabled>
+          </div>
         </div>
+
+        <!-- BILL NO -->
+        <div class="form-group">
+          <label>{{ lang.t('BILL_NO') }}</label>
+          <input type="text"
+                 [(ngModel)]="billNo">
+        </div>
+
+        <!-- DATE -->
+        <div class="form-group">
+          <label>{{ lang.t('DATE') }}</label>
+          <input type="date"
+                 [(ngModel)]="billDate">
+        </div>
+
       </div>
 
-      <div class="input-group">
-        <label>{{ lang.t('BILL_NO') }}</label>
-        <input [(ngModel)]="billNo">
-      </div>
+      <!-- ===== ROW 2 ===== -->
+      <div class="form-grid second-row">
 
-      <div class="input-group date-group">
-        <label>{{ lang.t('DATE') }}</label>
-        <input type="date"
-               [(ngModel)]="billDate"
-               class="date-input">
-      </div>
+        <!-- FARMER NAME -->
+        <div class="form-group">
+          <label>{{ lang.t('FARMER_NAME') }}</label>
+          <input type="text"
+                 [(ngModel)]="farmerName">
+        </div>
 
+        <!-- MEMBER CODE -->
+        <div class="form-group">
+          <label>{{ lang.t('MEMBER_CODE') }}</label>
+          <input type="text"
+                 [(ngModel)]="memberCode">
+        </div>
+
+      </div>
     </div>
 
-    <div class="header-inputs">
+    <!-- ===== SECTION 2 : ITEM DETAILS ===== -->
+    <div class="section-box">
+      <h3 class="section-title">
+        {{ lang.t('ITEM_DETAILS') }}
+      </h3>
 
-      <div class="input-group">
-        <label>{{ lang.t('FARMER_NAME') }}</label>
-        <input [(ngModel)]="farmerName">
+      <div class="table-container">
+        <table class="item-table">
+          <thead>
+            <tr>
+              <th>{{ lang.t('ITEM_CODE') }}</th>
+              <th>{{ lang.t('ITEM_LIST_NAME') }}</th>
+              <th style="text-align:right;">{{ lang.t('NOS') }}</th>
+              <th style="text-align:right;">{{ lang.t('RATE') }}</th>
+              <th style="text-align:right;">{{ lang.t('AMOUNT') }}</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td>{{ item.code }}</td>
+              <td>{{ item.name }}</td>
+              <td>
+                <input type="number"
+                       [(ngModel)]="item.qty"
+                       (ngModelChange)="calculateTotal()">
+              </td>
+              <td>
+                <input type="number"
+                       [(ngModel)]="item.rate"
+                       (ngModelChange)="calculateTotal()">
+              </td>
+              <td style="text-align:right;">
+                {{ item.amount | number:'1.2-2' }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-
-      <div class="input-group">
-        <label>{{ lang.t('MEMBER_CODE') }}</label>
-        <input [(ngModel)]="memberCode" class="small-code">
-      </div>
-
     </div>
 
-    <!-- TABLE -->
-    <div class="table-container">
-      <table class="item-table">
-        <thead>
-          <tr>
-            <th>{{ lang.t('ITEM_CODE') }}</th>
-            <th>{{ lang.t('ITEM_LIST_NAME') }}</th>
-            <th>{{ lang.t('NOS') }}</th>
-            <th>{{ lang.t('RATE') }}</th>
-            <th>{{ lang.t('AMOUNT') }}</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr *ngFor="let item of items">
-            <td>{{ item.code }}</td>
-            <td>{{ item.name }}</td>
-            <td>
-              <input type="number"
-                     [(ngModel)]="item.qty"
-                     (ngModelChange)="calculateTotal()">
-            </td>
-            <td>
-              <input type="number"
-                     [(ngModel)]="item.rate"
-                     (ngModelChange)="calculateTotal()">
-            </td>
-            <td>{{ item.amount | number:'1.2-2' }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- TOTAL -->
+    <!-- ===== SECTION 3 : TOTAL ===== -->
     <div class="total-bar">
       <label>{{ lang.t('TOTAL_AMOUNT') }}</label>
-      <input class="grand-total"
+      <input class="total-input"
              [value]="totalAmount | number:'1.2-2'"
-             readonly>
+             disabled>
     </div>
 
   </div>
 
-  <!-- FOOTER -->
+  <!-- ================= FOOTER ================= -->
   <div class="form-footer">
 
-    <div class="action-buttons">
-      <button class="btn-action">{{ lang.t('NEW') }}</button>
-      <button class="btn-action">{{ lang.t('EDIT') }}</button>
-      <button class="btn-save" (click)="onSave()">
+    <!-- LEFT ACTIONS -->
+    <div class="footer-left">
+      <button class="btn-save" (click)="onNew()">
+        {{ lang.t('NEW') }}
+      </button>
+
+      <button class="btn-clear" (click)="onEdit()">
+        {{ lang.t('EDIT') }}
+      </button>
+
+      <button class="btn-clear" (click)="onSave()">
         {{ lang.t('SAVE') }}
       </button>
-      <button class="btn-close" (click)="onClose()">
+
+      <button class="btn-clear" (click)="onClose()">
         {{ lang.t('CLOSE') }}
       </button>
     </div>
 
-    <div class="nav-buttons">
-      <button class="nav-btn">|❮</button>
-      <button class="nav-btn">❮</button>
-      <button class="nav-btn">❯</button>
-      <button class="nav-btn">❯|</button>
+    <!-- RIGHT PAGINATION -->
+    <div class="footer-right modern-pagination">
+      <button class="page-btn">⏮</button>
+      <button class="page-btn">◀</button>
+      <span class="page-info">1 / 10 {{ items.length }}</span>
+      <button class="page-btn">▶</button>
+      <button class="page-btn">⏭</button>
     </div>
 
   </div>

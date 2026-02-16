@@ -1,35 +1,48 @@
 <div class="form-container">
+
+  <!-- HEADER -->
   <div class="form-header">
-    <span class="title">सप्लायर मास्टर</span>
-    <button class="close-btn" (click)="onClose()">✕</button>
+    <h2>सप्लायर मास्टर</h2>
+    <button class="btn-close" (click)="onClose()">✕</button>
   </div>
 
-  <div class="form-body">
-    <div class="input-group">
-      <label>सप्लायर कोड</label>
-      <input type="text" [(ngModel)]="supplierCode" class="code-input">
-    </div>
+  <!-- CONTENT -->
+  <div class="form-content">
+    <div class="form-grid">
 
-    <div class="input-group">
-      <label>सप्लायरचे नांव</label>
-      <input type="text" [(ngModel)]="supplierName" class="name-input">
+      <div class="form-group">
+        <label>सप्लायर कोड</label>
+        <input type="text" [(ngModel)]="supplierCode">
+      </div>
+
+      <div class="form-group">
+        <label>सप्लायरचे नाव</label>
+        <input type="text" [(ngModel)]="supplierName">
+      </div>
+
+      <!-- add more fields to test scroll -->
     </div>
   </div>
 
+  <!-- FIXED FOOTER -->
   <div class="form-footer">
-    <div class="action-buttons">
-      <button class="btn-new" (click)="onNew()"><i class="icon-new"></i> नवीन</button>
-      <button class="btn-edit" (click)="onEdit()"><i class="icon-edit"></i> दुरुस्ती</button>
-      <button class="btn-delete" (click)="onDelete()"><i class="icon-delete"></i> रद्द</button>
-      <button class="btn-print" (click)="onPrint()"><i class="icon-print"></i> छपाई</button>
-      <button class="btn-form-close" (click)="onClose()"><i class="icon-close"></i> बंद</button>
+
+    <div class="footer-left">
+      <button class="btn-save">नवीन</button>
+      <button class="btn-clear">दुरुस्ती</button>
+      <button class="btn-clear">रद्द</button>
+      <button class="btn-clear">छपाई</button>
+      <button class="btn-clear">बंद</button>
     </div>
-    
-    <div class="nav-buttons">
-      <button class="nav-btn" (click)="onClose()">|❮</button>
-      <button class="nav-btn" (click)="onClose()">❮</button>
-      <button class="nav-btn" (click)="onClose()">❯</button>
-      <button class="nav-btn" (click)="onClose()">❯|</button>
+
+    <div class="footer-right">
+      <button class="page-btn">⏮</button>
+      <button class="page-btn">◀</button>
+      <span class="page-info">1 / 10</span>
+      <button class="page-btn">▶</button>
+      <button class="page-btn">⏭</button>
     </div>
+
   </div>
+
 </div>
