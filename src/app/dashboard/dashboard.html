@@ -15,11 +15,22 @@
       {{ lang.t('REPORT') }}
     </div>
 
-    <div class="lang-switch">
-      <span>{{ lang.t('LANGUAGE') }}:</span>
-      <button (click)="switchLang('mr')">मराठी</button>
-      <button (click)="switchLang('en')">English</button>
-    </div>
+  <div class="lang-switch">
+  <span>{{ lang.t('LANGUAGE') }}:</span>
+
+  <button
+    (click)="switchLang('mr')"
+    [class.active]="lang.getLang() === 'mr'">
+    मराठी
+  </button>
+
+  <button
+    (click)="switchLang('en')"
+    [class.active]="lang.getLang() === 'en'">
+    English
+  </button>
+</div>
+
 
   </div>
 
