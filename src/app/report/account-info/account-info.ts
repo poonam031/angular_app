@@ -57,9 +57,10 @@ export class AccountInfoComponent implements OnInit {
     };
   }
 
-  print(): void {
-    console.log('Print clicked');
-  }
+ print(): void {
+  window.print();
+}
+
 
   close(): void {
     this.closed.emit();

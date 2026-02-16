@@ -38,6 +38,10 @@ export class OutstandingComponent {
     this.location = '';
   }
 
+  print(): void {
+  window.print();
+}
+
   close() {
     this.closed.emit();
   }

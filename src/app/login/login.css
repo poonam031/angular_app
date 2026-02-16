@@ -1,6 +1,5 @@
 /* ============================= LOGIN PAGE ============================= */
 
-/* Animated Gradient Background */
 .login-container {
   display: flex;
   justify-content: center;
@@ -50,7 +49,7 @@
   padding: 3.5rem;
   width: 100%;
   max-width: 420px;
-  box-shadow: 
+  box-shadow:
     0 8px 32px 0 rgba(31, 38, 135, 0.37),
     0 0 50px rgba(58, 123, 213, 0.1),
     inset 0 0 20px rgba(255, 255, 255, 0.05);
@@ -62,7 +61,7 @@
 
 .glass-card:hover {
   transform: translateY(-5px);
-  box-shadow: 
+  box-shadow:
     0 15px 40px 0 rgba(31, 38, 135, 0.5),
     0 0 60px rgba(58, 123, 213, 0.2),
     inset 0 0 20px rgba(255, 255, 255, 0.08);
@@ -178,7 +177,7 @@ input:focus {
   outline: none;
   background: rgba(255, 255, 255, 0.12);
   border-color: #00d2ff;
-  box-shadow: 
+  box-shadow:
     0 0 20px rgba(0, 210, 255, 0.4),
     inset 0 0 10px rgba(0, 210, 255, 0.1);
   transform: translateY(-2px);
@@ -232,7 +231,7 @@ button::after {
 
 button:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 
+  box-shadow:
     0 8px 25px rgba(58, 123, 213, 0.5),
     0 0 30px rgba(0, 210, 255, 0.3),
     inset 0 0 20px rgba(255, 255, 255, 0.05);
@@ -249,7 +248,7 @@ button:hover::before {
 
 button:active {
   transform: translateY(-1px) scale(0.98);
-  box-shadow: 
+  box-shadow:
     0 4px 15px rgba(58, 123, 213, 0.3),
     inset 0 0 20px rgba(0, 210, 255, 0.1);
 }

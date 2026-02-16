@@ -4,7 +4,6 @@ import { Dashboard } from './dashboard/dashboard';
 import { DemandRegisterComponent } from './report/demand-register/demand-register';
 import { SalesRegister } from './report/sales-register/sales-register';
 import { BillList } from './report/bill-list/bill-list';
-import { BalanceDemand } from './report/balance-demand/balance-demand';
 import { ReportComponent } from './report/report.component';
 import { SupplierInfoComponent } from './master/supplier-info/supplier-info';
 import { StockRegisterComponent } from './report/stock-register/stock-register';
@@ -24,7 +23,6 @@ export const routes: Routes = [
       { path: 'stock', component: StockRegisterComponent },
       { path: 'sales', component:SalesRegister },
       { path: 'bill', component: BillList },
-      { path: 'balance', component: BalanceDemand },
       { path: 'stockbook', component: StockBook}
     ]
   }

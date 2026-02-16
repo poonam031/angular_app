@@ -11,7 +11,7 @@ import { ViewEncapsulation } from '@angular/core';
   imports: [CommonModule, FormsModule],
   templateUrl: './demand-register.html',
   styleUrls: ['./demand-register.scss'],
-  encapsulation: ViewEncapsulation.None  
+  encapsulation: ViewEncapsulation.None
 
 })
 export class DemandRegisterComponent {
@@ -41,4 +41,9 @@ export class DemandRegisterComponent {
   close() {
     this.closed.emit();
   }
+
+   print(): void {
+  window.print();
+}
+
 }

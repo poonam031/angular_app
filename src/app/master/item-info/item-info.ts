@@ -8,7 +8,9 @@ import { LanguageService } from '../../services/lang';
   imports: [FormsModule],
   templateUrl: './item-info.html',
   styleUrls: ['./item-info.css']
+  
 })
+
 export class ItemInfoComponent implements OnInit {
   @Output() closed = new EventEmitter<void>();
 

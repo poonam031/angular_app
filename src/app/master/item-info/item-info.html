@@ -69,12 +69,27 @@
   <div class="form-footer">
 
     <div class="footer-left">
-      <button class="btn-clear">{{ lang.t('NEW') }}</button>
-      <button class="btn-clear">{{ lang.t('EDIT') }}</button>
-      <button class="btn-clear">{{ lang.t('DELETE') }}</button>
-      <button class="btn-clear">{{ lang.t('PRINT') }}</button>
-      <button class="btn-clear">{{ lang.t('CLOSE') }}</button>
-    </div>
+  <button type="button" class="btn-clear" (click)="onNew()">
+    {{ lang.t('NEW') }}
+  </button>
+
+  <button type="button" class="btn-clear" (click)="onEdit()">
+    {{ lang.t('EDIT') }}
+  </button>
+
+  <button type="button" class="btn-clear" (click)="onDelete()">
+    {{ lang.t('DELETE') }}
+  </button>
+
+  <button type="button" class="btn-clear" (click)="onPrint()">
+    {{ lang.t('PRINT') }}
+  </button>
+
+  <button type="button" class="btn-clear" (click)="onClose()">
+    {{ lang.t('CLOSE') }}
+  </button>
+</div>
+
 
     <div class="footer-right modern-pagination">
       <button class="page-btn" title="{{ lang.t('FIRST') }}">⏮</button>

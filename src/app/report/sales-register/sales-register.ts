@@ -20,9 +20,10 @@ export class SalesRegister {
 
   constructor(public lang: LanguageService) {}
 
-  print(): void {
-    console.log('Sales Register Print triggered');
-  }
+   print(): void {
+  window.print();
+}
+
 
   close(): void {
     this.closed.emit();  // emits event to parent

@@ -20,13 +20,10 @@ export class StockRegisterComponent {
 
   constructor(public lang: LanguageService) {}
 
-  print(): void {
-    console.log('Stock Register Print', {
-      startCode: this.startCode,
-      endCode: this.endCode,
-      date: this.date
-    });
-  }
+   print(): void {
+  window.print();
+}
+
 
   close(): void {
     this.closed.emit();

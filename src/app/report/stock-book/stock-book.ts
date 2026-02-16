@@ -20,10 +20,10 @@ export class StockBook {
 
   constructor(public lang: LanguageService) { }
 
-  print(): void {
-    console.log('Stock Book Print triggered');
-    // Add print logic here
-  }
+   print(): void {
+  window.print();
+}
+
 
   close(): void {
     this.closed.emit();    // Add close logic here

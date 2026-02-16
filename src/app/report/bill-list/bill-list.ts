@@ -20,13 +20,10 @@ export class BillList {
 
   constructor(public lang: LanguageService) {}
 
-  print(): void {
-    console.log('Print clicked');
-    console.log('Balance As On Date:', this.balanceDate);
-    console.log('Account Type:', this.accountType);
+   print(): void {
+  window.print();
+}
 
-    // later you can call API or open print window here
-  }
 
   close(): void {
     this.closed.emit(); // notify parent to hide component
