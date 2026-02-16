@@ -174,7 +174,13 @@ export type TranslationKey =
   | 'RATE_100'
   | 'SALE_RATE'
   | 'SALE_INFO'
-  | 'MOBILE_NUMBER';
+  | 'MOBILE_NUMBER'
+
+  | 'QTY'
+  | 'SALE_INFO'
+  | 'SELECT_EXAMPLE'
+  | 'ITEM_DETAILS'
+  | 'ACCOUNT_BALANCE';
 
 
 
@@ -255,6 +261,8 @@ export class LanguageService {
       CASH_SALE_TITLE: 'रोख विक्री',
       CREDIT_SALE: 'उधार विक्री',
       CREDIT_SALE_TITLE: 'उधार विक्री',
+      ACCOUNT_BALANCE: 'खाते बाकी',
+
 
       TRANSACTION_ID: 'व्यवहार ID',
       TRANSACTION_TYPE: 'व्यवहार प्रकार',
@@ -361,6 +369,9 @@ DEMAND_INFO: 'मागणी माहिती',
       MOBILE_NUMBER: 'मोबाईल नंबर',
       ACCOUNT_STATEMENT: 'खाते विवरण',
 
+      QTY: 'नग',
+      SELECT_EXAMPLE: '-- उदाहरण निवडा --',
+
 
 
 
@@ -372,6 +383,9 @@ DEMAND_INFO: 'मागणी माहिती',
       REPORT: 'Report',
       LANGUAGE: 'Language',
 
+      QTY: 'Qty',
+      SELECT_EXAMPLE: '-- Select Example --',
+
       ITEM_INFO: 'Item Info',
       ITEM_INFO_TITLE: 'Item Information',
       ITEM_ID: 'Item ID',
@@ -380,6 +394,7 @@ DEMAND_INFO: 'मागणी माहिती',
       ITEM_LIST_NAME: 'Item Name',
       ITEM_AMOUNT: 'Amount',
       ACCOUNT_STATEMENT: 'Account Statement',
+      ACCOUNT_BALANCE: 'Account Balance',
 
 
       MEMBER_INFO: 'Member Info',
@@ -396,7 +411,7 @@ DEMAND_INFO: 'मागणी माहिती',
       MALE: 'Male',
       FEMALE: 'Female',
       ACTIVE_STATUS: 'Status',
-          SALE_INFO: 'Sale Information',
+      SALE_INFO: 'Sale Information',
 
 
       SUPPLIER_INFO: 'Supplier Info',

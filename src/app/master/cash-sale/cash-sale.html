@@ -2,111 +2,110 @@
 
   <!-- ================= HEADER ================= -->
   <div class="form-header">
-    <h2>कॅश सेल (Cash Sale)</h2>
+    <h2>{{ lang.t('CASH_SALE') }}</h2>
     <button class="btn-close" (click)="onClose()">✕</button>
   </div>
 
   <!-- ================= CONTENT ================= -->
   <div class="form-content">
-<!-- ===== SECTION 1 : SALE INFORMATION ===== -->
-<div class="section-box">
-  <h3 class="section-title">
-    विक्री माहिती
-  </h3>
 
-  <!-- ===== ROW 1 ===== -->
-  <div class="form-grid">
+    <!-- ===== SECTION 1 : SALE INFORMATION ===== -->
+    <div class="section-box">
+      <h3 class="section-title">
+        {{ lang.t('SALE_INFO') }}
+      </h3>
 
-    <!-- GODOWN : CODE + NAME -->
-    <div class="form-group inline-group">
-      <label>गोडाऊन</label>
+      <!-- ===== ROW 1 ===== -->
+      <div class="form-grid">
 
-      <div class="inline-fields">
-        <select [(ngModel)]="godownCode"
-                (ngModelChange)="onGodownChange()">
-          <option value="">-- उदा --</option>
-          <option *ngFor="let godown of godownList"
-                  [value]="godown.code">
-            {{ godown.code }}
-          </option>
-        </select>
+        <!-- GODOWN -->
+        <div class="form-group inline-group">
+          <label>{{ lang.t('GODOWN') }}</label>
 
-        <input type="text"
-               [(ngModel)]="godownName"
-               disabled>
+          <div class="inline-fields">
+            <select [(ngModel)]="godownCode"
+                    (ngModelChange)="onGodownChange()">
+              <option value="">{{ lang.t('SELECT') }}</option>
+              <option *ngFor="let godown of godownList"
+                      [value]="godown.code">
+                {{ godown.code }}
+              </option>
+            </select>
+
+            <input type="text"
+                   [(ngModel)]="godownName"
+                   disabled>
+          </div>
+        </div>
+
+        <!-- DEMAND NO -->
+        <div class="form-group inline-group">
+          <label>{{ lang.t('DEMAND_NO') }}</label>
+
+          <div class="inline-fields">
+            <select [(ngModel)]="demandNo"
+                    (ngModelChange)="onDemandChange()">
+              <option value="">{{ lang.t('SELECT') }}</option>
+              <option *ngFor="let demand of demandList"
+                      [value]="demand.no">
+                {{ demand.no }}
+              </option>
+            </select>
+
+            <input type="text"
+                   [(ngModel)]="year"
+                   disabled>
+          </div>
+        </div>
+
+        <!-- DATE -->
+        <div class="form-group">
+          <label>{{ lang.t('DATE') }}</label>
+          <input type="date" [(ngModel)]="currentDate">
+        </div>
+
+      </div>
+
+      <!-- ===== ROW 2 ===== -->
+      <div class="form-grid second-row">
+
+        <!-- SUPPLIER -->
+        <div class="form-group inline-group">
+          <label>{{ lang.t('SUPPLIER_CODE') }}</label>
+
+          <div class="inline-fields">
+            <select [(ngModel)]="supplierCode"
+                    (ngModelChange)="onSupplierChange()">
+              <option value="">{{ lang.t('SELECT') }}</option>
+              <option *ngFor="let supplier of supplierList"
+                      [value]="supplier.code">
+                {{ supplier.code }}
+              </option>
+            </select>
+
+            <input type="text"
+                   [(ngModel)]="supplierName"
+                   disabled>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <!-- DEMAND NO : NO + YEAR -->
-    <div class="form-group inline-group">
-      <label>धान्य मागणी नं.</label>
-
-      <div class="inline-fields">
-        <select [(ngModel)]="demandNo"
-                (ngModelChange)="onDemandChange()">
-          <option value="">-- उदा --</option>
-          <option *ngFor="let demand of demandList"
-                  [value]="demand.no">
-            {{ demand.no }}
-          </option>
-        </select>
-
-        <input type="text"
-               [(ngModel)]="year"
-               disabled>
-      </div>
-    </div>
-
-    <!-- DATE -->
-    <div class="form-group">
-      <label>तारीख</label>
-      <input type="date"
-             [(ngModel)]="currentDate">
-    </div>
-
-  </div>
-
-  <!-- ===== ROW 2 ===== -->
-  <div class="form-grid second-row">
-
-    <!-- SUPPLIER : CODE + NAME -->
-    <div class="form-group inline-group">
-      <label>सप्लायर कोड</label>
-
-      <div class="inline-fields">
-        <select [(ngModel)]="supplierCode"
-                (ngModelChange)="onSupplierChange()">
-          <option value="">-- उदा --</option>
-          <option *ngFor="let supplier of supplierList"
-                  [value]="supplier.code">
-            {{ supplier.code }}
-          </option>
-        </select>
-
-        <input type="text"
-               [(ngModel)]="supplierName"
-               disabled>
-      </div>
-    </div>
-
-  </div>
-</div>
-
 
     <!-- ===== SECTION 2 : ITEM DETAILS ===== -->
     <div class="section-box">
       <h3 class="section-title">
-        आयटम तपशील
+        {{ lang.t('ITEM_DETAILS') }}
       </h3>
 
       <div class="table-container">
         <table class="item-table">
           <thead>
             <tr>
-              <th style="width:120px;">आयटम</th>
-              <th>आयटमचे नांव</th>
-              <th style="width:120px;">नग</th>
-              <th style="width:120px;">दर</th>
+              <th>{{ lang.t('ITEM_CODE') }}</th>
+              <th>{{ lang.t('ITEM_NAME') }}</th>
+              <th>{{ lang.t('QTY') }}</th>
+              <th>{{ lang.t('RATE') }}</th>
             </tr>
           </thead>
 
@@ -132,7 +131,7 @@
 
     <!-- ===== SECTION 3 : TOTAL ===== -->
     <div class="total-bar">
-      <label>एकूण नग :</label>
+      <label>{{ lang.t('TOTAL_QTY') }} :</label>
       <input class="total-input"
              [value]="totalQty"
              disabled>
@@ -143,23 +142,26 @@
   <!-- ================= FOOTER ================= -->
   <div class="form-footer">
 
-    <!-- LEFT ACTIONS -->
     <div class="footer-left">
-      <button class="btn-save" (click)="onSave()">सेव्ह</button>
-      <button class="btn-clear" (click)="onCancel()">कॅन्सल</button>
-      <button class="btn-clear" (click)="onClose()">बंद</button>
+      <button class="btn-clear" (click)="onSave()">
+        {{ lang.t('SAVE') }}
+      </button>
+      <button class="btn-clear" (click)="onCancel()">
+        {{ lang.t('CANCEL') }}
+      </button>
+      <button class="btn-clear" (click)="onClose()">
+        {{ lang.t('CLOSE') }}
+      </button>
     </div>
 
-    <!-- RIGHT PAGINATION -->
     <div class="footer-right modern-pagination">
-      <button class="page-btn" title="First">⏮</button>
-      <button class="page-btn" title="Previous">◀</button>
+      <button class="page-btn" title="{{ lang.t('FIRST') }}">⏮</button>
+      <button class="page-btn" title="{{ lang.t('PREVIOUS') }}">◀</button>
       <span class="page-info">1 / 10</span>
-      <button class="page-btn" title="Next">▶</button>
-      <button class="page-btn" title="Last">⏭</button>
+      <button class="page-btn" title="{{ lang.t('NEXT') }}">▶</button>
+      <button class="page-btn" title="{{ lang.t('LAST') }}">⏭</button>
     </div>
 
   </div>
 
 </div>
-

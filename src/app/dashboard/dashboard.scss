@@ -1,76 +1,35 @@
 /* ============================================
-   ANIMATIONS
+   ANIMATIONS (Originals Preserved)
    ============================================ */
 @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
-  }
-  50% {
-    box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
-  }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7); }
+  50% { box-shadow: 0 0 0 10px rgba(102, 126, 234, 0); }
 }
 
 @keyframes popIn {
-  0% {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
+  0% { transform: scale(0.95); opacity: 0; }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
 /* ============================================
@@ -82,24 +41,9 @@
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   border-bottom: 4px solid #5a67d8;
-  box-shadow:
-    0 10px 40px rgba(102, 126, 234, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-      radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-  }
 }
 
 @keyframes gradient {
@@ -133,30 +77,6 @@
     color: #4a5568;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 8px 8px 0 0;
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
-      transition: left 0.5s ease;
-    }
-
-    &:hover {
-      color: #667eea;
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.05) 100%);
-      border-bottom-color: #667eea;
-      transform: translateY(-2px);
-
-      &::before {
-        left: 100%;
-      }
-    }
 
     &.active {
       background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
@@ -169,7 +89,7 @@
 }
 
 /* ============================================
-   RIBBON AREA
+   RIBBON AREA (TRANSITION UPDATED)
    ============================================ */
 .ribbon-area {
   display: flex;
@@ -180,23 +100,17 @@
   flex-wrap: wrap;
   animation: fadeIn 0.6s ease;
   position: relative;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-      radial-gradient(circle at 25% 75%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 75% 25%, rgba(118, 75, 162, 0.05) 0%, transparent 50%);
-    pointer-events: none;
+  &.has-selection {
+    gap: 0;
+    padding: 15px 32px;
+    min-height: 120px;
   }
 }
 
 /* ============================================
-   RIBBON ITEMS
+   RIBBON ITEMS (ZOOM & RETURN LOGIC)
    ============================================ */
 .ribbon-item {
   width: 120px;
@@ -204,523 +118,99 @@
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border: 2px solid #e2e8f0;
   border-radius: 12px;
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8),
-    0 0 0 0 rgba(102, 126, 234, 0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;   /* 🔑 FIX */
+  justify-content: flex-start;
+  padding-top: 14px;
+  padding-bottom: 14px;
 
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   overflow: hidden;
   animation: popIn 0.5s ease forwards;
 
-  @for $i from 1 through 8 {
-    &:nth-child(#{$i}) {
-      animation-delay: $i * 0.08s;
-    }
-  }
+  // Transition for all properties to ensure smooth return when deselected
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  // HIDE SIBLINGS LOGIC
+  .has-selection &:not(.selected) {
+    width: 0;
+    margin: 0;
+    padding: 0;
     opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 0;
+    transform: scale(0);
+    visibility: hidden;
+    pointer-events: none;
+    border: none;
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.6s ease;
-    z-index: 1;
-  }
-
-  &:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow:
-      0 12px 24px rgba(102, 126, 234, 0.25),
-      inset 0 1px 0 rgba(255, 255, 255, 0.8),
-      0 0 0 2px rgba(102, 126, 234, 0.2);
-    border-color: #667eea;
-    background: linear-gradient(135deg, #f0f4ff 0%, #f5f1ff 100%);
-
-    &::before {
-      opacity: 1;
-    }
-
-    &::after {
-      left: 100%;
-    }
-
-    .icon-image {
-      transform: scale(1.2) rotate(5deg);
-    }
-
-
-    .text {
-      transform: translateY(-2px);
-    }
-  }
-
+  // SELECTED STYLE
   &.selected {
+    width: 140px;
+    height: 110px;
     background: linear-gradient(135deg, #fef08a 0%, #fde047 50%, #fcd34d 100%);
     border: 2px solid #eab308;
-    box-shadow:
-      0 12px 32px rgba(234, 179, 8, 0.35),
-      inset 0 1px 0 rgba(255, 255, 255, 0.9),
-      0 0 0 0 rgba(234, 179, 8, 0.4);
     animation: pulse 2s infinite;
+    z-index: 10;
+  }
 
-    .icon-image {
-      filter: brightness(1.15) drop-shadow(0 4px 8px rgba(139, 29, 64, 0.2));
-    }
+  &:hover:not(.selected) {
+    transform: translateY(-8px) scale(1.05);
+    border-color: #667eea;
+  }
 
-    .text {
-      color: #854d0e;
-      font-weight: 800;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+  .icon-image {
+    display: block;
+    height: 80px;
+    margin: 0 auto;
+    object-fit: contain;
+    transition: all 0.4s ease;
+  }
+
+  &.selected .icon-image {
+    height: 60px;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-top: 5px;
   }
 }
 
 /* ============================================
-   ICONS
-   ============================================ */
-.icon-image {
-  width: 52px;
-  height: 52px;
-  object-fit: contain;
-  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  position: relative;
-  z-index: 2;
-  will-change: transform;
-}
-
-/* === FIX: Equal padding & alignment for all ribbon icons === */
-.ribbon-item {
-  padding-top: 14px;
-  padding-bottom: 14px;
-}
-
-/* Fixed icon slot so all cards align */
-.ribbon-item .icon-image {
-  display: block;
-  height: 80px;      /* SAME vertical space for all icons */
-  margin: 0 auto;
-  object-fit: contain;
-}
-
-.ribbon-item:hover .icon-image {
-  transform: scale(1.25) rotate(5deg);
-  filter: drop-shadow(0 4px 12px rgba(102, 126, 234, 0.4));
-}
-
-.ribbon-item.selected .icon-image {
-  filter: drop-shadow(0 4px 8px rgba(234, 179, 8, 0.5)) brightness(1.15);
-  animation: float 3s ease-in-out infinite;
-}
-
-/* ============================================
-   TEXT
-   ============================================ */
-.text {
-  font-size: 12px;
-  line-height: 1.4;
-  color: #2d3748;
-  font-weight: 700;
-  position: relative;
-  z-index: 2;
-  transition: all 0.3s ease;
-  text-transform: capitalize;
-  letter-spacing: 0.3px;
-}
-
-/* ============================================
-   LANGUAGE SWITCH
+   LANGUAGE & FORM (Originals Preserved)
    ============================================ */
 .lang-switch {
   margin-left: auto;
   display: flex;
   align-items: center;
   gap: 10px;
-  animation: slideDown 0.5s ease 0.2s backwards;
-
-  span {
-    font-weight: 600;
-    color: #4a5568;
-    font-size: 13px;
-  }
-
   button {
     padding: 8px 16px;
-    border: 2px solid #cbd5e0;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    color: #4a5568;
-    cursor: pointer;
     border-radius: 6px;
+    cursor: pointer;
     font-weight: 600;
-    font-size: 12px;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(102, 126, 234, 0.1);
-      transition: left 0.3s ease;
-      z-index: -1;
-    }
-
-    &:hover {
-      border-color: #667eea;
-      color: #667eea;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
-
-      &::before {
-        left: 100%;
-      }
-    }
-
-    &:active {
-      transform: translateY(0);
-    }
   }
 }
 
-/* ============================================
-   FORM CONTAINER
-   ============================================ */
 .form-container {
-  background: linear-gradient(135deg, #f7fafc 0%, #ffffff 50%, #f8f9fa 100%);
-  border-top: 4px solid;
-  border-image: linear-gradient(90deg, #667eea 0%, #764ba2 100%) 1;
+  background: white;
+  border-top: 4px solid #667eea;
   padding: 32px;
-  min-height: 320px;
-  box-shadow:
-    inset 0 2px 8px rgba(0, 0, 0, 0.05),
-    0 -4px 20px rgba(102, 126, 234, 0.1);
   animation: slideUp 0.5s ease;
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-      radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 80% 50%, rgba(118, 75, 162, 0.03) 0%, transparent 50%);
-    pointer-events: none;
-  }
 }
 
-/* ============================================
-   FORM HEADER
-   ============================================ */
-.form-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 32px;
-  padding-bottom: 20px;
-  border-bottom: 3px solid #e2e8f0;
-  animation: slideDown 0.5s ease;
-
-  h2 {
-    margin: 0;
-    font-size: 24px;
-    color: #2d3748;
-    font-weight: 800;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: 0.5px;
-  }
-
-  .close-btn {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
-    border: none;
-    font-size: 20px;
-    color: #ffffff;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    padding: 8px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.2);
-      transition: left 0.3s ease;
-    }
-
-    &:hover {
-      transform: scale(1.1) rotate(90deg);
-      box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
-
-      &::before {
-        left: 100%;
-      }
-    }
-
-    &:active {
-      transform: scale(0.95);
-    }
-  }
-}
-
-/* ============================================
-   FORM CONTENT
-   ============================================ */
-.form-content {
-  margin-bottom: 28px;
-  animation: fadeIn 0.6s ease 0.2s backwards;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-}
-
-/* ============================================
-   FORM GROUP
-   ============================================ */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  animation: slideUp 0.5s ease forwards;
-
-  @for $i from 1 through 10 {
-    &:nth-child(#{$i}) {
-      animation-delay: $i * 0.06s;
-    }
-  }
-
-  label {
-    font-size: 13px;
-    font-weight: 700;
-    color: #2d3748;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  input {
-    padding: 12px 16px;
-    border: 2px solid #cbd5e0;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #2d3748;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
-      transition: left 0.4s ease;
-    }
-
-    &:focus {
-      outline: none;
-      border-color: #667eea;
-      box-shadow:
-        0 0 0 4px rgba(102, 126, 234, 0.15),
-        0 4px 12px rgba(102, 126, 234, 0.2),
-        inset 0 0 0 2px rgba(102, 126, 234, 0.05);
-      background: #f7fafc;
-      transform: scale(1.02);
-    }
-
-    &:disabled {
-      background: #e2e8f0;
-      color: #a0aec0;
-      cursor: not-allowed;
-    }
-
-    &::placeholder {
-      color: #cbd5e0;
-      font-style: italic;
-    }
-  }
-}
-
-/* ============================================
-   FORM ACTIONS
-   ============================================ */
-.form-actions {
-  display: flex;
-  gap: 16px;
-  justify-content: flex-end;
-  padding-top: 28px;
-  border-top: 3px solid #e2e8f0;
-  animation: slideUp 0.5s ease 0.3s backwards;
-
-  button {
-    padding: 12px 32px;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.3);
-      transform: translate(-50%, -50%);
-      transition: width 0.6s, height 0.6s;
-    }
-
-    &:hover::before {
-      width: 400px;
-      height: 400px;
-    }
-  }
-
-  .btn-save {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow:
-        0 8px 24px rgba(102, 126, 234, 0.4),
-        0 0 0 0 rgba(102, 126, 234, 0.7);
-      animation: pulse 0.6s ease;
-    }
-
-    &:active {
-      transform: translateY(-2px);
-    }
-  }
-
-  .btn-clear {
-    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
-    color: #2d3748;
-
-    &:hover {
-      background: linear-gradient(135deg, #cbd5e0 0%, #a0aec0 100%);
-      color: #1a202c;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-    }
-
-    &:active {
-      transform: translateY(0);
-    }
-  }
-}
-
-/* ============================================
-   RESPONSIVE
-   ============================================ */
 @media (max-width: 768px) {
-  .ribbon-area {
-    gap: 12px;
-    padding: 16px;
-  }
-
-  .ribbon-item {
-    width: 100px;
-    height: 110px;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .lang-switch {
-    margin-top: 12px;
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .form-actions {
-    flex-direction: column;
-    gap: 10px;
-
-    button {
-      width: 100%;
-    }
-  }
-
-
-}
-
-/* === Grain Inward: make bigger than Cash Sale === */
-.ribbon-item img[src*="grain"] {
-  width: 100px;       /* clearly bigger */
-  transform: scale(1.15);
-  height: 80px;
-  transform: scale(1.15);
-}
-
-/* === Boost all report icons (default) === */
-.ribbon-area img[src^="icons/report-"] {
-  width: 72px;
-  height: 72px;
-  transform: scale(1.15);
+  .ribbon-item { width: 100px; height: 110px; }
+  .ribbon-item.selected { width: 100%; height: 100px; }
 }

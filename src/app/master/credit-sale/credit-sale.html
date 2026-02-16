@@ -2,112 +2,110 @@
 
   <!-- ================= HEADER ================= -->
   <div class="form-header">
-    <h2>क्रेडिट सेल (Credit Sale)</h2>
+    <h2>{{ lang.t('CREDIT_SALE') }}</h2>
     <button class="btn-close" (click)="onClose()">✕</button>
   </div>
 
   <!-- ================= CONTENT ================= -->
   <div class="form-content">
 
-  <!-- ===== SECTION 1 : SALE INFORMATION ===== -->
-<div class="section-box">
-  <h3 class="section-title">
-    विक्री माहिती
-  </h3>
+    <!-- ===== SECTION 1 : SALE INFORMATION ===== -->
+    <div class="section-box">
+      <h3 class="section-title">
+        {{ lang.t('SALE_INFO') }}
+      </h3>
 
-  <!-- ===== ROW 1 ===== -->
-  <div class="form-grid">
+      <!-- ===== ROW 1 ===== -->
+      <div class="form-grid">
 
-    <!-- GODOWN : CODE + NAME -->
-    <div class="form-group inline-group">
-      <label>गोडाऊन कोड</label>
-      <div class="inline-fields">
-        <select [(ngModel)]="godownCode"
-                (ngModelChange)="onGodownChange()">
-          <option value="">-- उदा --</option>
-          <option *ngFor="let godown of godownList"
-                  [value]="godown.code">
-            {{ godown.code }}
-          </option>
-        </select>
+        <!-- GODOWN -->
+        <div class="form-group inline-group">
+          <label>{{ lang.t('GODOWN_CODE') }}</label>
+          <div class="inline-fields">
+            <select [(ngModel)]="godownCode"
+                    (ngModelChange)="onGodownChange()">
+              <option value="">{{ lang.t('SELECT') }}</option>
+              <option *ngFor="let godown of godownList"
+                      [value]="godown.code">
+                {{ godown.code }}
+              </option>
+            </select>
 
-        <input type="text"
-               [(ngModel)]="godownName"
-               disabled>
+            <input type="text"
+                   [(ngModel)]="godownName"
+                   disabled>
+          </div>
+        </div>
+
+        <!-- BILL DATE -->
+        <div class="form-group">
+          <label>{{ lang.t('BILL_DATE') }}</label>
+          <input type="date" [(ngModel)]="billDate">
+        </div>
+
+      </div>
+
+      <!-- ===== ROW 2 ===== -->
+      <div class="form-grid second-row">
+
+        <!-- BILL NO -->
+        <div class="form-group">
+          <label>{{ lang.t('BILL_NO') }}</label>
+          <select [(ngModel)]="billNo"
+                  (ngModelChange)="onBillNoChange()">
+            <option value="">{{ lang.t('SELECT') }}</option>
+            <option *ngFor="let bill of billNoList"
+                    [value]="bill.no">
+              {{ bill.no }}
+            </option>
+          </select>
+        </div>
+
+        <!-- MEMBER -->
+        <div class="form-group inline-group">
+          <label>{{ lang.t('MEMBER_CODE') }}</label>
+          <div class="inline-fields">
+            <select [(ngModel)]="memberCode"
+                    (ngModelChange)="onMemberChange()">
+              <option value="">{{ lang.t('SELECT') }}</option>
+              <option *ngFor="let member of memberList"
+                      [value]="member.code">
+                {{ member.code }}
+              </option>
+            </select>
+
+            <input type="text"
+                   [(ngModel)]="memberName"
+                   disabled>
+          </div>
+        </div>
+
+        <!-- ACCOUNT BALANCE -->
+        <div class="form-group">
+          <label>{{ lang.t('ACCOUNT_BALANCE') }}</label>
+          <input type="text"
+                 [(ngModel)]="accountBalance"
+                 disabled>
+        </div>
+
       </div>
     </div>
-
-    <!-- BILL DATE -->
-    <div class="form-group">
-      <label>बिल तारीख</label>
-      <input type="date"
-             [(ngModel)]="billDate">
-    </div>
-
-  </div>
-
-  <!-- ===== ROW 2 ===== -->
-  <div class="form-grid second-row">
-
-    <!-- BILL NO -->
-    <div class="form-group">
-      <label>बिल नंबर</label>
-      <select [(ngModel)]="billNo"
-              (ngModelChange)="onBillNoChange()">
-        <option value="">-- उदा --</option>
-        <option *ngFor="let bill of billNoList"
-                [value]="bill.no">
-          {{ bill.no }}
-        </option>
-      </select>
-    </div>
-
-    <!-- MEMBER : CODE + NAME -->
-    <div class="form-group inline-group">
-      <label>सभासद कोड</label>
-      <div class="inline-fields">
-        <select [(ngModel)]="memberCode"
-                (ngModelChange)="onMemberChange()">
-          <option value="">-- उदा --</option>
-          <option *ngFor="let member of memberList"
-                  [value]="member.code">
-            {{ member.code }}
-          </option>
-        </select>
-
-        <input type="text"
-               [(ngModel)]="memberName"
-               disabled>
-      </div>
-    </div>
-
-    <!-- ACCOUNT BALANCE -->
-    <div class="form-group">
-      <label>खाते बाकी</label>
-      <input type="text"
-             [(ngModel)]="accountBalance"
-             disabled>
-    </div>
-
-  </div>
-</div>
-
 
     <!-- ===== SECTION 2 : ITEM DETAILS ===== -->
     <div class="section-box">
       <h3 class="section-title">
-        आयटम तपशील
+        {{ lang.t('ITEM_DETAILS') }}
       </h3>
 
       <div class="table-container">
         <table class="item-table">
           <thead>
             <tr>
-              <th style="width:120px;">आयटम</th>
-              <th>आयटमचे नांव</th>
-              <th style="width:120px;">नग</th>
-              <th style="width:120px;">दर</th>
-              <th style="width:140px;">रक्कम</th>
+              <th>{{ lang.t('ITEM_CODE') }}</th>
+              <th>{{ lang.t('ITEM_NAME') }}</th>
+              <th>{{ lang.t('QTY') }}</th>
+              <th>{{ lang.t('RATE') }}</th>
+              <th>{{ lang.t('AMOUNT') }}</th>
             </tr>
           </thead>
 
@@ -126,7 +124,7 @@
 
     <!-- ===== SECTION 3 : TOTAL ===== -->
     <div class="total-bar">
-      <label>बिलाची रक्कम :</label>
+      <label>{{ lang.t('BILL_AMOUNT') }} :</label>
       <input class="grand-total"
              [value]="totalAmount | number:'1.2-2'"
              disabled>
@@ -137,22 +135,22 @@
   <!-- ================= FOOTER ================= -->
   <div class="form-footer">
 
-    <!-- LEFT ACTIONS -->
     <div class="footer-left">
-      <button class="btn-save">नवीन</button>
-      <button class="btn-clear">दुरुस्ती</button>
-      <button class="btn-clear">रद्द</button>
-      <button class="btn-clear">छपाई</button>
-      <button class="btn-clear" (click)="onClose()">बंद</button>
+      <button class="btn-clear">{{ lang.t('NEW') }}</button>
+      <button class="btn-clear">{{ lang.t('EDIT') }}</button>
+      <button class="btn-clear">{{ lang.t('CANCEL') }}</button>
+      <button class="btn-clear">{{ lang.t('PRINT') }}</button>
+      <button class="btn-clear" (click)="onClose()">
+        {{ lang.t('CLOSE') }}
+      </button>
     </div>
 
-    <!-- RIGHT PAGINATION -->
     <div class="footer-right modern-pagination">
-      <button class="page-btn" title="First">⏮</button>
-      <button class="page-btn" title="Previous">◀</button>
+      <button class="page-btn" title="{{ lang.t('FIRST') }}">⏮</button>
+      <button class="page-btn" title="{{ lang.t('PREVIOUS') }}">◀</button>
       <span class="page-info">1 / 10</span>
-      <button class="page-btn" title="Next">▶</button>
-      <button class="page-btn" title="Last">⏭</button>
+      <button class="page-btn" title="{{ lang.t('NEXT') }}">▶</button>
+      <button class="page-btn" title="{{ lang.t('LAST') }}">⏭</button>
     </div>
 
   </div>

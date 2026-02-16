@@ -618,11 +618,12 @@
   justify-content: center;
 }
 
-/* Page info */
 .page-info {
   font-size: 13px;
-  padding: 0 8px;
   opacity: 0.9;
+  color: #ffffff;          /* PURE WHITE */
+  font-size: 14px;
+  font-weight: 600;
 }
 
 

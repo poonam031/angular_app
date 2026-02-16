@@ -61,11 +61,12 @@ export class Dashboard {
   }
 
   selectOption(option: string) {
-    this.selectedOption = option;
+    // If clicking the same option, it deselects (returns cards)
+    this.selectedOption = (this.selectedOption === option) ? null : option;
   }
 
   selectReport(reportKey: string) {
-    this.selectedOption = reportKey;
-    console.log('Report selected:', reportKey);
+    // If clicking the same report, it deselects (returns cards)
+    this.selectedOption = (this.selectedOption === reportKey) ? null : reportKey;
   }
 }

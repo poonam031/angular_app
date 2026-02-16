@@ -1,7 +1,8 @@
 <div class="ribbon-shell">
 
-  <!-- TOP TABS -->
+  <!-- ================= TOP TABS ================= -->
   <div class="ribbon-tabs">
+
     <div class="tab"
          [class.active]="activeTab === 'master'"
          (click)="setTab('master')">
@@ -19,10 +20,13 @@
       <button (click)="switchLang('mr')">मराठी</button>
       <button (click)="switchLang('en')">English</button>
     </div>
+
   </div>
 
   <!-- ================= MASTER RIBBON ================= -->
-  <div class="ribbon-area" *ngIf="activeTab === 'master'">
+  <div class="ribbon-area"
+       *ngIf="activeTab === 'master'"
+       [class.has-selection]="selectedOption !== null">
 
     <div class="ribbon-item"
          [class.selected]="selectedOption === 'item-info'"
@@ -83,7 +87,9 @@
   </div>
 
   <!-- ================= REPORT RIBBON ================= -->
-  <div class="ribbon-area" *ngIf="activeTab === 'report'">
+  <div class="ribbon-area"
+       *ngIf="activeTab === 'report'"
+       [class.has-selection]="selectedOption !== null">
 
     <div class="ribbon-item"
          [class.selected]="selectedOption === 'demand-register'"
@@ -139,86 +145,22 @@
   <!-- ================= COMPONENT AREA ================= -->
 
   <!-- MASTER -->
-  <app-item-info
-    *ngIf="activeTab === 'master' && selectedOption === 'item-info'"
-    (closed)="selectedOption = null">
-  </app-item-info>
+  <app-item-info *ngIf="activeTab === 'master' && selectedOption === 'item-info'" (closed)="selectedOption = null"></app-item-info>
+  <app-member-info *ngIf="activeTab === 'master' && selectedOption === 'member-info'" (closed)="selectedOption = null"></app-member-info>
+  <app-supplier-info *ngIf="activeTab === 'master' && selectedOption === 'supplier-info'" (closed)="selectedOption = null"></app-supplier-info>
+  <app-grain-demand *ngIf="activeTab === 'master' && selectedOption === 'grain-demand'" (closed)="selectedOption = null"></app-grain-demand>
+  <app-grain-inward *ngIf="activeTab === 'master' && selectedOption === 'grain-inward'" (closed)="selectedOption = null"></app-grain-inward>
+  <app-cash-sale *ngIf="activeTab === 'master' && selectedOption === 'cash-sale'" (closed)="selectedOption = null"></app-cash-sale>
+  <app-credit-sale *ngIf="activeTab === 'master' && selectedOption === 'credit-sale'" (closed)="selectedOption = null"></app-credit-sale>
+  <app-deposit *ngIf="activeTab === 'master' && selectedOption === 'deposit'" (closed)="selectedOption = null"></app-deposit>
 
   <!-- REPORT -->
-  <app-demand-register
-    *ngIf="activeTab === 'report' && selectedOption === 'demand-register'"
-    (closed)="selectedOption = null">
-  </app-demand-register>
-
-  <app-stock-register
-    *ngIf="activeTab === 'report' && selectedOption === 'stock-register'"
-    (closed)="selectedOption = null">
-  </app-stock-register>
-
-  <app-stock-book
-    *ngIf="activeTab === 'report' && selectedOption === 'stock-book'"
-    (closed)="selectedOption = null">
-  </app-stock-book>
-
-  <app-sales-register
-    *ngIf="activeTab === 'report' && selectedOption === 'sales-register'"
-    (closed)="selectedOption = null">
-  </app-sales-register>
-
-  <app-bill-list
-    *ngIf="activeTab === 'report' && selectedOption === 'bill-list'"
-    (closed)="selectedOption = null">
-  </app-bill-list>
-
-
-  <app-account-info
-    *ngIf="activeTab === 'report' && selectedOption === 'account-info'"
-    (closed)="selectedOption = null">
-  </app-account-info>
-
-
-  <app-outstanding
-    *ngIf="activeTab === 'report' && selectedOption === 'outstanding-demand'"
-    (closed)="selectedOption = null">
-  </app-outstanding>
-
-
-
-
-<app-supplier-info
-  *ngIf="activeTab === 'master' && selectedOption === 'supplier-info'"
-  (closed)="selectedOption = null">
-</app-supplier-info>
-
-<app-cash-sale
-  *ngIf="activeTab === 'master' && selectedOption === 'cash-sale'"
-  (closed)="selectedOption = null">
-</app-cash-sale>
-
-<app-credit-sale
-  *ngIf="activeTab === 'master' && selectedOption === 'credit-sale'"
-  (closed)="selectedOption = null">
-</app-credit-sale>
-
-<app-grain-demand
-  *ngIf="activeTab === 'master' && selectedOption === 'grain-demand'"
-  (closed)="selectedOption = null">
-</app-grain-demand>
-
-<app-deposit
-  *ngIf="activeTab === 'master' && selectedOption === 'deposit'"
-  (closed)="selectedOption = null">
-</app-deposit>
-
-<app-member-info
-  *ngIf="activeTab === 'master' && selectedOption === 'member-info'"
-  (closed)="selectedOption = null">
-</app-member-info>
-
-
-<app-grain-inward
-  *ngIf="activeTab === 'master' && selectedOption === 'grain-inward'"
-  (closed)="selectedOption = null">
-</app-grain-inward>
+  <app-demand-register *ngIf="activeTab === 'report' && selectedOption === 'demand-register'" (closed)="selectedOption = null"></app-demand-register>
+  <app-stock-register *ngIf="activeTab === 'report' && selectedOption === 'stock-register'" (closed)="selectedOption = null"></app-stock-register>
+  <app-stock-book *ngIf="activeTab === 'report' && selectedOption === 'stock-book'" (closed)="selectedOption = null"></app-stock-book>
+  <app-sales-register *ngIf="activeTab === 'report' && selectedOption === 'sales-register'" (closed)="selectedOption = null"></app-sales-register>
+  <app-account-info *ngIf="activeTab === 'report' && selectedOption === 'account-info'" (closed)="selectedOption = null"></app-account-info>
+  <app-bill-list *ngIf="activeTab === 'report' && selectedOption === 'bill-list'" (closed)="selectedOption = null"></app-bill-list>
+  <app-outstanding *ngIf="activeTab === 'report' && selectedOption === 'outstanding-demand'" (closed)="selectedOption = null"></app-outstanding>
 
 </div>
